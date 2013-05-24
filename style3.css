@@ -118,13 +118,13 @@ img {
        }
 
 a {
-	color: green;
+	color: #06690b;
 	text-decoration: none;
 	padding-bottom: 1px;
 	}
 	
 a:hover {
-	color: #000;
+	color: #ccc;
 	}
 
 .right {
@@ -149,28 +149,54 @@ footer {
 	padding: 15px;
 	}
 	
-footer li 	{
+footer div 	{
+	width: 33%;
 	margin: 0 auto;
-	padding-left: .8em;
-	padding-right: .6em;
-	list-style: none;
-	display: inline;
- 	color: #FFFFFF;
+ 	color: #fff;
     font: 100 42px/42px "lato";
     letter-spacing: -2px;
     text-transform: uppercase;
 	}
+	
+#skills	{
+	float: left;
+	}
 
-footer li:nth-child(even)	{
+#skills ul	{
+	padding-top: 40px;
+	padding-left: 210px;
+	}
+
+#skills	ul li {
+	text-align: left;
+	font-size: .6em
+	}
+
+#skills a	{
+	padding-top: 100px;
+	font-size: .6em;
+	}
+	
+#contact	{
+	float: left;
 	border-left: 1px solid #fff;
-	height: 350px;
-}
+	border-right: 1px solid #fff;
+	}
+
+#tweets	{
+	float: left;
+	color: #fff;
+	}
+	
+#tweets	p	{
+	margin-bottom: 40px;
+	}
 
 	
 .year {
-	background-color: #000;
+	background-color:  #000;
 	color: #fff;
 	font: 100 18px/18px "lato";
 	text-align: center;
-	padding-bottom: 1em;
+	padding: 2em 0;
 	}
