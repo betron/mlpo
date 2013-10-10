@@ -1,4 +1,4 @@
-/* A Song For All Seasons */
+/* My Little Pond Online */
 
 /* Remove browser styles*/
 	
@@ -41,22 +41,15 @@ body	{
 		
 
 h1	{
-	font-size: 7em;
-	line-height: 1em;
 	margin-top: 100px;
-	font-family: 'Gravitas One', serif;
+	font-size: 4em;
+	font-family: 'gravitas one';
+    text-transform: uppercase;
 	text-align: center;
-		color: #399c3e;
-	text-shadow: 5px 5px 5px #ccc;
+	color: #399c3e;
+	padding-bottom: 50px;
+		
 }
-
-
-h1 span	{
-	font-size: .7em;
-	font-family:'Petit Formal Script', cursive;
-	text-shadow: none;
-	color: #399C2E;
-	}
 
 img {
 	max-width: 100%;
@@ -67,9 +60,11 @@ img {
 	width:100%;
 	text-align: center;
 	clear: both;
-	text-transform: uppercase; 
-	font-family: 'Gravitas One', serif;
 	font-size: 2em;
+	font-family: "lato", sans-serif;
+	font-weight: 100;
+	letter-spacing: -2;
+    text-transform: uppercase;
 	}
 
 	
@@ -91,7 +86,7 @@ img {
 	font-family: PT Mono, mono-spaced;
 	margin: 0 auto;
 	line-height: 1.5em;
-	width: 480px;
+	width: 460px;
 	}
 
 .main p a   {
@@ -105,7 +100,7 @@ a {
 	}
 	
 a:hover {
-	color: #ccc;
+	opacity: .8;
 	}
 
 .right {
@@ -115,6 +110,7 @@ a:hover {
 #recent ul li{
 	text-align: center;
 	margin: 50px auto 0;
+        list-style: none;
 	}	
 
 #recent img	{
@@ -191,6 +187,7 @@ footer div 	{
 	
 .year {
 	background-color:  #000;
+	color: #fff;
 	font: 100 18px/18px "lato";
 	text-align: center;
 	padding: 2em 0;
