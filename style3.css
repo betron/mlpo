@@ -46,7 +46,7 @@ h1	{
 	font-family: 'gravitas one';
     text-transform: uppercase;
 	text-align: center;
-	color: Purple;
+	color: #399c3e;
 	padding-bottom: 50px;
 		
 }
@@ -173,6 +173,12 @@ footer div 	{
 	
 #contact i	{
 	padding: 15px;
+	}
+	
+.screen-reader-text	{
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
 	}
 
 #tweets	{
