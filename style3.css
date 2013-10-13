@@ -94,7 +94,7 @@ img {
        }
 
 a {
-	color: #399c3e;
+	color: purple;
 	text-decoration: none;
 	padding-bottom: 1px;
 	}
@@ -173,6 +173,12 @@ footer div 	{
 	
 #contact i	{
 	padding: 15px;
+	}
+	
+.screen-reader-text	{
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
 	}
 
 #tweets	{
