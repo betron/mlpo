@@ -87,19 +87,23 @@ body	{
 #main ul li {
 	display: inline;
 	float: left;
-	margin:40px auto 0 19%;
-	height: 95px;
-	width: 95px;
-	background-color: #fff;
+	margin:140px auto 0 95px;
+	height: 100px;
+	width: 300px;
+	border-radius: 100%;
+	box-shadow: 10px 10px 50px #333;
+	background-color: #3A7230;
 	}
 	
 #main ul li div	{
 	display: inline;
 	float: left;
-	margin:38% auto 0 38%;
-	height: 20px;
-	width: 20px;
-	background-color: #3A7230;
+	margin: 5px auto 0 5px;
+	height: 80px;
+	width: 280px;
+	border-radius: 70%;
+	box-shadow: 2px 2px 20px #333;	
+	background-color: #6EBF60;
 	}
 
 #about	{
