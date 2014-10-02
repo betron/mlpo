@@ -37,61 +37,96 @@ body	{
 .page	{
 	margin: 0 auto;
 	width: 93.75%; /*900px / 960px*/
+	font-family: PT Mono, mono-spaced;
+
 		}
-		
+
+#topBanner {
+	height: 25px;
+	background-color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	padding: 15px;
+	
+	}		
 
 h1	{
-	margin-top: 100px;
-	font-size: 3em;
-	font-family: 'gravitas one';
-    text-transform: uppercase;
-	text-align: center;
-	color: red;
-	padding-bottom: 50px;
+	margin-top: 5px;
+	font-size: 1em;
+	font-family: Helvetica, sans-serif;
+	text-align: left;
+	color: #000;
+	padding-bottom: 10px;
 		
 }
 
-img {
-	max-width: 100%;
-	}
-
-.nav	{
+#main	{
+	height: 500px;
 	margin: 0 auto;
-	width:100%;
+	background-color: #534ACC;
+	padding: 15px;
+	}
+
+#main p	{
 	text-align: center;
-	clear: both;
-	font-size: 2em;
-	font-family: "lato", sans-serif;
-	font-weight: 100;
-	letter-spacing: -2;
-    text-transform: uppercase;
-	}
-
-	
-.nav a {
-	margin-left: 1em;
-	margin-right: 1em;
-	}
-
-.nav ul li	{
-	display: inline;
-	}
-
-.main	{
-	margin: 100px auto 0;
-	}
-
-.main p	{
-	text-align: center;
-	font-family: PT Mono, mono-spaced;
 	margin: 0 auto;
 	line-height: 1.5em;
 	width: 460px;
 	}
 
-.main p a   {
+#main p a   {
        text-decoration: underline;
        }
+       
+#main ul {
+	display: inline;
+	list-style: none;
+	margin: 0 ;
+	padding: 0;
+	}
+	
+#main ul li {
+	display:block;
+	margin: 20px 0;
+	height: 95px;
+	width: 95px;
+	background-color: #fff;
+	}
+	
+#main ul li div	{
+	margin: 50%;
+	height: 75px;
+	width: 75px;
+	background-color: #ccc;
+	}
+
+#about	{
+	height: 500px;
+	margin: 0 auto;
+	background-color: #3A7230;
+	padding: 15px;
+	}
+
+#about p	{
+	text-align: center;
+	margin: 0 auto;
+	line-height: 1.5em;
+	width: 460px;
+	}
+	
+#process	{
+	height: 500px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 15px;
+	}
+
+#process p	{
+	text-align: center;
+	margin: 0 auto;
+	line-height: 1.5em;
+	width: 460px;
+	}
 
 a {
 	color: purple;
@@ -107,94 +142,19 @@ a:hover {
 	text-align: right;
 	}
 
-#recent ul li{
-	text-align: center;
-	margin: 50px auto 0;
-        list-style: none;
-	}	
-
-#recent img	{
-	
-	box-shadow: 5px 5px 13px #000;
-	}
-
-#recent p	{
-	text-align: center;
-	font-family: PT Mono, mono-spaced;
-	line-height: 1.5em;
-	width: 400px;
+#lower {
+	height: 500px;
+	width: 100%;
+	background-color:#B2A7A1; 
+	text-align: center;	
+	padding: 15px;
 	}
 
 footer {
-	height: 350px;
-	background-color: #000;
-	margin: 50px auto 0;
+	height: 15px;
+	width: 100%;
+	background-color: #3A7230;
+	margin:0 auto;
 	text-align: center;
-	position: relative;
 	padding: 15px;
-	}
-	
-footer div 	{
-	width: 30%;
-	margin: 0 auto;
- 	color: #fff;
-    font: 100 42px/42px "lato";
-    letter-spacing: -2px;
-    text-transform: uppercase;
-	}
-	
-#skills	{
-	float: left;
-	}
-
-#skills ul	{
-	padding-top: 40px;
-	padding-left: 80px;
-	}
-
-#skills	ul li {
-	text-align: left;
-	font-size: .6em
-	}
-
-#skills a	{
-	padding-top: 100px;
-	font-size: .6em;
-	}
-	
-#contact	{
-	float: left;
-	padding:0 10px;
-	margin: 0 15px;
-	border-left: 1px solid #fff;
-	border-right: 1px solid #fff;
-	height: 100%;
-	}
-	
-#contact i	{
-	padding: 15px;
-	}
-	
-.screen-reader-text	{
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-	}
-
-#tweets	{
-	float: left;
-	color: #fff;
-	}
-	
-#tweets	p	{
-	margin-bottom: 25px;
-	}
-
-	
-.year {
-	background-color:  #000;
-	color: #fff;
-	font: 100 18px/18px "lato";
-	text-align: center;
-	padding: 2em 0;
 	}
