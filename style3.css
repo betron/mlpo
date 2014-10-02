@@ -50,10 +50,10 @@ body	{
 	
 	}		
 
-h1	{
+.logo h1	{
 	margin-top: 5px;
 	font-size: 1em;
-	font-family: Helvetica, sans-serif;
+	font-family: 'Bauhaus 93', sans-serif;
 	text-align: left;
 	color: #000;
 	padding-bottom: 10px;
@@ -67,9 +67,11 @@ h1	{
 	padding: 15px;
 	}
 
-#main p	{
+#main h1	{
 	text-align: center;
 	margin: 0 auto;
+	font-size: 3em;
+	font-family: 'Braggadocio', 'Times New Roman', serif;
 	line-height: 1.5em;
 	width: 460px;
 	}
@@ -79,25 +81,25 @@ h1	{
        }
        
 #main ul {
-	display: inline;
 	list-style: none;
-	margin: 0 ;
-	padding: 0;
 	}
 	
 #main ul li {
-	display:block;
-	margin: 20px 0;
+	display: inline;
+	float: left;
+	margin:40px auto 0 19%;
 	height: 95px;
 	width: 95px;
 	background-color: #fff;
 	}
 	
 #main ul li div	{
-	margin: 50%;
-	height: 75px;
-	width: 75px;
-	background-color: #ccc;
+	display: inline;
+	float: left;
+	margin:38% auto 0 38%;
+	height: 20px;
+	width: 20px;
+	background-color: #3A7230;
 	}
 
 #about	{
@@ -105,6 +107,33 @@ h1	{
 	margin: 0 auto;
 	background-color: #3A7230;
 	padding: 15px;
+	}
+
+#about h1	{
+	text-align: center;
+	margin: 7% auto 0;
+	font-size: 3em;
+	font-family: 'Braggadocio', 'Times New Roman', serif;
+	line-height: 1.5em;
+	width: 460px;
+	}
+
+#about ul li {
+	display: inline;
+	float: left;
+	margin:40px auto 0 19%;
+	height: 95px;
+	width: 95px;
+	background-color: #fff;
+	}
+	
+#about ul li div	{
+	display: inline;
+	float: left;
+	margin:38% auto 0 38%;
+	height: 20px;
+	width: 20px;
+	background-color: #534ACC;
 	}
 
 #about p	{
@@ -119,6 +148,33 @@ h1	{
 	margin: 0 auto;
 	background-color: #fff;
 	padding: 15px;
+	}
+	
+#process h1	{
+	text-align: center;
+	margin: 7% auto 0;
+	font-size: 3em;
+	font-family: 'Braggadocio', 'Times New Roman', serif;
+	line-height: 1.5em;
+	width: 460px;
+	}
+
+#process ul li {
+	display: inline;
+	float: left;
+	margin:40px auto 0 19%;
+	height: 95px;
+	width: 95px;
+	background-color: #534ACC;
+	}
+	
+#process ul li div	{
+	display: inline;
+	float: left;
+	margin:38% auto 0 38%;
+	height: 20px;
+	width: 20px;
+	background-color: #3A7230;
 	}
 
 #process p	{
@@ -145,16 +201,45 @@ a:hover {
 #lower {
 	height: 500px;
 	width: 100%;
-	background-color:#B2A7A1; 
+	background-color:#534ACC; 
 	text-align: center;	
 	padding: 15px;
+	}
+
+#lower h1	{
+	text-align: center;
+	margin: 7% auto 0;
+	font-size: 3em;
+	font-family: 'Braggadocio', 'Times New Roman', serif;
+	line-height: 1.5em;
+	width: 460px;
+	}
+	
+#lower ul li {
+	display: inline;
+	float: left;
+	margin:40px auto 0 19%;
+	height: 95px;
+	width: 95px;
+	background-color: #fff;
+	}
+	
+#lower ul li div	{
+	display: inline;
+	float: left;
+	margin:38% auto 0 38%;
+	height: 20px;
+	width: 20px;
+	background-color: #3A7230;
 	}
 
 footer {
 	height: 15px;
 	width: 100%;
 	background-color: #3A7230;
+	font-family: 'Bauhaus 93', sans-serif;
 	margin:0 auto;
 	text-align: center;
 	padding: 15px;
 	}
+	
