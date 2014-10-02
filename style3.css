@@ -87,9 +87,9 @@ body	{
 #main ul li {
 	display: inline;
 	float: left;
-	margin:140px auto 0 95px;
-	height: 100px;
-	width: 300px;
+	margin:100px auto 0 13%;
+	height: 200px;
+	width: 200px;
 	border-radius: 100%;
 	box-shadow: 10px 10px 50px #333;
 	background-color: #3A7230;
@@ -98,9 +98,9 @@ body	{
 #main ul li div	{
 	display: inline;
 	float: left;
-	margin: 5px auto 0 5px;
-	height: 80px;
-	width: 280px;
+	margin: 4% auto 0 4%;
+	height: 185px;
+	width: 185px;
 	border-radius: 70%;
 	box-shadow: 2px 2px 20px #333;	
 	background-color: #6EBF60;
