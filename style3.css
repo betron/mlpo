@@ -218,16 +218,47 @@ a:hover {
 	width: 460px;
 	}
 	
+#hexagon {
+	width: 100px;
+	height: 50px;
+	background: #3A7230;
+	position: relative;
+	margin-left: 15%;
+	margin-top: 21%;
+}
+#hexagon:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid #3A7230;
+}
+#hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid #3A7230;
+}
+	
 #lower ul li {
 	display: inline;
 	float: left;
-	margin:40px auto 0 19%;
-	height: 95px;
-	width: 95px;
+	margin:40px auto 0 17%;
+	height: 115px;
+	width: 145px;
 	background-color: #fff;
 	}
 	
-#lower ul li div	{
+/*#lower ul li div	{
 	display: inline;
 	float: left;
 	margin:38% auto 0 38%;
@@ -235,6 +266,7 @@ a:hover {
 	width: 20px;
 	background-color: #3A7230;
 	}
+*/
 
 footer {
 	height: 15px;
