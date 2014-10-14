@@ -18,6 +18,10 @@ a {
 	outline: none;
 }
 
+a, button {
+	outline: none;
+	}
+
 a:hover, a:focus {
 	opacity: .8;
 	outline: none;
