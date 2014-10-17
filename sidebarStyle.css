@@ -79,6 +79,11 @@ a:hover, a:focus {
 	text-align: right;
 }
 
+.column img	{
+	border: 5px solid #fff;
+	
+	}
+
 .column:nth-child(3) {
 	box-shadow: -1px 0 0 rgba(0,0,0,0.1);
 	text-align: left;
