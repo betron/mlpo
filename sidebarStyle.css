@@ -90,7 +90,6 @@ a:hover, a:focus {
 
 
 .column p {
-	font-weight: 300;
 	font-size: 2em;
 	padding: 0 0 0.5em;
 	margin: 0;
@@ -107,11 +106,11 @@ a:hover, a:focus {
 }
 
 .columntwo p {
-	font-weight: 300;
 	font-size: 2em;
-	padding: 0 0 7em;
-	margin: 0;
+	padding: 0 0 1em;
+	margin: 0 0 1.4em 0;
 	line-height: 1.5;
+	height: 285px;
 	}
 
 button {
