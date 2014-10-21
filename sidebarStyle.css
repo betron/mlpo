@@ -168,6 +168,20 @@ button:hover {
 	}
 }
 
+@media screen and (max-width: 350px) {
+
+.column {
+	width: 90%;
+	}
+	
+.columntwo {
+	width: 90%;
+	
+	}
+
+
+}
+
 
 
 /*end Demo.css*/
