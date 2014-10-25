@@ -118,6 +118,7 @@ a:hover, a:focus {
 	padding: 0 .5em;
 	min-height: 300px;
 	position: relative;
+	background: green;
 }
 	
 .work p	{
