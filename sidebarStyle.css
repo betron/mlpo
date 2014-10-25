@@ -118,7 +118,6 @@ a:hover, a:focus {
 	padding: 0 .5em;
 	min-height: 300px;
 	position: relative;
-	background: green;
 }
 	
 .work p	{
@@ -384,17 +383,43 @@ body,
 .work p	{
 	float: left;
 	font-size: 2em;
-	padding: 0 0 .5em 1em;
-	margin: 0 20% .5em 0;
+	padding: 0 1em .5em;
+	margin: 0 auto 180px 5%;
 	line-height: 1.5;
-	height: 285px;
-	width: 100%;
+	width: 90%;
+	text-align: center;
+	overflow: visible;
 }
 
 .work img	{
 	border: 5px solid #fff;
 	float: left;
+	width: 90%;
+	margin: 0 0 0 5%;
 }
+
+/**********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*********************************************************************************
+*/
+@media screen and (max-width: 950px) {
+
+.work p	{
+	float: left;
+	font-size: 1.8em;
+	padding: 0;
+	margin: 0 auto 150px 5%;
+	width: 90%;
+}
+
+.work img {
+	border: 5px solid #fff;
+	float: left;
+	width: 90%;
+	margin: 5px 15% 5px 5%;
+}
+
 
 /**********************************************************************************
 *********************************************************************************
@@ -403,39 +428,52 @@ body,
 */	
 	
 @media screen and (max-width: 737px) {
-	.column {
-		width: 100%;
-		min-width: auto;
-		min-height: auto;
-		padding: 2em; 
-		text-align: center;
-	}
+.column {
+	width: 100%;
+	min-width: auto;
+	min-height: auto;
+	padding: 2em; 
+	text-align: center;
+}
 
-	.column p {
-		font-size: 2em;
-	}
+.column p {
+	font-size: 2em;
+}
 	
-	.column span {
-		font-size: 2em;
-	}
+.column span {
+	font-size: 2em;
+}
 	
-	.columntwo span {
-		font-size: 2em;
-	}
+.columntwo span {
+	font-size: 2em;
+}
 	
-	.columntwo {
-		width: 100%;
-		min-width: auto;
-		min-height: auto;
-		padding: 2em; 
-		text-align: center;
-	}
+.columntwo {
+	width: 100%;
+	min-width: auto;
+	min-height: auto;
+	padding: 2em; 
+	text-align: center;
+}
 	
-	.columntwo p {
-		font-size: 2em;
-	}
+.columntwo p {
+	font-size: 2em;
+}
 
-}	
+.work p	{
+	float: left;
+	font-size: 1.8em;
+	padding: 0;
+	margin: 0 15% 50px 5%;
+	width: 90%;
+}
+
+.work img {
+	border: 5px solid #fff;
+	float: left;
+	width: 90%;
+	margin: 5px 15% 5px 5%;
+}
 	
 	
 /*     
@@ -446,28 +484,20 @@ body,
 */	
 
 @media screen and (max-width: 550px) {
-.work img	{
-	border: 5px solid #fff;
-	float: left;
-	width: 80%;
-}
-
-@media screen and (max-width: 340px) {
 
 .work p	{
 	float: left;
-	font-size: 2em;
-	padding: 0 0 1em 1em;
-	margin: 0 20% 1em 0;
-	width: 100%;
+	font-size: 1.8em;
+	padding: 0;
+	margin: 0 13% -5% 5%;
+	width: 90%;
 }
 
 .work img {
 	border: 5px solid #fff;
 	float: left;
-	width: 80%;
-	
-
+	width: 90%;
+	margin: 10px 5px 5px 6%;
 }
 
 /*     
@@ -506,8 +536,8 @@ body {
 .work p	{
 	float: left;
 	font-size: 1.8em;
-	padding: 0 0 0 1em;
-	margin: 0 20% -50px 0;
+	padding: 0 .5em 0;
+	margin: 0 15% -25% 0;
 	width: 100%;
 }
 
@@ -515,7 +545,7 @@ body {
 	border: 5px solid #fff;
 	float: left;
 	width: 90%;
-	margin: 5px;
+	margin: 50px 5px 5px 15px;
 }
 
 
@@ -523,4 +553,4 @@ body {
 .no-csstransforms3d .st-pusher,
 .no-js .st-pusher {
 	padding-left: 300px;
-}}}}}
+}}}}}}
