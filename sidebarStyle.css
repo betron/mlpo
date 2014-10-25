@@ -489,18 +489,17 @@ body {
 
 .work p	{
 	float: left;
-	font-size: 2em;
-	padding: 0 0 1em 1em;
-	margin: 0 20% 1em 0;
+	font-size: 1.8em;
+	padding: 0 0 0 1em;
+	margin: 0 20% -50px 0;
 	width: 100%;
 }
 
 .work img {
 	border: 5px solid #fff;
 	float: left;
-	width: 80%;
-	margin: 40px;
-
+	width: 90%;
+	margin: 5px;
 }
 
 
