@@ -90,11 +90,16 @@ a:hover, a:focus {
 
 
 .column p {
+	color: #414141;
 	font-size: 2em;
 	padding: 0 0 0.5em;
 	margin: 0;
 	line-height: 1.5;
 }
+
+.column p a {
+	color: #fff;
+	}
 
 .columntwo {
 	float: left;
@@ -106,11 +111,16 @@ a:hover, a:focus {
 }
 
 .columntwo p {
+	color: #414141;
 	font-size: 2em;
 	padding: 0 0 0.5em;
 	margin: 0;
 	line-height: 1.5;
 }
+
+.columntwo p a {
+	color: #fff;
+	}
 	
 .work {
 	float: left;
@@ -126,7 +136,7 @@ a:hover, a:focus {
 	padding: 0 0 1em;
 	margin: 0 20% 1.4em 0;
 	line-height: 1.5;
-	height: 285px;
+	height: 295px;
 	width: 30%;
 }
 
