@@ -122,6 +122,14 @@ a:hover, a:focus {
 	color: #fff;
 	}
 	
+.column span {
+	color: #fff;
+}
+	
+.columntwo span {
+	color: #fff;
+}
+	
 .work {
 	float: left;
 	width: 98%;
