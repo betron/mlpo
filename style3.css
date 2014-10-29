@@ -376,7 +376,7 @@ footer {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(153,204,51,0.9);
+	background: #3A7230;
 }
 
 /* Overlay closing cross */
@@ -387,8 +387,8 @@ footer {
 	right: 20px;
 	top: 20px;
 	border: none;
-	background: blue no-repeat center center;
-	color: red;
+	background: #000 no-repeat center center;
+	color: #fff;
 	outline: none;
 	z-index: 100;
 }
