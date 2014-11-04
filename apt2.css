@@ -962,9 +962,15 @@ body {
 
 @media screen and (max-width: 336px) {
 
-body {
-	min-width: 328px;
+.pure-pusher {
+	width: 100%;
 }
+
+.pure-pusher h1 {
+  margin: -70px 0 0 5px;
+
+}
+
 
 .column p {
 	font-size: 1.8em;
@@ -986,17 +992,23 @@ body {
 	margin: 0 auto;
 	}
 
+
+.work {
+	padding: 200px 0 .5em 0;
+}
+
 .work p	{
 	float: left;
 	font-size: 1.8em;
-	padding: 0 .5em 0;
-	margin: 0 15% -25% 0;
-	width: 100%;
+	padding: 10px 0 0;
+	margin: 0 auto -25%;
+	width: 95%;
+	text-align: left;
 }
 
 .work img {
 	border: 5px solid #fff;
 	float: left;
-	width: 90%;
-	margin: 50px 5px 5px 15px;
+	width: 95%;
+	margin: 50px 5px 5px;
 }
