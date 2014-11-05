@@ -24,7 +24,6 @@ body {
 
 .pure-toggle-label {
   cursor: pointer;
-  position: fixed;
   z-index: 99;
   background: #fff;
   color: #000;
@@ -52,8 +51,10 @@ body {
 .pure-toggle-label[data-toggle-label='left'] {
   clear: both;
   float: left;
-  margin: 200px 0 0 52%;}
-
+  margin: 20px 0 0 51%;}
+  
+  
+/*
 .pure-toggle-label[data-toggle-label='right'] {
   right: 28px;
   left: auto; }
@@ -79,7 +80,7 @@ body {
 .pure-toggle[data-toggle='top']:checked ~ .pure-toggle-label[data-toggle-label='top'] {
   -webkit-transform: rotate(-45deg) translate3d(-20px, -20px, 0);
   transform: rotate(-45deg) translate3d(-20px, -20px, 0); }
-
+*/
 /***********
 ## Drawer ##
 ***********/
