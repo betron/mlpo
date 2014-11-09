@@ -301,7 +301,6 @@ body	{
 
 #online {
 	height: 500px;
-	width: 100%;
 	background-color:#242424; 
 	text-align: center;	
 	padding: 15px;
@@ -360,7 +359,6 @@ body	{
 
 footer {
 	height: 15px;
-	width: 100%;
 	background-color: #3A7230;
 	font-family: 'Bauhaus 93', 'Erica One', sans-serif;
 	margin:0 auto;
