@@ -358,14 +358,51 @@ body	{
 */
 
 footer {
-	height: 15px;
+	height: 60px;
 	background-color: #3A7230;
 	font-family: 'Bauhaus 93', 'Erica One', sans-serif;
 	margin:0 auto;
 	text-align: center;
-	padding: 15px;
+	padding: 20px;
 	}
 	
+footer a {
+	text-decoration: none;
+	color: #000; 
+	}
+	
+footer a:hover {	
+	-webkit-animation:spin .5s ease-in-out 1;
+    -moz-animation:spin .5s ease-in-out 1;
+    animation:spin .5s ease-in-out 1;
+}
+	
+footer ul {
+	list-style: none;
+	margin: 0 auto 0 15%;
+	}
+	
+footer ul li {
+	font-size: 2em;
+	display: inline;
+	float: left;
+	margin: 0 auto 10px 3%;
+}
+
+footer ul li hr {
+	border: 1px solid #000;
+	width: 250px;
+	}
+	
+footer p {
+	clear: left;
+	margin: 0 auto;
+	}
+	
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 	
 /* Overlay style */
 .overlay {
