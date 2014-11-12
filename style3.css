@@ -21,9 +21,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 		}
 			
 html { 
-	min-width: 770px; 
-	 }
-	 
+	max-width: 1233px; 
+	margin: 0 auto;
+	 }	 
 	 
 body	{	
 	margin: 0 auto;
@@ -35,14 +35,14 @@ body	{
 	}
 
 .page	{
-	margin: 0 auto;
-	width: 93.75%; /*900px / 960px*/
 
-		}
+	margin: 0 auto;
+
+	}
 
 #topBanner {
 	height: 25px;
-	background-color: #fff;
+	background-color: #ooo;
 	margin: 0 auto;
 	text-align: center;
 	padding: 15px;
@@ -72,7 +72,7 @@ body	{
 	font-size: 3em;
 	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
 	line-height: 1.5em;
-	width: 460px;
+	width: 100%;
 	}
 
 #main p a   {
@@ -86,7 +86,7 @@ body	{
 #main ul li {
 	display: inline;
 	float: left;
-	margin:100px auto 0 17%;
+	margin:100px auto 0 24%;
 	height: 140px;
 	width: 140px;
 	border-radius: 100%;
@@ -138,13 +138,13 @@ body	{
 	font-size: 3em;
 	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
 	line-height: 1.5em;
-	width: 460px;
+	width: 100%;
 	}
 
 #little ul li {
 	display: inline;
 	float: left;
-	margin:40px auto 0 19%;
+	margin:40px auto 0 32%;
 	height: 95px;
 	width: 95px;
 	background-color: #fff;
@@ -179,7 +179,7 @@ body	{
 	font-size: 3em;
 	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
 	line-height: 1.5em;
-	width: 460px;
+	width: 100%;
 	}
 
 #pond ul li {
@@ -313,7 +313,7 @@ body	{
 	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
 	line-height: 1.5em;
 	color: #fff;
-	width: 460px;
+	width: 100%;
 	}
 	
 #holder {
@@ -347,16 +347,6 @@ body	{
 	
 	}
 	
-/*#online ul li div	{
-	display: inline;
-	float: left;
-	margin:38% auto 0 38%;
-	height: 20px;
-	width: 20px;
-	background-color: #3A7230;
-	}
-*/
-
 footer {
 	height: 70px;
 	background-color: #3A7230;
@@ -379,19 +369,20 @@ footer a:hover {
 	
 footer ul {
 	list-style: none;
-	margin: 0 auto 0 15%;
+	margin: 0 auto 0 14%;
 	}
 	
 footer ul li {
 	font-size: 2em;
 	display: inline;
 	float: left;
-	margin: 0 auto 10px 3%;
+	margin: 0 auto 10px 5%;
 }
 
 footer ul li hr {
 	border: 1px solid #000;
 	width: 250px;
+	margin: 0 auto;
 	}
 	
 footer p {
@@ -411,10 +402,33 @@ footer p {
 
 @media screen and (max-width: 336px) {
 
+
+#main	{
+	height: 850px;
+	}
+
+#little {
+	height: 560px;
+	}
+
+#pond	{
+	height: 750px;
+	}
+	
+#pond ul {
+	margin-left: 11%;
+	
+	}
+	
+#online {
+	height: 870px;
+	
+	}
+
 #holder {
 	float: left;
-	width: 80%;
-	height: 910px;
+	width: 85%;
+	height: 750px;
 	background-color: #313131;
 	margin: 30px 0 0 10%;
 	border: 5px solid #000
@@ -423,11 +437,9 @@ footer p {
 #online ul li {
 	float: left;
 	display: inline;
-	margin: 30px 0 0 30%;
-	width: 336px;
-	font-size: 3em;
-	}
+	margin: 30px 0 0 3%;
 
+	}
 
 footer {
 	height: 800px;
@@ -441,7 +453,6 @@ footer ul {
 	}
 	
 footer ul li {
-	font-size: 6em;
 	display: block;
 	margin: 0 auto 10px 1%;
 }
