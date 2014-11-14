@@ -402,6 +402,9 @@ footer p {
 
 @media screen and (max-width: 1130px) {
 
+#topBanner {
+	background-color: orange;
+	}
 
 #online {
 	padding: 5px;
@@ -436,6 +439,10 @@ footer ul li hr {
 
 
 @media screen and (max-width: 890px) {
+
+#topBanner {
+	background-color: blue;
+	}
 
 #main ul li {
 	margin:100px auto 0 11%;
@@ -480,6 +487,11 @@ footer ul li hr {
 
 
 @media screen and (max-width: 660px) {
+
+#topBanner {
+	background-color: green;
+	}
+
 
 #main	{
 	height: 850px;
@@ -553,7 +565,9 @@ footer ul li hr {
 
 @media screen and (max-width: 460px) {
 
-
+#topBanner {
+	background-color: yellow;
+	}
 	
 #online ul li {
 	margin-left:10%;
