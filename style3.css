@@ -47,7 +47,6 @@ body	{
 	margin: 0 auto;
 	text-align: center;
 	padding: 15px;
-	
 	}		
 
 .logo h1	{
@@ -57,8 +56,7 @@ body	{
 	text-align: left;
 	color: #000;
 	padding-bottom: 10px;
-		
-}
+	}
 
 #main	{
 	height: 500px;
@@ -77,8 +75,8 @@ body	{
 	}
 
 #main p a   {
-       text-decoration: underline;
-       }
+    text-decoration: underline;
+    }
        
 #main ul {
 	list-style: none;
@@ -401,6 +399,7 @@ footer p {
 
 
 @media all and (max-width: 1130px), (max-device-width: 1130px) {
+/*tablet*/
 
 #topBanner {
 	background-color: orange;
@@ -535,7 +534,6 @@ footer ul li hr {
 	float: left;
 	display: inline;
 	margin: 60px 0 0 28%;
-
 	}
 
 footer {
@@ -563,33 +561,81 @@ footer ul li hr {
 
 
 @media all and (max-width: 460px), (max-device-width: 460px) {
+/*ipod touch 5th gen, iphone 5*/
 
 #topBanner {
 	background-color: yellow;
+	height: 70px;
+	padding: 5px;
+	}
+
+.logo h1	{
+	margin-top: 5px;
+	font-size: 3em;
+	text-align: left;
+	padding-bottom: 5px;
+	}
+	
+#online {
+	height: 2500px;
+	padding: 15px;
+	}
+
+#online h1	{
+	margin: 2% auto 0;
+	font-size: 5em;
+	line-height: 1.5em;
+	}
+	
+#holder {
+	width: 80%;
+	height: 2200px;
+	margin: 30px 0 0 10%;
+	}
+	
+#online ul {
+	list-style: none;
 	}
 	
 #online ul li {
-	margin-left:10%;
-
+	margin: 30px 0 460px 5%;
+	padding: 10px;
+	height: 190px;
+	width: 80%;
+	font-size: 2.5em;
+	line-height: 1.4em;
+	}
+	
+#online span {
+	line-height: 2em;
 	}
 
 footer {
-	height: 210px;
+	height: 310px;
 	}
 
 		
 footer ul {
 	margin: 0 auto;
+	width: 450px;
+	}
+	
+footer ul li {
+	margin: 0 auto 10px 4%;
 	}
 	
 footer ul li a {
-	font-size: 2.5em;
-	display: block;
-	margin: 0 auto 10px 15%;
-}
+	font-size: 3em;
+	display: inline;
+	margin: 0 auto 10px 2%;
+	}
 
 footer ul li hr {
 	width: 420px;
+	}
+	
+footer p {
+	font-size: 4em;
 	}
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
