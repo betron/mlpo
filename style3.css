@@ -575,6 +575,55 @@ footer ul li hr {
 	text-align: left;
 	padding-bottom: 5px;
 	}
+
+#main h1	{
+	margin:7% auto 0;
+	font-size: 5em;
+	}
+	
+#main ul {
+	list-style: none;
+	}
+	
+#main ul li {
+	margin:100px auto 0 8%;
+	height: 200px;
+	width: 200px;
+	}
+	
+#main ul li div	{
+	margin: 5% auto 0 5%;
+	height: 185px;
+	width: 185px;
+	}
+	
+#main button {
+	height: 195px;
+	width: 195px;
+	font-size: 2em;
+	line-height: 6em;
+	}
+	
+	
+#little h1	{
+	font-size: 5em;
+	}
+	
+#little ul li {
+	margin:100px auto 0 8%;
+	height: 200px;
+	width: 200px;
+	}
+	
+#little ul li div	{
+	margin: 5% auto 0 5%;
+	height: 185px;
+	width: 185px;
+	}
+	
+#pond h1	{
+	font-size: 5em;
+	}
 	
 #online {
 	height: 2500px;
@@ -598,7 +647,7 @@ footer ul li hr {
 	}
 	
 #online ul li {
-	margin: 30px 0 460px 5%;
+	margin: 60px 0 460px 5%;
 	padding: 10px;
 	height: 190px;
 	width: 80%;
@@ -621,7 +670,7 @@ footer ul {
 	}
 	
 footer ul li {
-	margin: 0 auto 10px 4%;
+	margin: 10px auto 10px 4%;
 	}
 	
 footer ul li a {
