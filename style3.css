@@ -699,21 +699,21 @@ footer {
 		
 footer ul {
 	margin: 0 auto;
-	width: 450px;
+	width: 650px;
 	}
 	
 footer ul li {
-	margin: 10px auto 10px 4%;
+	margin: 10px auto 10px 30px;
 	}
 	
 footer ul li a {
 	font-size: 3em;
 	display: inline;
-	margin: 0 auto 10px 2%;
+	margin: 0 auto 10px 40px;
 	}
 
 footer ul li hr {
-	width: 420px;
+	width: 520px;
 	}
 	
 footer p {
