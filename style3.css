@@ -346,7 +346,7 @@ body	{
 	
 	}
 	
-footer {
+#footer {
 	height: 70px;
 	background-color: #3A7230;
 	font-family: 'Bauhaus 93', 'Erica One', sans-serif;
@@ -355,36 +355,36 @@ footer {
 	padding: 20px;
 	}
 	
-footer a {
+#footer a {
 	text-decoration: none;
 	color: #000; 
 	}
 	
-footer a:hover {	
+#footer a:hover {	
 	-webkit-animation:spin .5s ease-in-out 1;
     -moz-animation:spin .5s ease-in-out 1;
     animation:spin .5s ease-in-out 1;
 }
 	
-footer ul {
+#footer ul {
 	list-style: none;
 	margin: 0 auto 0 8%;
 	}
 	
-footer ul li {
+#footer ul li {
 	font-size: 2em;
 	display: inline;
 	float: left;
 	margin: 0 auto 10px 4%;
 }
 
-footer ul li hr {
+#footer ul li hr {
 	border: 1px solid #000;
 	width: 250px;
 	margin: 0 auto;
 	}
 	
-footer p {
+#footer p {
 	clear: left;
 	margin: 0 auto;
 	}
@@ -420,6 +420,46 @@ footer p {
 	z-index: 100;
 }
 
+.overlay ul li a {
+	text-decoration: none;
+	
+	}
+
+.overlay ul li .list-close-two {
+border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5.5px 11px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+   
+.button .list-close-two:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+   
+.button .list-close-two:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+	}
+
 /* Menu style */
 .overlay nav {
 	text-align: center;
@@ -450,14 +490,15 @@ footer p {
 .overlay ul li a {
 	font-weight: 300;
 	display: block;
-	color: #fff;
+	color: #000;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
+	text-decoration: none;
 }
 
 .overlay ul li a:hover,
 .overlay ul li a:focus {
-	color: #e3fcb1;
+	color: green;
 }
 
 /* Effects */
@@ -534,15 +575,15 @@ tablet
 	margin:20px 0 0 2%;
 	}
 	
-footer ul {
+#footer ul {
 	margin: 0 auto 0 15%;
 	}
 	
-footer ul li {
+#footer ul li {
 	margin: 0 auto 10px 5%;
 }
 	
-footer ul li hr {
+#footer ul li hr {
 	width: 140px;
 	}
 
@@ -581,15 +622,15 @@ footer ul li hr {
 	margin:60px 0 0 31%;
 	}	
 	
-footer ul {
+#footer ul {
 	margin: 0 auto 0 8%;
 	}
 	
-footer ul li {
+#footer ul li {
 	margin: 0 auto 10px 5%;
 }
 	
-footer ul li hr {
+#footer ul li hr {
 	width: 140px;
 	}
 
@@ -671,30 +712,30 @@ footer ul li hr {
 	margin: 70px 0 0 28%;
 	}
 
-footer {
+#footer {
 	height: 240px;
 	}
 
 		
-footer ul {
+#footer ul {
 	margin: 0 auto;
 	width: 450px;
 	}
 	
-footer ul li {
+#footer ul li {
 	margin: 20px auto 10px 12%;
 	}
 	
-footer ul li a {
+#footer ul li a {
 	font-size: 2em;
 	display: inline;
 	}
 
-footer ul li hr {
+#footer ul li hr {
 	width: 420px;
 	}
 	
-footer p {
+#footer p {
 	font-size: 2em;
 	}
 
@@ -804,31 +845,31 @@ footer p {
 	line-height: 2em;
 	}
 
-footer {
+#footer {
 	height: 310px;
 	}
 
 		
-footer ul {
+#footer ul {
 	margin: 0 auto;
 	width: 650px;
 	}
 	
-footer ul li {
+#footer ul li {
 	margin: 10px auto 10px 10px;
 	}
 	
-footer ul li a {
+#footer ul li a {
 	font-size: 3em;
 	display: inline;
 	margin: 0 auto 10px 65px;
 	}
 
-footer ul li hr {
+#footer ul li hr {
 	width: 600px;
 	}
 	
-footer p {
+#footer p {
 	font-size: 4em;
 	}
 

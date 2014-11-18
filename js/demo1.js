@@ -1,6 +1,11 @@
 (function() {
 	var triggerBttn = document.getElementById( 'trigger-overlay' ),
 		overlay = document.querySelector( 'div.overlay' ),
+		itemBttn = overlay.querySelector( 'button.list-close-one' ),
+		itemTwoBttn = overlay.querySelector( 'button.list-close-two' ),
+		itemThreeBttn = overlay.querySelector( 'button.list-close-three' ),
+		itemFourBttn = overlay.querySelector( 'button.list-close-four' ),
+		itemFiveBttn = overlay.querySelector( 'button.list-close-five' ),
 		closeBttn = overlay.querySelector( 'button.overlay-close' );
 		transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
@@ -36,5 +41,10 @@
 	}
 
 	triggerBttn.addEventListener( 'click', toggleOverlay );
+	itemBttn.addEventListener( 'click', toggleOverlay );
+	itemTwoBttn.addEventListener( 'click', toggleOverlay );
+	itemThreeBttn.addEventListener( 'click', toggleOverlay );
+	itemFourBttn.addEventListener( 'click', toggleOverlay );
+	itemFiveBttn.addEventListener( 'click', toggleOverlay );
 	closeBttn.addEventListener( 'click', toggleOverlay );
 })();
