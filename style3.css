@@ -85,7 +85,7 @@ body	{
 #main ul li {
 	display: inline;
 	float: left;
-	margin:100px auto 0 17%;
+	margin:100px auto 0 14%;
 	height: 140px;
 	width: 140px;
 	border-radius: 100%;
@@ -317,10 +317,10 @@ body	{
 	
 #holder {
 	float: left;
-	width: 80%;
+	width: 85%;
 	height: 300px;
 	background-color: #313131;
-	margin: 30px 0 0 10%;
+	margin: 30px 0 0 6%;
 	border: 5px solid #000
 	}
 	
@@ -331,7 +331,7 @@ body	{
 #online ul li {
 	float: left;
 	display: inline;
-	margin: 30px 0 0 6%;
+	margin: 30px 0 0 3%;
 	height: 190px;
 	width: 240px;
 	color: #959695;
@@ -368,14 +368,14 @@ body	{
 	
 #footer ul {
 	list-style: none;
-	margin: 0 auto 0 8%;
+	margin: 0 auto 0 4%;
 	}
 	
 #footer ul li {
 	font-size: 2em;
 	display: inline;
 	float: left;
-	margin: 0 auto 10px 4%;
+	margin: 0 auto 10px 3.5%;
 }
 
 #footer ul li hr {
