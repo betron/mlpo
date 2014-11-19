@@ -424,6 +424,10 @@ body	{
 	text-decoration: none;
 	
 	}
+	
+.overlay ul li .list-close-one {
+   font-size: .8em;
+   }
 
 .overlay ul li .list-close-two {
 border-top: 1px solid #96d1f8;
@@ -433,7 +437,6 @@ border-top: 1px solid #96d1f8;
    background: -moz-linear-gradient(top, #3e779d, #65a9d7);
    background: -ms-linear-gradient(top, #3e779d, #65a9d7);
    background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   padding: 5.5px 11px;
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
    border-radius: 8px;
@@ -442,23 +445,26 @@ border-top: 1px solid #96d1f8;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
-   font-size: 14px;
+   font-size: .8em;
    font-family: Georgia, serif;
    text-decoration: none;
    vertical-align: middle;
    }
    
-.button .list-close-two:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
+	
+.overlay ul li .list-close-three {
+   font-size: .8em;
    }
    
-.button .list-close-two:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
+	
+.overlay ul li .list-close-four {
+   font-size: .8em;
    }
-	}
+   
+	
+.overlay ul li .list-close-five {
+   font-size: .8em;
+   }
 
 /* Menu style */
 .overlay nav {
@@ -485,6 +491,8 @@ border-top: 1px solid #96d1f8;
 	height: 20%;
 	height: calc(100% / 5);
 	min-height: 54px;
+	margin: 20px;
+	font-size: .8em;
 }
 
 .overlay ul li a {
