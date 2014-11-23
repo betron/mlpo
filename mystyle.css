@@ -1,5 +1,5 @@
 body {
-	background: #534ACC;
+	background: #3A7230;
 }
 
 #searcharea {
@@ -63,7 +63,7 @@ body {
 }
 
 #update li:hover {
-	background: #534ACC;
+	background: #fff;
 	min-height: 110px;
 	height: 250px;
 	overflow: visible;
