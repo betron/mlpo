@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="js/phaser.min.js"></script>
     <style type="text/css">
         body {
-            margin: 0 auto;
+            margin: 0 20%;
         }
     </style>
 </head>
@@ -58,14 +58,14 @@ function create() {
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
-    //  Now let's create two ledges
+    //  Now let's create three ledges
     var ledge = platforms.create(400, 400, 'ground');
     ledge.body.immovable = true;
 
     ledge = platforms.create(-150, 250, 'ground');
     ledge.body.immovable = true;
 
-	ledge = platforms.create(400, 600, 'ground');
+	ledge = platforms.create(500, 500, 'ground');
     ledge.body.immovable = true;
 
     // The player and its settings
