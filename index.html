@@ -11,8 +11,10 @@
 <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Erica+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="animate.css">
 
 <style type="text/css" media="all">@import "style3.css";</style>
+
 
 <script src="js/modernizr.custom.js"></script>
 
@@ -65,12 +67,13 @@
 		<div id="pond">
 			
 			<h1>POND</h1>
-			
+			<div class="wow bounceInLeft">
 			<ul>
 				<li><div id="hexagon"><div id="smhexagon"></div></div></li>
 				<li><div id="hexagon"><div id="smhexagonTwo"></div></div></li>
 				<li><div id="hexagon"><div id="smhexagon"></div></div></li>
 			</ul>	
+			</div> <!-- end wow -->
 			
 			
 				
@@ -78,6 +81,7 @@
 
 	<div id="online">
 		<h1>ONLINE</h1>
+			<div class="wow bounceInRight">
 			<div id="holder">
 			<ul>
 				<li><span>59  126  45</span><br>Loading Loading Loading Followers >100000 Self-Esteem 0 Morbi sagittis metus id ante luctus convallis. Fusce eleifend risus ut erat porttitor, vel aliquam lorem malesuada. Sed quis porta nulla. Ut pharetra tortor eros, ut laoreet nibh hendrerit ut. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
@@ -86,11 +90,13 @@
 					
 			</ul>
 			</div> <!-- end .holder -->
+			</div> <!-- end wow -->
 		
 	</div> <!-- end .online -->
 	
 		<div id="online">
 		<h1>ONLINE</h1>
+			<div class="wow bounceInLeft">
 			<div id="holder">
 			<ul>
 				<li><span>THE LIGHT</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis metus id ante luctus convallis. Fusce eleifend risus ut erat porttitor, vel aliquam lorem malesuada. Sed quis porta nulla. Ut pharetra tortor eros, ut laoreet nibh hendrerit ut. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
@@ -99,6 +105,7 @@
 					
 			</ul>
 			</div> <!-- end .holder -->
+			</div><!-- end wow -->
 		
 	</div> <!-- end .online -->
 
@@ -131,6 +138,10 @@
 			</div>
 			<script src="js/classie.js"></script>
 			<script src="js/demo1.js"></script>
+			<script src="js/wow.min.js"></script>
+				<script>
+				 new WOW().init();
+				</script>
 </div> <!-- /end #page -->
 </body>
 </html>
