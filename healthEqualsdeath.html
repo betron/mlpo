@@ -20,6 +20,7 @@ function preload() {
 
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
+    game.load.image('ground', 'assets/lava.png');
     game.load.image('star', 'assets/star.png');
     game.load.image( 'firstaid' , 'assets/firstaid.png');
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
@@ -28,6 +29,7 @@ function preload() {
 
 var player;
 var platforms;
+var lava;
 var cursors;
 
 var stars;
@@ -48,6 +50,12 @@ function create() {
 
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
+    
+        //  The lavas group contains the lava we can't jump on
+    lavas = game.add.group();
+
+    //  We will enable physics for any object that is created in this group
+    lavas.enableBody = true;
 
     // Here we create the ground.
     var ground = platforms.create(0, game.world.height - 64, 'ground');
@@ -58,8 +66,8 @@ function create() {
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
-    //  Now let's create three ledges
-    var ledge = platforms.create(400, 400, 'ground');
+    //  Now let's create four ledges
+    var ledge = platforms.create(400, 410, 'ground');
     ledge.body.immovable = true;
 
     ledge = platforms.create(-150, 250, 'ground');
@@ -70,6 +78,10 @@ function create() {
     
     ledge = platforms.create(500, 700, 'ground');
     ledge.body.immovable = true;
+    
+    //  Now let's create lava
+    var lava = lavas.create(200, 880, 'ground');
+    lava.body.immovable = true;
 
     // The player and its settings
     player = game.add.sprite(32, game.world.height - 130, 'dude');
@@ -136,6 +148,7 @@ function update() {
 
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.collide(player, lavas);
     game.physics.arcade.collide(stars, platforms);
     game.physics.arcade.collide(firstaids, platforms);
 
@@ -144,6 +157,9 @@ function update() {
 
        //  Checks to see if the player overlaps with any of the firstaids, if he does call the collectFirstaid function
     game.physics.arcade.overlap(player, firstaids, collectFirstaid, null, this);
+    
+     //  Checks to see if the player overlaps with any of the lavas, if he does call the collectLava function
+    game.physics.arcade.overlap(player, lavas, collectLava, null, this);
 
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
@@ -190,6 +206,17 @@ function collectStar (player, star) {
 }
 
 function collectFirstaid (player, firstaid) {
+    
+    // Removes the player from the screen
+    player.kill();
+
+    //  Add and update the score
+    score -= 10;
+    scoreText.text = 'Score: ' + score;
+
+}
+
+function collectLava (player, lava) {
     
     // Removes the player from the screen
     player.kill();
