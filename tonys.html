@@ -10,36 +10,39 @@
 <link rel="shortcut icon" href="http://mylittlepondonline/favicon.ico">
 <link href='http://fonts.googleapis.com/css?family=Erica+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="animate.css">
 
 <style type="text/css" media="all">@import "tonystyle.css";</style>
+
 
 
 </head>
 <body>
 <div id="page">
 	<div id="topBanner">
-		<div class="logo">
 				
-			<p>Hours<br>
-				Tuesday - Saturday<br>
-				11am - 5pm</p> 
-
+		<p>Hours<br>
+		Tuesday - Saturday<br>
+		11am - 5pm</p> 
+		
+		<div class="logo">
 			<img src="images/tonys1.gif" alt="[Tonys]">	
-
-			<p class="right">Location<br>
-			   4409 5th Avenue<br>
-			   Brooklyn, N.Y. 11232</p>
-			
 		</div><!-- /end .logo-->
+
+		<p class="right">Location<br>
+		   4409 5th Avenue<br>
+		   Brooklyn, N.Y. 11232</p>
+			
 	</div><!-- /end .topBanner -->
 	
 	<div id="main">
 		<img src="images/anystyle.gif" alt="[any style you like]">
-		<h1>$10</h1>
+		<div class="wow rubberBand"><h1>$10</h1></div>
 		<p>Haircut ..... $10<br>
-			Shave &nbsp;&nbsp;..... $10</p>
+		Shave &nbsp;&nbsp;..... $10</p>
 
-		<p><span>~ Cash Only ~</span></p>
+		<div class="wow fadeIn"><p><span>~ Cash Only ~</span></p></div>
 
 			<!--ul>
 				<li><img src="images/prices.gif" alt="[prices]"></li>
@@ -93,9 +96,13 @@
 			<li><hr></hr></li>
 		</ul-->	
 			
-		<p> &copy; 2014
+		<div class="wow fadeIn"><p> &copy; 2014</div>
 
 	</div> 
+	<script src="js/wow.min.js"></script>
+				<script>
+				 new WOW().init();
+				</script>
 </div> <!-- /end #page -->
 </body>
 </html>
