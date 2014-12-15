@@ -14,7 +14,7 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(800, 900, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(800, 500, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
@@ -80,7 +80,7 @@ function create() {
     ledge.body.immovable = true;
     
     //  Now let's create lava
-    var lava = lavas.create(200, 850, 'ground');
+    var lava = lavas.create(200, 650, 'ground');
     lava.body.immovable = true;
 
     // The player and its settings
