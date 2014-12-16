@@ -52,7 +52,7 @@ body {
 .pure-toggle-label[data-toggle-label='left'] {
   clear: both;
   float: left;
-  margin: 20px 0 0 51%;}
+  margin: 20px 0 0 50%;}
   
   
 /*
@@ -174,7 +174,7 @@ body {
 }
   
 .pure-pusher h1 {
-  margin: -70px 0 0 42%;
+  margin: 5px 0 0 42%;
   clear: both;
   float: left;
   text-align: center;
@@ -840,10 +840,8 @@ body {
 .work p	{
 	float: left;
 	font-size: 2em;
-	padding: 0 1em .5em;
-	margin: 0 auto 180px 5%;
-	line-height: 1.5;
-	width: 90%;
+	padding: 10px;
+	width: 80%;
 	text-align: center;
 	overflow: visible;
 }
@@ -851,9 +849,18 @@ body {
 .work img	{
 	border: 5px solid #fff;
 	float: left;
-	width: 90%;
-	margin: 0 0 0 5%;
+	width: 80%;
+	margin-right: 20%;
 }
+
+.pure-pusher h1 {
+  margin-left: 35%;
+}
+
+.pure-pusher label {
+	position: relative;
+	right: 57px;
+	}
 
 /**********************************************************************************
 *********************************************************************************
@@ -863,20 +870,17 @@ body {
 @media screen and (max-width: 950px) {
 
 .work p	{
-	float: left;
 	font-size: 1.8em;
-	padding: 0;
-	margin: 0 auto 150px 5%;
-	width: 90%;
 }
 
-.work img {
-	border: 5px solid #fff;
-	float: left;
-	width: 90%;
-	margin: 5px 15% 5px 5%;
+.pure-pusher h1 {
+  margin-left: 37%;
 }
 
+.pure-pusher label {
+	position: relative;
+	right: 20px;
+	}
 
 /**********************************************************************************
 *********************************************************************************
@@ -917,19 +921,9 @@ body {
 	font-size: 2em;
 }
 
-.work p	{
-	float: left;
-	font-size: 1.8em;
-	padding: 0;
-	margin: 0 15% 50px 5%;
-	width: 90%;
-}
 
-.work img {
-	border: 5px solid #fff;
-	float: left;
-	width: 90%;
-	margin: 5px 15% 5px 5%;
+.pure-pusher h1 {
+  margin-left: 33%;
 }
 	
 	
@@ -943,18 +937,12 @@ body {
 @media screen and (max-width: 550px) {
 
 .work p	{
-	float: left;
-	font-size: 1.8em;
-	padding: 0;
-	margin: 0 13% -5% 5%;
-	width: 90%;
+	width: 85%;
 }
 
-.work img {
-	border: 5px solid #fff;
-	float: left;
-	width: 90%;
-	margin: 10px 5px 5px 6%;
+
+.pure-pusher h1 {
+  margin-left: 27%;
 }
 
 /*     
@@ -1034,7 +1022,7 @@ body {
 	padding: 10px 0 0;
 	margin: 0 auto -25%;
 	width: 95%;
-	text-align: left;
+	text-align: center;
 }
 
 .work img {
