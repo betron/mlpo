@@ -86,9 +86,6 @@ a:hover {
     margin: 15px auto 0;
 }
 
-#main p span {
-    font-family: serif;
-}
 
 #main ul {
     list-style: none;
@@ -128,7 +125,7 @@ a:hover {
 #little img {
     margin: 0;
     padding: 0;
-    width: 1233px;
+    width: 100%;
 }
 
 #pond {
