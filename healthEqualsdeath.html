@@ -66,6 +66,15 @@ function create() {
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
+	    // Here we create the lavas.
+    var hot = lavas.create(0, game.world.height - 64, 'hot');
+
+    //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
+    hot.scale.setTo(2, 2);
+
+    //  This stops it from falling away when you jump on it
+    hot.body.immovable = true;
+
     //  Now let's create four ledges
     var ledge = platforms.create(400, 410, 'ground');
     ledge.body.immovable = true;
@@ -73,14 +82,14 @@ function create() {
     ledge = platforms.create(-150, 250, 'ground');
     ledge.body.immovable = true;
 
-	ledge = platforms.create(-175, 550, 'ground');
+	ledge = platforms.create(-175, 150, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(500, 700, 'ground');
+    ledge = platforms.create(500, 100, 'ground');
     ledge.body.immovable = true;
     
     //  Now let's create lava
-    var lava = lavas.create(200, 650, 'ground');
+    var lava = lavas.create(200, 650, 'hot');
     lava.body.immovable = true;
 
     // The player and its settings
