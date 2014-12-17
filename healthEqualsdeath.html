@@ -20,7 +20,7 @@ function preload() {
 
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
-    game.load.image('ground', 'assets/lava.png');
+    game.load.image('lava', 'assets/lava.png');
     game.load.image('star', 'assets/star.png');
     game.load.image( 'firstaid' , 'assets/firstaid.png');
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
@@ -51,7 +51,7 @@ function create() {
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
     
-        //  The lavas group contains the lava we can't jump on
+    //  The lavas group contains the lava we can't jump on
     lavas = game.add.group();
 
     //  We will enable physics for any object that is created in this group
@@ -66,14 +66,14 @@ function create() {
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
-	    // Here we create the lavas.
-    var hot = lavas.create(0, game.world.height - 64, 'hot');
+	// Here we create the lavas.
+    var hot = lavas.create(250, game.world.height - 68, 'lava');
 
     //  This stops it from falling away when you jump on it
     hot.body.immovable = true;
 
     //  Now let's create four ledges
-    var ledge = platforms.create(400, 410, 'ground');
+    var ledge = platforms.create(400, 310, 'ground');
     ledge.body.immovable = true;
 
     ledge = platforms.create(-150, 250, 'ground');
@@ -82,12 +82,8 @@ function create() {
 	ledge = platforms.create(-175, 170, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(500, 100, 'ground');
+    ledge = platforms.create(500, 120, 'ground');
     ledge.body.immovable = true;
-    
-    //  Now let's create lava
-    var lava = lavas.create(200, 410, 'hot');
-    lava.body.immovable = true;
 
     // The player and its settings
     player = game.add.sprite(32, game.world.height - 130, 'dude');
