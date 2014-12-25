@@ -61,7 +61,7 @@ body	{
 #main	{
 	height: 500px;
 	margin: 0 auto;
-	background-color: blue;
+	background-color: red;
 	padding: 15px;
 	}
 
@@ -168,7 +168,7 @@ body	{
 #pond	{
 	height: 500px;
 	margin: 0 auto;
-	background-color: green;
+	background-color: red;
 	padding: 15px;
 	}
 	
@@ -300,7 +300,7 @@ body	{
 
 #online {
 	height: 500px;
-	background-color:#242424; 
+	background-color:green; 
 	text-align: center;	
 	padding: 15px;
 	}
