@@ -61,7 +61,7 @@ body	{
 #main	{
 	height: 500px;
 	margin: 0 auto;
-	background-color: red;
+	background-color: #3A7230;
 	padding: 15px;
 	}
 
@@ -127,7 +127,7 @@ body	{
 #little	{
 	height: 500px;
 	margin: 0 auto;
-	background-color: #3A7230;
+	background-color: red;
 	padding: 15px;
 	}
 
@@ -168,7 +168,7 @@ body	{
 #pond	{
 	height: 500px;
 	margin: 0 auto;
-	background-color: red;
+	background-color: #3A7230;
 	padding: 15px;
 	}
 	
@@ -300,7 +300,7 @@ body	{
 
 #online {
 	height: 500px;
-	background-color:green; 
+	background-color:red; 
 	text-align: center;	
 	padding: 15px;
 	}
