@@ -41,6 +41,16 @@ body	{
 
 	}
 
+a {
+    text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+	opacity:.3;
+}
+
 #topBanner {
 	height: 25px;
 	background-color: #ooo;
@@ -220,6 +230,12 @@ body	{
 	line-height: 1.5em;
 	width: 460px;
 	}
+
+#pond a {
+    text-align: center;
+	font-size: .8em;
+	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
+}
 	
 #hexagon {
 	width: 100px;
@@ -270,6 +286,7 @@ body	{
 	margin-left: 11%;
 	margin-top: 11%;
 	background:#3A7230;
+    color: #fff;
 	}
 	
 #smhexagonTwo:before {
