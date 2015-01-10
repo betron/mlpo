@@ -3,7 +3,9 @@
 <head> 
 	<meta charset="UTF-8" />
     <title>Lizard</title>
-	<script type="text/javascript" src="js/phaser.min.js"></script>
+	<script type="text/javascript" src="js/phaser.min.js">
+    </script>
+    <script src="js/gamecontroller.js" type="text/javascript"></script>
     <style type="text/css">
         body {
             margin: 0 20%;
@@ -14,13 +16,15 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(800, 500, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(400, 700, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
-    game.load.image('sky', 'assets/oldsky.png');
+    game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
+    game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
+    game.load.spritesheet('buttonjump', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('lizard', 'assets/lizardsprite.png', 64, 64); // made by Julie Bentsen, she'll get you bent, son
 
 }
@@ -32,8 +36,12 @@ var cursors;
 var stars;
 var score = 0;
 var scoreText;
-
+var left=false;
+var right=false;
+var jump=false;
+    
 function create() {
+    if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
 
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -59,10 +67,19 @@ function create() {
 
     //  Now let's create four ledges
 
-    ledge = platforms.create(-150, 270, 'ground');
+    ledge = platforms.create(-150, 100, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(500, 105, 'ground');
+    ledge = platforms.create(240, 210, 'ground');
+    ledge.body.immovable = true;
+    
+    ledge = platforms.create(-250, 310, 'ground');
+    ledge.body.immovable = true;
+    
+    ledge = platforms.create(300, 400, 'ground');
+    ledge.body.immovable = true;
+    
+    ledge = platforms.create(-200, 490, 'ground');
     ledge.body.immovable = true;
 
     // The player and its settings
@@ -77,9 +94,11 @@ function create() {
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
-    player.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 10, true);
-    player.animations.add('right', [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], 10, true);
+    player.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,], 10, true);
+    player.animations.add('right', [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], 10, true);
 
+     game.camera.follow(player); //always center player
+    
     //  Finally some stars to collect
     stars = game.add.group();
 
@@ -104,6 +123,28 @@ function create() {
 
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
+    
+     // create our virtual game controller buttons 
+    buttonjump = game.add.button(300, 590, 'buttonjump', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
+    buttonjump.fixedToCamera = true;  //our buttons should stay on the same place  
+    buttonjump.events.onInputOver.add(function(){jump=true;});
+    buttonjump.events.onInputOut.add(function(){jump=false;});
+    buttonjump.events.onInputDown.add(function(){jump=true;});
+    buttonjump.events.onInputUp.add(function(){jump=false;});
+
+    buttonleft = game.add.button(0, 620, 'buttonhorizontal', null, this, 0, 1, 0, 1);
+    buttonleft.fixedToCamera = true;
+    buttonleft.events.onInputOver.add(function(){left=true;});
+    buttonleft.events.onInputOut.add(function(){left=false;});
+    buttonleft.events.onInputDown.add(function(){left=true;});
+    buttonleft.events.onInputUp.add(function(){left=false;});
+    
+     buttonright = game.add.button(160, 620, 'buttonhorizontal', null, this, 0, 1, 0, 1);
+    buttonright.fixedToCamera = true;
+    buttonright.events.onInputOver.add(function(){right=true;});
+    buttonright.events.onInputOut.add(function(){right=false;});
+    buttonright.events.onInputDown.add(function(){right=true;});
+    buttonright.events.onInputUp.add(function(){right=false;});
     
 }
 
@@ -146,8 +187,29 @@ function update() {
     {
         player.body.velocity.y = -350;
     }
+    
+    // define what should happen when a button is pressed
+    if (left) {
+        
+        player.body.velocity.x = -150;
+
+        player.animations.play('left');
+    }
+    else if (right) {
+        player.body.velocity.x = 150;
+
+        player.animations.play('right');
+    } 
+
+ 
+    else {
+        player.loadTexture('lizard', 0);
+    }
+    if (jump && player.body.touching.down){ player.body.velocity.y = -350; player.loadTexture('lizard', 5);}  //change to another frame of the spritesheet
 
 }
+    
+
 
 function collectStar (player, star) {
     
