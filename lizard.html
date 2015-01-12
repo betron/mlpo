@@ -71,10 +71,10 @@ function create() {
     ledge = platforms.create(800, 110, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(100, 350, 'ground');
+    ledge = platforms.create(100, 250, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(300, 400, 'ground');
+    ledge = platforms.create(500, 380, 'ground');
     ledge.body.immovable = true;
     
     ledge = platforms.create(-200, 490, 'ground');
@@ -83,10 +83,10 @@ function create() {
     ledge = platforms.create(500, 550, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(0, 600, 'ground');
+    ledge = platforms.create(-140, 600, 'ground');
     ledge.body.immovable = true;
     
-	ledge = platforms.create(-150, 700, 'ground');
+	ledge = platforms.create(-90, 700, 'ground');
     ledge.body.immovable = true;
 
     ledge = platforms.create(300, 800, 'ground');
@@ -145,21 +145,21 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
      // create our virtual game controller buttons 
-    buttonjump = game.add.button(850, 1150, 'buttonjump', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
+    buttonjump = game.add.button(850, 1204, 'buttonjump', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
     buttonjump.fixedToCamera = true;  //our buttons should stay on the same place  
     buttonjump.events.onInputOver.add(function(){jump=true;});
     buttonjump.events.onInputOut.add(function(){jump=false;});
     buttonjump.events.onInputDown.add(function(){jump=true;});
     buttonjump.events.onInputUp.add(function(){jump=false;});
 
-    buttonleft = game.add.button(0, 1150, 'buttonhorizontal', null, this, 0, 1, 0, 1);
+    buttonleft = game.add.button(0, 1204, 'buttonhorizontal', null, this, 0, 1, 0, 1);
     buttonleft.fixedToCamera = true;
     buttonleft.events.onInputOver.add(function(){left=true; player.animations.play('left');});
     buttonleft.events.onInputOut.add(function(){left=false;});
     buttonleft.events.onInputDown.add(function(){left=true; player.animations.play('left');});
     buttonleft.events.onInputUp.add(function(){left=false;});
     
-     buttonright = game.add.button(260, 1150, 'buttonhorizontal', null, this, 0, 1, 0, 1);
+     buttonright = game.add.button(200, 1204, 'buttonhorizontal', null, this, 0, 1, 0, 1);
     buttonright.fixedToCamera = true;
     buttonright.events.onInputOver.add(function(){right=true; player.animations.play('right');});
     buttonright.events.onInputOut.add(function(){right=false;});
