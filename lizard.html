@@ -41,8 +41,6 @@ var right=false;
 var jump=false;
     
 function create() {
-    if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
-
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
