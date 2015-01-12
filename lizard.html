@@ -16,7 +16,7 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(900, 1300, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(950, 1300, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
@@ -94,6 +94,9 @@ function create() {
 
     ledge = platforms.create(300, 800, 'ground');
     ledge.body.immovable = true;
+    
+     ledge = platforms.create(200, 900, 'ground');
+    ledge.body.immovable = true;
 
 	ledge = platforms.create(-200, 1100, 'ground');
     ledge.body.immovable = true;
@@ -142,7 +145,7 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
      // create our virtual game controller buttons 
-    buttonjump = game.add.button(800, 1200, 'buttonjump', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
+    buttonjump = game.add.button(875, 1200, 'buttonjump', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
     buttonjump.fixedToCamera = true;  //our buttons should stay on the same place  
     buttonjump.events.onInputOver.add(function(){jump=true;});
     buttonjump.events.onInputOut.add(function(){jump=false;});
