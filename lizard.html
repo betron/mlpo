@@ -20,7 +20,7 @@ var game = new Phaser.Game(900, 1300, Phaser.AUTO, '', { preload: preload, creat
 
 function preload() {
 
-    game.load.image('sky', 'assets/sky.png');
+    game.load.image('sky', 'assets/bigsky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
@@ -83,11 +83,21 @@ function create() {
     ledge = platforms.create(-200, 490, 'ground');
     ledge.body.immovable = true;
     
-     ledge = platforms.create(-200, 1100, 'ground');
+    ledge = platforms.create(500, 550, 'ground');
     ledge.body.immovable = true;
     
-     ledge = platforms.create(400, 900, 'ground');
+    ledge = platforms.create(0, 600, 'ground');
     ledge.body.immovable = true;
+    
+	ledge = platforms.create(-150, 700, 'ground');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(300, 800, 'ground');
+    ledge.body.immovable = true;
+
+	ledge = platforms.create(-200, 1100, 'ground');
+    ledge.body.immovable = true;
+    
 
     // The player and its settings
     player = game.add.sprite(1, game.world.height - 160, 'lizard');
