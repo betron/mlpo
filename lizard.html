@@ -8,7 +8,7 @@
     <script src="js/gamecontroller.js" type="text/javascript"></script>
     <style type="text/css">
         body {
-            margin: 0 20%;
+            margin: 0;
         }
     </style>
 </head>
@@ -16,7 +16,7 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(900, 1100, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(900, 1300, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
@@ -82,6 +82,12 @@ function create() {
     
     ledge = platforms.create(-200, 490, 'ground');
     ledge.body.immovable = true;
+    
+     ledge = platforms.create(-200, 1100, 'ground');
+    ledge.body.immovable = true;
+    
+     ledge = platforms.create(400, 900, 'ground');
+    ledge.body.immovable = true;
 
     // The player and its settings
     player = game.add.sprite(1, game.world.height - 160, 'lizard');
@@ -106,8 +112,8 @@ function create() {
     //  We will enable physics for any star that is created in this group
     stars.enableBody = true;
 
-    //  Here we'll create 12 of them evenly spaced apart
-    for (var i = 0; i < 3; i++)
+    //  Here we'll create 5 of them evenly spaced apart
+    for (var i = 0; i < 5; i++)
     {
         //  Create a star inside of the 'stars' group
         var star = stars.create(i * 70, 0, 'star');
@@ -126,21 +132,21 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
      // create our virtual game controller buttons 
-    buttonjump = game.add.button(300, 590, 'buttonjump', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
+    buttonjump = game.add.button(800, 1200, 'buttonjump', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
     buttonjump.fixedToCamera = true;  //our buttons should stay on the same place  
     buttonjump.events.onInputOver.add(function(){jump=true;});
     buttonjump.events.onInputOut.add(function(){jump=false;});
     buttonjump.events.onInputDown.add(function(){jump=true;});
     buttonjump.events.onInputUp.add(function(){jump=false;});
 
-    buttonleft = game.add.button(0, 620, 'buttonhorizontal', null, this, 0, 1, 0, 1);
+    buttonleft = game.add.button(0, 1200, 'buttonhorizontal', null, this, 0, 1, 0, 1);
     buttonleft.fixedToCamera = true;
     buttonleft.events.onInputOver.add(function(){left=true; player.animations.play('left');});
     buttonleft.events.onInputOut.add(function(){left=false;});
     buttonleft.events.onInputDown.add(function(){left=true; player.animations.play('left');});
     buttonleft.events.onInputUp.add(function(){left=false;});
     
-     buttonright = game.add.button(160, 620, 'buttonhorizontal', null, this, 0, 1, 0, 1);
+     buttonright = game.add.button(160, 1200, 'buttonhorizontal', null, this, 0, 1, 0, 1);
     buttonright.fixedToCamera = true;
     buttonright.events.onInputOver.add(function(){right=true; player.animations.play('right');});
     buttonright.events.onInputOut.add(function(){right=false;});
