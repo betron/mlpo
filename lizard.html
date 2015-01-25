@@ -65,44 +65,35 @@ function create() {
 
 
     //  Now let's create four ledges
-
-    ledge = platforms.create(-150, 100, 'ground');
+    
+    ledge = platforms.create(730, 210, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(800, 110, 'ground');
-    ledge.body.immovable = true;
-    
-    ledge = platforms.create(-90, 250, 'ground');
-    ledge.body.immovable = true;
-    
-    ledge = platforms.create(720, 380, 'ground');
-    ledge.body.immovable = true;
-    
-    ledge = platforms.create(-200, 490, 'ground');
+    ledge = platforms.create(720, 340, 'ground');
     ledge.body.immovable = true;
     
     ledge = platforms.create(600, 400, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(500, 520, 'ground');
+    ledge = platforms.create(500, 490, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(-140, 600, 'ground');
+    ledge = platforms.create(-210, 580, 'ground');
     ledge.body.immovable = true;
     
-	ledge = platforms.create(-10, 700, 'ground');
+    ledge = platforms.create(-140, 700, 'ground');
+    ledge.body.immovable = true;
+    
+				ledge = platforms.create(-10, 840, 'ground');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(700, 800, 'ground');
+    ledge = platforms.create(600, 900, 'ground');
     ledge.body.immovable = true;
     
-     ledge = platforms.create(640, 900, 'ground');
-    ledge.body.immovable = true;
-
-	ledge = platforms.create(-10, 1100, 'ground');
+    ledge = platforms.create(520, 1000, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(600, 1100, 'ground');
+    ledge = platforms.create(400, 1100, 'ground');
     ledge.body.immovable = true;
     
 
@@ -129,8 +120,8 @@ function create() {
     //  We will enable physics for any star that is created in this group
     stars.enableBody = true;
 
-    //  Here we'll create 5 of them evenly spaced apart
-    for (var i = 0; i < 5; i++)
+    //  Here we'll create 13 of them evenly spaced apart
+    for (var i = 0; i < 13; i++)
     {
         //  Create a star inside of the 'stars' group
         var star = stars.create(i * 70, 0, 'star');
