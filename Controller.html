@@ -42,7 +42,7 @@ var jump=false;
 function preload() {
     //spritesheet for animations
     game.load.spritesheet('mario', 'assets/mariospritesheet-small.png',50,50); // key, sourcefile, framesize x, framesize y
-    //background, ground, fireball images
+    //background, ground, platform,  fireball images
     game.load.image('ground', 'assets/2048x48-ground.png');
 				game.load.image('platform', 'assets/platform.png');
     game.load.image('clouds', 'assets/clouds.jpg');
@@ -62,8 +62,8 @@ function create() {
     if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
     
     game.physics.startSystem(Phaser.Physics.P2JS);  //activate physics
-    game.physics.p2.gravity.y = 1100;  //realistic gravity
-    game.world.setBounds(0, 0, 2000, 600);//(x, y, width, height)
+    game.physics.p2.gravity.y = 1200;  //realistic gravity
+    game.world.setBounds(0, 0, 2000, 800);//(x, y, width, height)
     game.physics.p2.setBoundsToWorld(true, true, false, true, false); //(left, right, top, bottom, setCollisionGroup)
     game.physics.p2.friction = 5;   // default friction between ground and player or fireballs
 
