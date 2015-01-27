@@ -44,6 +44,7 @@ function preload() {
     game.load.spritesheet('mario', 'assets/mariospritesheet-small.png',50,50); // key, sourcefile, framesize x, framesize y
     //background, ground, fireball images
     game.load.image('ground', 'assets/2048x48-ground.png');
+				game.load.image('platform', 'assets/platform.png');
     game.load.image('clouds', 'assets/clouds.jpg');
     game.load.image('fireball', 'assets/fireball.png',40,30);
     //gamepad buttons
@@ -61,7 +62,7 @@ function create() {
     if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
     
     game.physics.startSystem(Phaser.Physics.P2JS);  //activate physics
-    game.physics.p2.gravity.y = 1200;  //realistic gravity
+    game.physics.p2.gravity.y = 1100;  //realistic gravity
     game.world.setBounds(0, 0, 2000, 600);//(x, y, width, height)
     game.physics.p2.setBoundsToWorld(true, true, false, true, false); //(left, right, top, bottom, setCollisionGroup)
     game.physics.p2.friction = 5;   // default friction between ground and player or fireballs
@@ -70,6 +71,18 @@ function create() {
     ground = game.add.sprite(game.world.width/2, game.world.height-24,'ground');
     game.physics.p2.enable(ground);  //enable physics so our player will not fall through ground but collide with it
     ground.body.static=true;    // ground should not move
+				
+				platform = game.add.sprite(500, 450,'platform');
+	   platform = game.add.sprite(600, 350,'platform');
+	   platform = game.add.sprite(700, 250,'platform');
+				platform = game.add.sprite(500, 140,'platform');
+	
+				platform = game.add.sprite(1500, 450,'platform');
+	   platform = game.add.sprite(1600, 350,'platform');
+	   platform = game.add.sprite(1700, 250,'platform');
+				platform = game.add.sprite(1500, 140,'platform');
+				game.physics.p2.enable(platform);  //enable physics so our player will not fall through platform but collide with it
+    platform.body.static=true;    // platform should not move
 
     fireballs = game.add.group();  // add a new group for fireballs
     fireballs.createMultiple(500, 'fireball', 0, false);  // create plenty of them hidden and out of the game world
@@ -79,7 +92,7 @@ function create() {
     game.physics.p2.enable(player);
     player.body.setCircle(22);  // collision circle 
     player.body.fixedRotation=true; // do not rotate on collision
-    player.body.mass = 4;
+    player.body.mass = 3;
 
     // add some animations 
     player.animations.add('walk', [1,2,3,4], 10, true);  // (key, framesarray, fps,repeat)
