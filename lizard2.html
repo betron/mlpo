@@ -2,14 +2,13 @@
 <html lang="en"> 
 <head> 
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
     <title>Lizard2</title>
 	<script type="text/javascript" src="js/phaser.min.js">
     </script>
+    <script src="js/gamecontroller.js" type="text/javascript"></script>
     <style type="text/css">
         body {
-            margin: 0 20%;
-            background-color: #ddd;
+            margin: 0;
         }
     </style>
 </head>
@@ -17,35 +16,13 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, '', { init: init, preload: preload, create: create, render: render });
-
-var pixel = { scale: 4, canvas: null, context: null, width: 0, height: 0 }
-
-function init() {
-	
-	game.canvas.style['display'] = 'none';
-	
-	pixel.canvas = Phaser.Canvas.create(game.width * pixel.scale, game.height * pixel.scale);
-	
-	pixel.context = pixel.canvas.getContext('2d');
-	
-	Phaser.Canvas.addToDOM(pixel.canvas);
-	
-	Phaser.Canvas.setSmoothingEnabled(pixel.context,false);
-	
-	pixel.width = pixel.canvas.width;
-	pixel.height = pixel.canvas.height;
-	
-}
-
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
     game.load.image('sky', 'assets/oldsky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
-    game.load.spritesheet('buttonjump', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('lizard', 'assets/lizardsprite.png', 64, 64); // made by Julie Bentsen, she'll get you bent, son
 
 }
@@ -62,7 +39,6 @@ var right=false;
 var jump=false;
     
 function create() {
-
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -77,6 +53,7 @@ function create() {
 
     // Here we create the ground.
     var ground = platforms.create(0, game.world.height - 64, 'ground');
+   
 
     //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
     ground.scale.setTo(2, 2);
@@ -84,27 +61,29 @@ function create() {
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
+				game.camera.follow(player); //always center player
 
     //  Now let's create four ledges
+    
+    
+	ledge = platforms.create(600, 100, 'ground');
+    ledge.body.immovable = true;
 
-    ledge = platforms.create(-150, 100, 'ground');
+    ledge = platforms.create(500, 200, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(-90, 210, 'ground');
+     ledge = platforms.create(450, 270, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create (650, 310, 'ground');
+    ledge = platforms.create(350, 360, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(500, 400, 'ground');
-    ledge.body.immovable = true;
-    
-    ledge = platforms.create(300, 470, 'ground');
+    ledge = platforms.create(240, 450, 'ground');
     ledge.body.immovable = true;
     
 
     // The player and its settings
-    player = game.add.sprite(1, game.world.height - 160, 'lizard');
+    player = game.add.sprite(650, 10, 'lizard');
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -148,9 +127,7 @@ function create() {
     
 }
 
-function render() {
-
-	pixel.context.drawImage(game.canvas, 0, 0, game.width, game.height, 0, 0, pixel.width, pixel,height);
+function update() {
 
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
@@ -161,7 +138,7 @@ function render() {
 
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
-
+    
     if (cursors.left.isDown)
     {
         //  Move to the left
@@ -187,12 +164,11 @@ function render() {
     //  Allow the player to jump if they are touching the ground.
     if (cursors.up.isDown && player.body.touching.down)
     {
-        player.body.velocity.y = -350;
+        player.body.velocity.y = -250;
     }
     
-
-}
-    
+    // define what should happen when a button is pressed
+   
 
 
 function collectStar (player, star) {
@@ -204,7 +180,7 @@ function collectStar (player, star) {
     score += 960;
     scoreText.text = 'Score: ' + score;
 
-}
+}}
 
 </script>
 
