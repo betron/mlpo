@@ -229,17 +229,18 @@ a:visited {
 	margin: 0 auto;
 	line-height: 1.5em;
 	width: 460px;
+	
 	}
 
 #pond a {
     text-align: center;
-	font-size: .8em;
+	font-size: 1.5em;
 	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
 }
 	
 #hexagon {
-	width: 100px;
-	height: 50px;
+	width: 200px;
+	height: 100px;
 	background: #000;
 	position: relative;
 	margin-left: 15%;
@@ -249,30 +250,30 @@ a:visited {
 #hexagon:before {
 	content: "";
 	position: absolute;
-	top: -25px;
+	top: -75px;
 	left: 0;
 	width: 0;
 	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-bottom: 25px solid #000;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 75px solid #000;
 	}
 	
 #hexagon:after {
 	content: "";
 	position: absolute;
-	bottom: -25px;
+	bottom: -75px;
 	left: 0;
 	width: 0;
 	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 25px solid #000;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-top: 75px solid #000;
 	}
 	
 #smhexagon {
-	width: 78px;
-	height: 44px;
+	width: 158px;
+	height: 94px;
 	background: #fff;
 	position: relative;
 	margin-left: 11%;
@@ -280,8 +281,8 @@ a:visited {
 	}
 	
 #smhexagonTwo {
-	width: 78px;
-	height: 44px;
+	width: 158px;
+	height: 94px;
 	position: relative;
 	margin-left: 11%;
 	margin-top: 11%;
@@ -292,25 +293,25 @@ a:visited {
 #smhexagonTwo:before {
 	content: "";
 	position: absolute;
-	top: -19px;
+	top: -49px;
 	left: 0;
 	width: 0;
 	height: 0;
-	border-left: 39px solid transparent;
-	border-right: 39px solid transparent;
-	border-bottom: 19px solid #3A7230;
+	border-left: 80px solid transparent;
+	border-right: 80px solid transparent;
+	border-bottom: 50px solid #3A7230;
 	}
 	
 #smhexagonTwo:after {
 	content: "";
 	position: absolute;
-	bottom: -20px;
+	bottom: -50px;
 	left: 0;
 	width: 0;
 	height: 0;
-	border-left: 40px solid transparent;
-	border-right: 40px solid transparent;
-	border-top: 20px solid #3A7230;
+	border-left: 80px solid transparent;
+	border-right: 80px solid transparent;
+	border-top: 50px solid #3A7230;
 	z-index: 1;
 	}
 
@@ -318,25 +319,25 @@ a:visited {
 #smhexagon:before {
 	content: "";
 	position: absolute;
-	top: -19px;
+	top: -49px;
 	left: 0;
 	width: 0;
 	height: 0;
-	border-left: 39px solid transparent;
-	border-right: 39px solid transparent;
-	border-bottom: 19px solid #fff;
+	border-left: 80px solid transparent;
+	border-right: 80px solid transparent;
+	border-bottom: 50px solid #fff;
 	}
 	
 #smhexagon:after {
 	content: "";
 	position: absolute;
-	bottom: -20px;
+	bottom: -50px;
 	left: 0;
 	width: 0;
 	height: 0;
-	border-left: 40px solid transparent;
-	border-right: 40px solid transparent;
-	border-top: 20px solid #fff;
+	border-left: 80px solid transparent;
+	border-right: 80px solid transparent;
+	border-top: 50px solid #fff;
 	z-index: 1;
 	}
 
