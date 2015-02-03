@@ -222,7 +222,7 @@ function gofull() { game.scale.startFullScreen(false);}
 function jump_now(){  //jump with small delay
     if (game.time.now > nextJump ){
         player.body.moveUp(600);
-        nextJump = game.time.now + 900;
+        nextJump = game.time.now + 1000;
     }
 }
 function fire_now() {
