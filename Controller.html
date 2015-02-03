@@ -67,22 +67,44 @@ function create() {
     game.physics.p2.setBoundsToWorld(true, true, false, true, false); //(left, right, top, bottom, setCollisionGroup)
     game.physics.p2.friction = 5;   // default friction between ground and player or fireballs
 
-    clouds = game.add.tileSprite(0, 0, 2048, 600, 'clouds'); //add tiling sprite to cover the whole game world
+    clouds = game.add.tileSprite(0, 0, 2048, 800, 'clouds'); //add tiling sprite to cover the whole game world
     ground = game.add.sprite(game.world.width/2, game.world.height-24,'ground');
-    game.physics.p2.enable(ground);  //enable physics so our player will not fall through ground but collide with it
-    ground.body.static=true;    // ground should not move
+    game.physics.p2.enable(ground); //enable physics so our player will not fall through ground but collide with it
+    ground.body.static=true; // ground should not move
+  
 				
-				platform = game.add.sprite(500, 450,'platform');
-	   platform = game.add.sprite(600, 350,'platform');
-	   platform = game.add.sprite(700, 250,'platform');
-				platform = game.add.sprite(500, 140,'platform');
+	   platform = game.add.sprite(900, 650,'platform');
+	   game.physics.p2.enable(platform);
+	   platform.body.static=true;
+	   
+	   platform = game.add.sprite(800, 550,'platform');
+	   game.physics.p2.enable(platform);
+	   platform.body.static=true;
+	   
+	   platform = game.add.sprite(700, 450,'platform');
+	   game.physics.p2.enable(platform);
+	   platform.body.static=true;
+	   
+	   platform = game.add.sprite(500, 340,'platform');
+	   game.physics.p2.enable(platform);
+	   platform.body.static=true;
 	
-				platform = game.add.sprite(1500, 450,'platform');
-	   platform = game.add.sprite(1600, 350,'platform');
-	   platform = game.add.sprite(1700, 250,'platform');
-				platform = game.add.sprite(1500, 140,'platform');
-				game.physics.p2.enable(platform);  //enable physics so our player will not fall through platform but collide with it
-    platform.body.static=true;    // platform should not move
+		platform = game.add.sprite(1500, 450,'platform');
+		game.physics.p2.enable(platform);
+	    platform.body.static=true;
+	   
+	    platform = game.add.sprite(1600, 350,'platform');
+	    game.physics.p2.enable(platform);
+	   platform.body.static=true;
+	   
+	    platform = game.add.sprite(1700, 250,'platform');
+		game.physics.p2.enable(platform);
+	    platform.body.static=true;
+	   
+		platform = game.add.sprite(1500, 140,'platform');
+		game.physics.p2.enable(platform);
+	   platform.body.static=true;
+	   
 
     fireballs = game.add.group();  // add a new group for fireballs
     fireballs.createMultiple(500, 'fireball', 0, false);  // create plenty of them hidden and out of the game world
@@ -93,6 +115,7 @@ function create() {
     player.body.setCircle(22);  // collision circle 
     player.body.fixedRotation=true; // do not rotate on collision
     player.body.mass = 3;
+    
 
     // add some animations 
     player.animations.add('walk', [1,2,3,4], 10, true);  // (key, framesarray, fps,repeat)
@@ -184,6 +207,9 @@ function update() {
     if (fire){fire_now(); player.loadTexture('mario', 8); }
     if (duck){ player.body.setCircle(16,0,6);}else{ player.body.setCircle(22);}  //when ducking create a smaller hitarea - (radius,offsetx,offsety)
     if (game.input.currentPointers == 0 && !game.input.activePointer.isMouse){ fire=false; right=false; left=false; duck=false; jump=false;} //this works around a "bug" where a button gets stuck in pressed state
+
+	
+
 };
 
 function render(){
@@ -224,4 +250,4 @@ function fire_now() {
 </script>
 
 </body>
-</html>
+</html> 
