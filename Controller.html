@@ -114,7 +114,7 @@ function create() {
     game.physics.p2.enable(player);
     player.body.setCircle(22);  // collision circle 
     player.body.fixedRotation=true; // do not rotate on collision
-    player.body.mass = 3;
+    player.body.mass = 4;
     
 
     // add some animations 
@@ -178,12 +178,12 @@ function update() {
     // define what should happen when a button is pressed
     if (left && !duck) {
         player.scale.x = -1;
-        player.body.moveLeft(500);
+        player.body.moveLeft(400);
         player.animations.play('walk');
     }
     else if (right && !duck) {
         player.scale.x = 1;
-        player.body.moveRight(500);
+        player.body.moveRight(400);
         player.animations.play('walk');
     } 
     else if (duck && !left && !right) {
