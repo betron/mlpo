@@ -26,6 +26,10 @@ function preload() {
     game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
     game.load.spritesheet('buttonjump', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('lizard', 'assets/lizardsprite.png', 64, 64); // made by Julie Bentsen, she'll get you bent, son
+    
+    // fullscreen setup
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
 }
 
