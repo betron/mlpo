@@ -799,7 +799,7 @@ tablet
 	}
 
 #little {
-	height: 560px;
+	height: 300px;
 	}
 
 #little ul li {
@@ -807,7 +807,7 @@ tablet
 	}
 
 #pond	{
-	height: 750px;
+	height: 300px;
 	}
 	
 #pond ul li{
@@ -925,8 +925,8 @@ tablet
 	}
 	
 #little ul li div	{
-	margin: 5% auto 0 5%;
-	height: 185px;
+	margin: 20px auto 0 5%;
+	height: 50px;
 	width: 185px;
 	}
 	
@@ -979,17 +979,17 @@ tablet
 	}
 	
 #footer ul li {
-	margin: 10px auto 10px 8%;
+	margin: 10px auto 10px 10%;
 	}
 	
 #footer ul li a {
-	font-size: 2em;
+	font-size: 4em;
 	display: inline;
 	margin: 0 auto 10px;
 	}
 
 #footer ul li hr {
-	width: 460px;
+	display: none;
 	}
 	
 #footer p {
