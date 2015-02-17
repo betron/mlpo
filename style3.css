@@ -438,14 +438,13 @@ footer p {
 
 #little ul li {
 	margin: 20px auto 20px 19%;
-	height: 390px;
 	width: 200px;
 	}
 	
 #holder {
 	float: left;
 	width: 85%;
-	height: 730px;
+	height: 830px;
 	background-color: #fff;
 	margin: 30px 0 30px 5%;
 	border: 5px solid #000
@@ -456,7 +455,7 @@ footer p {
 	}
 	
 #pond ul li{
-	margin:80px auto 80px 25%;
+	margin:80px auto 80px 35%;
 	}
 	
 footer {
@@ -498,12 +497,16 @@ footer p {
 	background-color: blue;
 	}
 
+#main {
+	height: 850px;
+}
+
 #main ul li {
 	margin:100px auto 0 11%;
 	}
 	
 #little {
-	height: 880px;
+	height: 730px;
 }
 	
 #little ul li {
@@ -511,7 +514,7 @@ footer p {
 	}
 	
 #pond {
-	height: 600px;
+	height: 550px;
 }
 	
 #pond ul li{
@@ -520,14 +523,10 @@ footer p {
 
 #holder {
 	width: 90%;
-	height: 550px;
-	margin:30px 0 30px 8%;
+	height: 500px;
+	margin:30px 0 30px 4%;
 	background-color: #fff;
 	}
-	
-#online ul li {
-	margin:60px 0 0 31%;
-	}	
 
 footer {
 	color: #000;
@@ -558,25 +557,14 @@ footer hr {
 	background-color: orange;
 	}
 
-#online {
-	padding: 5px;
+#pond ul li{
+	margin-left: 15%;
 	}
 
 #holder {
 	width: 92%;
 	margin:30px 0 30px 4%;
 	}
-	
-#online ul {
-	margin-left: 5%;
-	}
-	
-#online ul li {
-	margin:20px 0 0 2%;
-	}
-	
-
-
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 	
