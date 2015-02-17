@@ -69,7 +69,7 @@ a:visited {
 	}
 
 #main	{
-	height: 700px;
+	height: 850px;
 	margin: 0 auto;
 	background-color: #3A7230;
 	padding: 15px;
@@ -153,7 +153,7 @@ a:visited {
 
 
 #little	{
-	height: 700px;
+	height: 750px;
 	margin: 0 auto;
 	background-color: #414141;
 	padding: 15px;
@@ -170,10 +170,11 @@ a:visited {
 
 #holder {
 	float: left;
-	width: 87%;
-	height: 300px;
+	width: 90%;
+	height: 550px;
 	background-color: #fff;
-	margin: 30px 0 0 4%;
+	margin: 30px auto 0;
+	padding: 5px;
 	border: 5px solid #000
 	}
 	
@@ -184,19 +185,13 @@ a:visited {
 #little ul li {
 	float: left;
 	display: inline;
-	margin: 50px 0 0 12%;
-	height: 190px;
-	width: 35%;
+	margin: 20px 0 0 3%;
+	width: 90%;
 	color: #333;
 	text-align: center;
 	font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 17px;
 	}
-	
-#little ul ul li {
-	margin: 5px 0 0 12%;
-	height: 50px;
-}
 
 #little span {
 	line-height: 2.1em;
@@ -205,8 +200,10 @@ a:visited {
 	
 	}
 	
+	
+	
 #pond	{
-	height: 700px;
+	height: 1100px;
 	margin: 0 auto;
 	background-color: #3A7230;
 	padding: 15px;
@@ -217,18 +214,16 @@ a:visited {
 	margin: 7% auto 0;
 	font-size: 3em;
 	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
-	line-height: 1.5em;
 	width: 100%;
 	}
 
 #pond ul li {
 	display: inline;
 	float: left;
-	margin: 65px auto 0 14%;
+	margin: 150px auto 0 24%;
 	height: 115px;
 	width: 145px;
 	}	
-
 
 #pond a {
     text-align: center;
@@ -338,104 +333,250 @@ a:visited {
 	border-top: 50px solid #3A7230;
 	z-index: 1;
 	}
-
-
-
-#online {
-	height: 500px;
-	background-color: #414141; 
-	text-align: center;	
-	padding: 15px;
-	}
-
-#online h1	{
-	text-align: center;
-	margin: 2% auto 0;
-	font-size: 3em;
-	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
-	line-height: 1.5em;
-	color: #fff;
-	width: 100%;
-	}
 	
-#holder {
-	float: left;
-	width: 90%;
-	height: 300px;
-	background-color: #fff;
-	margin: 30px 0 0 2%;
-	border: 5px solid #000
-	}
 	
-#online ul {
-	list-style: none;
-	}
-	
-#online ul li {
-	float: left;
-	display: inline;
-	margin: 20px 0 0 5%;
-	height: 190px;
-	width: 245px;
-	color: #333;
-	text-align: center;
-	font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 17px;
-	}
-	
-#online span {
-	line-height: 2.1em;
-	font-size: 1.4em;
-	text-transform: uppercase;
-	}
 
-#footer {
-	height: 70px;
-	background-color: #3A7230;
+footer {
+	height: 160px;
+	background-color: white; /*#3A7230;*/
 	font-family: 'Bauhaus 93', 'Erica One', sans-serif;
 	margin:0 auto;
 	text-align: center;
-	padding: 20px;
+	padding: 10px;
 	}
 	
-#footer a {
-	text-decoration: none;
+footer ul {
+	width: 380px;
+	height: 120px;
+	list-style: none;
+	margin: 0 auto;
+	}
+	
+footer ul li {
+	font-size: 2em;
+	display: inline;
+	float: left;
+	margin: 10px auto 10px 15%;
+}
+
+footer a {
 	color: #000; 
+	font-size: 2em;
+	display: inline;
+	margin: 0 auto 10px;
 	}
 	
-#footer a:hover {	
+footer a:hover {	
 	-webkit-animation:spin .5s ease-in-out 1;
     -moz-animation:spin .5s ease-in-out 1;
     animation:spin .5s ease-in-out 1;
 }
-	
-#footer ul {
-	list-style: none;
-	margin: 0 auto 0 16%;
-	}
-	
-#footer ul li {
-	font-size: 2em;
-	display: inline;
-	float: left;
-	margin: 0 auto 10px 3.5%;
-}
 
-#footer ul li hr {
+footer hr {
 	border: 1px solid #000;
-	width: 250px;
+	width: 380px;
 	margin: 0 auto;
+	display: block;
 	}
 	
-#footer p {
+footer p {
 	clear: left;
 	margin: 0 auto;
+	font-size: 2em;
 	}
 	
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media all and (min-width: 660px) {
+
+#topBanner {
+	background-color: green;
+	}
+
+#main	{
+	height: 1750px;
+	}
+	
+#main h1	{
+	margin:7% auto 0;
+	font-size: 5em;
+	}
+	
+#main ul {
+	list-style: none;
+	}
+	
+#main ul li {
+	margin:50px auto 0 27%;
+	height: 200px;
+	width: 200px;
+	}
+	
+#main ul li div	{
+	margin: 5% auto 0 5%;
+	height: 185px;
+	width: 185px;
+	}
+	
+#main button {
+	height: 195px;
+	width: 195px;
+	font-size: 2em;
+	line-height: 6em;
+	}
+
+#little {
+	height: 1030px;
+	}
+
+#little ul li {
+	margin: 20px auto 20px 19%;
+	height: 390px;
+	width: 200px;
+	}
+	
+#holder {
+	float: left;
+	width: 85%;
+	height: 730px;
+	background-color: #fff;
+	margin: 30px 0 30px 5%;
+	border: 5px solid #000
+	}
+
+#pond	{
+	height: 1030px;
+	}
+	
+#pond ul li{
+	margin:80px auto 80px 25%;
+	}
+	
+footer {
+	height: 180px;
+	background-color: #fff;
+	}
+
+		
+footer ul {
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	}
+	
+footer ul li {
+	margin: 0 auto 5px 15%;
+	}
+	
+footer ul li a {
+	font-size: 2em;
+	display: inline;
+	}
+
+footer hr {
+	width: 420px;
+	border: 1px solid #000;
+	}
+	
+footer p {
+	font-size: 2em;
+	}
+	
+	
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media all and (min-width: 890px) {
+
+#topBanner {
+	background-color: blue;
+	}
+
+#main ul li {
+	margin:100px auto 0 11%;
+	}
+	
+#little {
+	height: 880px;
+}
+	
+#little ul li {
+	margin-left: 18%;
+	}
+	
+#pond {
+	height: 600px;
+}
+	
+#pond ul li{
+	margin-left: 10%;
+	}
+
+#holder {
+	width: 90%;
+	height: 550px;
+	margin:30px 0 30px 8%;
+	background-color: #fff;
+	}
+	
+#online ul li {
+	margin:60px 0 0 31%;
+	}	
+
+footer {
+	color: #000;
+	background-color: #fff;
+	}	
+	
+footer ul {
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	}
+	
+footer ul li {
+	margin: 0 auto 5px 21.4%;
+}
+	
+footer hr {
+	width: 800px;
+	border: 1px solid #000;
+	}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media all and (min-width: 1130px){
+
+#topBanner {
+	background-color: orange;
+	}
+
+#online {
+	padding: 5px;
+	}
+
+#holder {
+	width: 92%;
+	margin:30px 0 30px 4%;
+	}
+	
+#online ul {
+	margin-left: 5%;
+	}
+	
+#online ul li {
+	margin:20px 0 0 2%;
+	}
+	
+
+
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 	
@@ -671,331 +812,6 @@ border-top: 1px solid #96d1f8;
 	.overlay ul li {
 		min-height: 34px;
 	}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-@media all and (max-width: 1130px), (max-device-width: 1130px) {
-tablet
-
-#topBanner {
-	background-color: orange;
-	}
-
-#online {
-	padding: 5px;
-	}
-
-#holder {
-	width: 92%;
-	margin:30px 0 30px 4%;
-	}
-	
-#online ul {
-	margin-left: 5%;
-	}
-	
-#online ul li {
-	margin:20px 0 0 2%;
-	}
-	
-#footer ul {
-	margin: 0 auto 0 15%;
-	}
-	
-#footer ul li {
-	margin: 0 auto 10px 5%;
-}
-	
-#footer ul li hr {
-	width: 140px;
-	}
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-@media all and (max-width: 890px), (max-device-width: 890px) {
-
-#topBanner {
-	background-color: blue;
-	}
-
-#main ul li {
-	margin:100px auto 0 11%;
-	}
-	
-#little ul li {
-	margin-left: 18%;
-	}
-	
-#pond ul li{
-	margin-left: 10%;
-	}
-
-#online {
-	height: 940px;
-	
-	}
-
-#holder {
-	width: 90%;
-	height: 810px;
-	margin:30px 0 30px 8%;
-	}
-	
-#online ul li {
-	margin:60px 0 0 31%;
-	}	
-	
-#footer ul {
-	margin: 0 auto 0 8%;
-	}
-	
-#footer ul li {
-	margin: 0 auto 10px 5%;
-}
-	
-#footer ul li hr {
-	width: 140px;
-	}
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-
-@media all and (max-width: 660px), (max-device-width: 660px) {
-
-#topBanner {
-	background-color: green;
-	}
-
-#main	{
-	height: 850px;
-	}
-	
-#main h1	{
-	margin:7% auto 0;
-	font-size: 5em;
-	}
-	
-#main ul {
-	list-style: none;
-	}
-	
-#main ul li {
-	margin:100px auto 0 8%;
-	height: 200px;
-	width: 200px;
-	}
-	
-#main ul li div	{
-	margin: 5% auto 0 5%;
-	height: 185px;
-	width: 185px;
-	}
-	
-#main button {
-	height: 195px;
-	width: 195px;
-	font-size: 2em;
-	line-height: 6em;
-	}
-
-#little {
-	height: 300px;
-	}
-
-#little ul li {
-	margin-left: 42%;
-	}
-
-#pond	{
-	height: 300px;
-	}
-	
-#pond ul li{
-	margin-left: 39%;
-	
-	}
-	
-#online {
-	height: 960px;
-	
-	}
-
-#holder {
-	float: left;
-	width: 85%;
-	height: 830px;
-	background-color: #313131;
-	margin: 30px 0 30px 8%;
-	border: 5px solid #000
-	}
-	
-#online ul li {
-	float: left;
-	display: inline;
-	margin: 70px 0 0 28%;
-	}
-
-#footer {
-	height: 240px;
-	}
-
-		
-#footer ul {
-	margin: 0 auto;
-	width: 450px;
-	}
-	
-#footer ul li {
-	margin: 20px auto 10px 12%;
-	}
-	
-#footer ul li a {
-	font-size: 2em;
-	display: inline;
-	}
-
-#footer ul li hr {
-	width: 420px;
-	}
-	
-#footer p {
-	font-size: 2em;
-	}
-
-
-
-
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-
-@media all and (max-width: 460px), (max-device-width: 460px) {
-/*ipod touch 5th gen, iphone 5*/
-
-#topBanner {
-	background-color: #990000;
-	height: 70px;
-	padding: 5px;
-	}
-
-.logo h1	{
-	margin-top: 5px;
-	font-size: 3em;
-	text-align: left;
-	padding-bottom: 5px;
-	}
-
-#main h1	{
-	margin:7% auto 0;
-	font-size: 4em;
-	}
-	
-#main ul {
-	list-style: none;
-	}
-	
-#main ul li {
-	margin:100px auto 0 8%;
-	height: 200px;
-	width: 200px;
-	}
-	
-#main ul li div	{
-	margin: 5% auto 0 5%;
-	height: 185px;
-	width: 185px;
-	}
-	
-#main button {
-	height: 195px;
-	width: 195px;
-	font-size: 2em;
-	line-height: 6em;
-	}
-	
-	
-#little h1	{
-	font-size: 5em;
-	}
-	
-#little ul li {
-	margin:100px auto 0 8%;
-	height: 200px;
-	width: 200px;
-	}
-	
-#little ul li div	{
-	margin: 20px auto 0 5%;
-	height: 50px;
-	width: 185px;
-	}
-	
-#pond h1	{
-	font-size: 5em;
-	}
-	
-#online {
-	height: 2500px;
-	padding: 15px;
-	}
-
-#online h1	{
-	margin: 2% auto 0;
-	font-size: 5em;
-	line-height: 1.5em;
-	}
-	
-#holder {
-	width: 80%;
-	height: 2250px;
-	margin: 30px 0 0 10%;
-	}
-	
-#online ul {
-	list-style: none;
-	}
-	
-#online ul li {
-	margin: 30px 0 470px 4%;
-	padding: 10px;
-	height: 190px;
-	width: 80%;
-	font-size: 2.5em;
-	line-height: 1.4em;
-	}
-	
-#online span {
-	line-height: 2em;
-	}
-
-#footer {
-	height: 310px;
-	}
-
-		
-#footer ul {
-	margin: 0 auto;
-	width: 250px;
-	}
-	
-#footer ul li {
-	margin: 10px auto 10px 10%;
-	}
-	
-#footer ul li a {
-	font-size: 4em;
-	display: inline;
-	margin: 0 auto 10px;
-	}
-
-#footer ul li hr {
-	display: none;
-	}
-	
-#footer p {
-	font-size: 4em;
-	}
-
-
+*/
 
 }}}}}
