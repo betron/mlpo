@@ -1,0 +1,252 @@
+/* Brendan Tronconi.com */
+
+/* Remove browser styles*/
+	
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+		}
+			 
+	 
+body	{	
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1100px;
+	padding: 0;
+	border: 0;	
+	}
+
+.page	{
+	margin: 0 auto;
+		}
+		
+a {
+	color: #000;
+	text-decoration: underline;
+	padding-bottom: 1px;
+	}
+	
+a:hover {
+	opacity: .8;
+	}
+
+#banner	{
+	height: 472px;
+	width: 100%;
+	background-color: #3A7230;
+	margin: 0;
+	padding: 0;
+	}	
+	
+#banner a {
+	text-decoration: none;
+	}	
+
+h1	{
+	float: left;
+	width: 305px;
+	font-size: 2.2em;
+	font-family: 'gravitas one';
+	text-align: center;
+	color: black;
+    margin-top: 35px;
+	}
+	
+h2	{
+	font-family: 'lato';
+	}
+
+img {
+	max-width: 100%;
+	}
+
+#desc	{
+	float: left;
+	width: 305px;
+	margin-left: 5%;
+	text-align: center;
+	}
+
+#desc p {
+	font-size: 1em;
+	line-height: 1.8em;
+	font-family: "lato", sans-serif;
+	margin-left: 2px;
+	}
+	
+#desc span {
+	text-decoration: line-through;
+	}
+
+#contact	{
+	width: 300px;
+	clear: right;
+	float: right;
+	text-align: right;
+	margin-right: 14%;
+	margin-top: 55px;
+	font: 100 42px/42px 'lato';
+	line-height: 1.3em;
+	color: #000;
+	}	
+	
+#contact i	{
+	padding: 10px;
+	color: #000;
+	}
+	
+#contact a	{
+	color: #000;
+	text-decoration: none;
+	}
+
+.main	{
+	margin: 10px auto 0;
+	padding-top: 10px;
+	clear: both;
+	}
+	
+.main h2	{
+	text-align: center;
+	font: 400 42px/42px 'lato';
+	text-transform: uppercase;
+	}
+	
+.main img {
+	margin: 30px auto 30px 3%;
+	padding: 0;
+	box-shadow: 0px 5px 10px #000;
+	}
+	
+.main p	{
+	text-align: left;
+	margin: 20px 20px 20px 30%;
+	padding: 0;
+	font-family: 'lato', sans-serif;
+	font-weight: 400;
+	line-height: 1.4em;
+	width: 600px;
+	}
+	
+.main p span	{
+	color: #399c3e;
+	}
+
+.main a {
+	color: #399c3e;
+	} 
+	
+.main button {
+	float: left;
+	color: #6fa44f;
+	margin: 0 auto 10px 40px;
+	text-transform: uppercase;
+	font-weight: 800;
+	}
+
+.main button a {
+	text-decoration: none;
+	}
+
+#recent	{
+	height: 700px;
+	padding-bottom: 10px;
+	}
+	
+#recent ul {
+	list-style: none;
+	margin: 80px 0 0;
+	}
+	
+#recent li {
+	margin:0 0 0 20%;
+	padding: 10px;
+	text-align: none;
+	width: 200px;
+	float: left;
+	}
+	
+#recent img	{
+	margin: 10px;
+	padding: 0;
+	box-shadow: 0px 5px 10px #000;
+	}
+
+#recent p	{
+	text-align: center;
+	margin: 0;
+	padding: 10px;
+	font-family: "lato", sans-serif;
+	line-height: 1.3em;
+	width: 100%;
+	}
+	
+#recent span 	{
+	font-style: oblique;
+	color: black;
+	}
+	
+#recent a {
+	color: black;
+	}
+		
+footer {
+	clear: both;
+	background-color: #3A7230;
+	color: #000;
+	font: 400 16px/16px "lato";
+	text-align: center;
+	padding: 5px;
+	}
+
+	
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+ 
+@media screen and (min-width:336px) {
+
+
+#desc {
+	margin: 0 0 0 13%;
+	}	
+	
+	
+#recent li {
+	margin:0 0 0 30%;
+	}
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+ 
+@media screen and (min-width:560px) {
+
+
+ /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media screen and (min-width: 950px) {
+    
+
+
+
+	
+	/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media screen and (min-width: 980px) {
+
+
+ 
+    
+ 
+}}}}}}}}
