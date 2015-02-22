@@ -490,7 +490,7 @@ footer p {
 
 
 	
-	@media all and (min-width: 890px), (min-device-width: 890px) {
+	@media all and (min-width: 890px) and (orientation: landscape), (min-device-width: 890px) {
 	
 	
 	
@@ -499,7 +499,7 @@ footer p {
 	}
 
 #main {
-	height: 850px;
+	height: 750px;
 }
 
 #main ul li {
@@ -511,7 +511,7 @@ footer p {
 }
 	
 #little ul li {
-	margin-left: 18%;
+	margin-left: 5%;
 	}
 	
 #pond {
