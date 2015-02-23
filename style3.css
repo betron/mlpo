@@ -369,7 +369,7 @@ footer a:hover {
 footer hr {
 	border: 1px solid #000;
 	width: 380px;
-	margin: 0 auto;
+	margin: 0 auto 0 10%;
 	display: block;
 	}
 	
@@ -389,8 +389,6 @@ footer p {
 
 
 @media all and (min-width: 660px) {
-
-
 
 
 #topBanner {
@@ -441,14 +439,14 @@ footer p {
 #holder {
 	float: left;
 	width: 85%;
-	height: 830px;
+	height: 630px;
 	background-color: #fff;
 	margin: 30px 0 30px 5%;
 	border: 5px solid #000
 	}
 
 #pond	{
-	height: 1030px;
+	height: 1130px;
 	}
 	
 #pond ul li{
@@ -468,7 +466,7 @@ footer ul {
 	}
 	
 footer ul li {
-	margin: 0 auto 5px 15%;
+	margin: 0 auto;
 	}
 	
 footer ul li a {
@@ -479,6 +477,7 @@ footer ul li a {
 footer hr {
 	width: 420px;
 	border: 1px solid #000;
+	margin: 0 auto;
 	}
 	
 footer p {
@@ -519,7 +518,7 @@ footer p {
 }
 	
 #pond ul li{
-	margin-left: 10%;
+	margin-left: 14%;
 	}
 
 #holder {
@@ -530,6 +529,7 @@ footer p {
 	}
 
 footer {
+	width: 810px;
 	color: #000;
 	background-color: #fff;
 	}	
@@ -537,16 +537,16 @@ footer {
 footer ul {
 	width: 100%;
 	height: 100px;
-	margin: 0 auto;
+	margin: 0 0 0 20%;
 	}
 	
 footer ul li {
 	font-size: 2em;
-	margin: 0 auto 5px 15%;
+	margin: 0 auto 5px 10%;
 	}
 	
 footer hr {
-	width: 800px;
+	width: 600px;
 	border: 1px solid #000;
 	}
 
