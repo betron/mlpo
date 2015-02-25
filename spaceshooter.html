@@ -27,7 +27,9 @@ function preload() {
     game.load.spritesheet('buttonthrust', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
 
-
+	// fullscreen setup
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 }
 
 var sprite;
@@ -38,8 +40,9 @@ var bullets;
 var bulletTime = 0;
 
 function create() {
-
-
+	
+	if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
+	
     //  This will run in Canvas mode, so let's gain a little speed and display
     game.renderer.clearBeforeRender = false;
     game.renderer.roundPixels = true;
@@ -77,8 +80,8 @@ function create() {
 	
 	// create our virtual game controller buttons 
     buttonthrust = game.add.button(416, 410, 'buttonthrust', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
-    buttonthrust.events.onInputOver.add(function(){sprite.body.acceleration.set(200);});
-    buttonthrust.events.onInputDown.add(function(){sprite.body.acceleration.set(200);});
+    buttonthrust.events.onInputOver.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 200, sprite.body.acceleration);});
+    buttonthrust.events.onInputDown.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 200, sprite.body.acceleration);});
 
     buttonfire = game.add.button(310, 410, 'buttonfire', null, this, 0, 1, 0, 1);
     buttonfire.events.onInputOver.add(function(){fireBullet();});
@@ -168,6 +171,8 @@ function screenWrap (sprite) {
     }
 
 }
+
+function gofull() { game.scale.startFullScreen(false);}
 
 
 </script>
