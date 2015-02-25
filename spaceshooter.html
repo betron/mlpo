@@ -3,7 +3,7 @@
 <head> 
     <meta charset="UTF-8" />
     <title>Space Shooter- One File</title>
-    <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/phaser.min.js"></script>
     <script src="js/gamecontroller.js" type="text/javascript"></script>
 
@@ -80,20 +80,20 @@ function create() {
 	
 	// create our virtual game controller buttons 
     buttonthrust = game.add.button(416, 410, 'buttonthrust', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
-    buttonthrust.events.onInputOver.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 200, sprite.body.acceleration);});
-    buttonthrust.events.onInputDown.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 200, sprite.body.acceleration);});
+    buttonthrust.events.onInputOver.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 600, sprite.body.acceleration);});
+    buttonthrust.events.onInputDown.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 600, sprite.body.acceleration);});
 
     buttonfire = game.add.button(310, 410, 'buttonfire', null, this, 0, 1, 0, 1);
     buttonfire.events.onInputOver.add(function(){fireBullet();});
     buttonfire.events.onInputDown.add(function(){fireBullet();});
     
     buttonleft = game.add.button(0, 415, 'buttonhorizontal', null, this, 0, 1, 0, 1);
-    buttonleft.events.onInputOver.add(function(){sprite.body.angularVelocity = -600;});
-    buttonleft.events.onInputDown.add(function(){sprite.body.angularVelocity = -600;});
+    buttonleft.events.onInputOver.add(function(){sprite.body.angularVelocity = -300;});
+    buttonleft.events.onInputDown.add(function(){sprite.body.angularVelocity = -300;});
     
     buttonright = game.add.button(160, 415, 'buttonhorizontal', null, this, 0, 1, 0, 1);
-    buttonright.events.onInputOver.add(function(){sprite.body.angularVelocity = 600;});
-    buttonright.events.onInputDown.add(function(){sprite.body.angularVelocity = 600;});
+    buttonright.events.onInputOver.add(function(){sprite.body.angularVelocity = 300;});
+    buttonright.events.onInputDown.add(function(){sprite.body.angularVelocity = 300;});
  
 
 }
