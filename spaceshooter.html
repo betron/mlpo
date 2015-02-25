@@ -27,11 +27,6 @@ function preload() {
     game.load.spritesheet('buttonthrust', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
 
-	
- 	 // fullscreen setup
-    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
-
 
 }
 
@@ -44,7 +39,6 @@ var bulletTime = 0;
 
 function create() {
 
-	if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
 
     //  This will run in Canvas mode, so let's gain a little speed and display
     game.renderer.clearBeforeRender = false;
