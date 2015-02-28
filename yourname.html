@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
 	
 <style type="text/css" media="all">@import"yourstyle.css";</style>
+<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>
 
 
 </head>
@@ -32,12 +33,18 @@
                 my website.</h1>
 			<p>This is the personal portfolio site of Brendan Tronconi.<br> 
 			I make things for the web.</p>
+			</p>
+	
+		
+			<h1 class="hidden">Welcom 2<br>
+				mah webwiet.</h1>
+			<p class="hidden">DIS AR TEH PERSONAL PORTFOLIO SIET OV BRENDAN TRONCONI.<br>
+				I MAK THINGS 4 DA WEB.</p>
+				
 		</div>   <!-- /end .desc-->
 		
-		<div id="desclol">
-			<h1>    </h1>
 			
-		</div><!-- /end .desclol -->
+		
 		
 		<div id="contact">
 			<a href="http://codepen.io/betron/">Codepen<i class="fa fa-codepen"></i></a><br>
@@ -45,7 +52,8 @@
 			<a href="mailto:Design@BrendanTronconi.com">E-mail<i class="fa fa-envelope"></i></a>			
 		</div> <!-- /end .contact -->
 	
-		
+		<button>Translate to LolCat</button>
+
 		</div> <!-- /end .banner-->
 				
 			
@@ -69,10 +77,21 @@
 		
 			<p>This site was built using valid <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.brendantronconi.com%2F">HTML.</a>  
 			
-			<p class="lol">DIS SIET WUZ BUILT USIN VALID <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.brendantronconi.com%2F">HTML.</a> </p>
+			<p class="hidden">DIS SIET WUZ BUILT USIN VALID <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.brendantronconi.com%2F">HTML.</a> </p>
+			
+			
 			
 		</footer>
 
 </div> <!-- /end #page -->
+
+<script type="text/javascript">
+$( "button" ).click(function() {
+$( "p" ).toggleClass( "hidden" );
+$( "h1" ).toggleClass( "hidden" );
+
+});
+</script>
+
 </body>
 </html>
