@@ -38,6 +38,10 @@ var cursors;
 var bullet;
 var bullets;
 var bulletTime = 0;
+var nextFire = 0;
+var fire=false;
+var left=false;
+var right=false;
 
 function create() {
 	
@@ -80,20 +84,26 @@ function create() {
 	
 	// create our virtual game controller buttons 
     buttonthrust = game.add.button(416, 410, 'buttonthrust', null, this, 0, 1, 0, 1);  //game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame
-    buttonthrust.events.onInputOver.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 600, sprite.body.acceleration);});
-    buttonthrust.events.onInputDown.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 600, sprite.body.acceleration);});
+    buttonthrust.events.onInputOver.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 72000, sprite.body.acceleration);});
+    buttonthrust.events.onInputDown.add(function(){game.physics.arcade.accelerationFromRotation(sprite.rotation, 72000, sprite.body.acceleration);});
 
     buttonfire = game.add.button(310, 410, 'buttonfire', null, this, 0, 1, 0, 1);
-    buttonfire.events.onInputOver.add(function(){fireBullet();});
-    buttonfire.events.onInputDown.add(function(){fireBullet();});
-    
+    buttonfire.events.onInputOver.add(function(){fire=true;});
+    buttonfire.events.onInputOut.add(function(){fire=false;});
+    buttonfire.events.onInputDown.add(function(){fire=true;});
+    buttonfire.events.onInputUp.add(function(){fire=false;});        
+
     buttonleft = game.add.button(0, 415, 'buttonhorizontal', null, this, 0, 1, 0, 1);
-    buttonleft.events.onInputOver.add(function(){sprite.body.angularVelocity = -300;});
-    buttonleft.events.onInputDown.add(function(){sprite.body.angularVelocity = -300;});
+	buttonleft.events.onInputOver.add(function(){left=true;});
+    buttonleft.events.onInputOut.add(function(){left=false;});
+    buttonleft.events.onInputDown.add(function(){left=true;});
+    buttonleft.events.onInputUp.add(function(){left=false;});
     
     buttonright = game.add.button(160, 415, 'buttonhorizontal', null, this, 0, 1, 0, 1);
-    buttonright.events.onInputOver.add(function(){sprite.body.angularVelocity = 300;});
-    buttonright.events.onInputDown.add(function(){sprite.body.angularVelocity = 300;});
+	buttonright.events.onInputOver.add(function(){right=true;});
+    buttonright.events.onInputOut.add(function(){right=false;});
+    buttonright.events.onInputDown.add(function(){right=true;});
+    buttonright.events.onInputUp.add(function(){right=false;});
  
 
 }
@@ -126,6 +136,16 @@ function update() {
     {
         fireBullet();
     }
+    
+     if (left) {
+       sprite.body.angularVelocity = -300;
+     
+    }
+    else if (right) {
+        sprite.body.angularVelocity = 300;
+    } 
+    
+    if (fire){fire_now()};
 
     screenWrap(sprite);
 
@@ -149,6 +169,28 @@ function fireBullet () {
     }
 
 }
+
+//fire for touch screen controls
+
+function fire_now() {
+
+    if (game.time.now > bulletTime)
+    {
+        bullet = bullets.getFirstExists(false);
+
+        if (bullet)
+        {
+            bullet.reset(sprite.body.x + 16, sprite.body.y + 16);
+            bullet.lifespan = 2000;
+            bullet.rotation = sprite.rotation;
+            game.physics.arcade.velocityFromRotation(sprite.rotation, 400, bullet.body.velocity);
+            bulletTime = game.time.now + 90;
+        }
+    }
+
+}
+
+
 
 function screenWrap (sprite) {
 
