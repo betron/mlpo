@@ -45,7 +45,7 @@ var right=false;
 
 function create() {
 	
-	if (!game.device.desktop), { game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
+	if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
 	
     //  This will run in Canvas mode, so let's gain a little speed and display
     game.renderer.clearBeforeRender = false;
