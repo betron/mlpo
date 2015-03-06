@@ -44,7 +44,7 @@ a:hover {
 	}
 
 #banner	{
-	height: 472px;
+	height: 572px;
 	width: 100%;
 	background-color: #3A7230;
 	margin: 0;
@@ -57,7 +57,7 @@ a:hover {
 
 h1	{
 	float: left;
-	width: 320px;
+	width: 420px;
 	font-size: 3em;
 	line-height: 1.5em;
 	font-family: 'gravitas one';
@@ -76,13 +76,13 @@ img {
 
 #desc	{
 	float: left;
-	width: 305px;
+	width: 405px;
 	margin-left: 5%;
 	text-align: center;
 	}
 
 #desc p {
-	font-size: 1em;
+	font-size: .8em;
 	line-height: 1.8em;
 	font-family: "lato", sans-serif;
 	margin-left: 2px;
@@ -99,7 +99,8 @@ img {
 	text-align: right;
 	margin-right: 14%;
 	margin-top: 55px;
-	font: 100 42px/42px 'lato';
+	font-family: 'lato';
+	font-size: 1.3em;
 	line-height: 1.3em;
 	color: #000;
 	}	
@@ -114,56 +115,8 @@ img {
 	text-decoration: none;
 	}
 
-.main	{
-	margin: 10px auto 0;
-	padding-top: 10px;
-	clear: both;
-	}
-	
-.main h2	{
-	text-align: center;
-	font: 400 42px/42px 'lato';
-	text-transform: uppercase;
-	}
-	
-.main img {
-	margin: 30px auto 30px 3%;
-	padding: 0;
-	box-shadow: 0px 5px 10px #000;
-	}
-	
-.main p	{
-	text-align: left;
-	margin: 20px 20px 20px 30%;
-	padding: 0;
-	font-family: 'lato', sans-serif;
-	font-weight: 400;
-	line-height: 1.4em;
-	width: 600px;
-	}
-	
-.main p span	{
-	color: #399c3e;
-	}
-
-.main a {
-	color: #399c3e;
-	} 
-	
-.main button {
-	float: left;
-	color: #6fa44f;
-	margin: 0 auto 10px 40px;
-	text-transform: uppercase;
-	font-weight: 800;
-	}
-
-.main button a {
-	text-decoration: none;
-	}
-
 #recent	{
-	height: 700px;
+	height: 1700px;
 	padding-bottom: 10px;
 	}
 	
@@ -173,7 +126,7 @@ img {
 	}
 	
 #recent li {
-	margin:0 0 0 20%;
+	margin:0 0 300px 40%;
 	padding: 10px;
 	text-align: none;
 	width: 200px;
@@ -226,51 +179,32 @@ footer {
 
 
 
-#main	{
-	height: 1150px;
-	}
-	
-#main h1	{
-	margin:7% auto 0;
-	font-size: 5em;
-	}
-	
-#main ul {
-	list-style: none;
-	}
-	
-#main ul li {
-	margin:50px auto 0 18%;
-	height: 200px;
-	width: 200px;
-	}
-	
-#main ul li div	{
-	margin: 5% auto 0 5%;
-	height: 185px;
-	width: 185px;
-	}
-	
-#main button {
-	height: 195px;
-	width: 195px;
+
+#desc p {
 	font-size: 2em;
-	line-height: 6em;
+
 	}
 
+#contact {
+	font-size: 2.1em;
+	}
+
+#recent p {
+	font-size: 2em;
+	}
 
 	
 footer {
 	height: 180px;
 	color: #000;
-	background-color:  #3A7230;
+	background-color:#3A7230;
 	}	
 	
 
 	
 footer p {
-	font-size: 2em;
-	margin: 0 auto 5px 21%;
+	font-size: 2.2em;
+	margin: 90px auto 10px 10%;
 	}
 
 	
