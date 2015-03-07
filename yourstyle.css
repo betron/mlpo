@@ -44,7 +44,7 @@ a:hover {
 	}
 
 #banner	{
-	height: 572px;
+	height: 472px;
 	width: 100%;
 	background-color: #3A7230;
 	margin: 0;
@@ -57,13 +57,13 @@ a:hover {
 
 h1	{
 	float: left;
-	width: 420px;
+	width: 450px;
 	font-size: 3em;
-	line-height: 1.5em;
 	font-family: 'gravitas one';
 	text-align: center;
 	color: black;
-    margin-top: 35px;
+    margin-top: 55px;
+    margin-bottom: 40px;
 	}
 	
 h2	{
@@ -77,42 +77,21 @@ img {
 #desc	{
 	float: left;
 	width: 405px;
-	margin-left: 5%;
+	margin-left: 31%;
 	text-align: center;
 	}
 
 #desc p {
-	font-size: .8em;
+	font-size: 1.8em;
 	line-height: 1.8em;
 	font-family: "lato", sans-serif;
 	margin-left: 2px;
+	margin-top: 30px;
+	
 	}
 	
 #desc span {
 	text-decoration: line-through;
-	}
-
-#contact	{
-	width: 300px;
-	clear: right;
-	float: right;
-	text-align: right;
-	margin-right: 14%;
-	margin-top: 55px;
-	font-family: 'lato';
-	font-size: 1.3em;
-	line-height: 1.3em;
-	color: #000;
-	}	
-	
-#contact i	{
-	padding: 10px;
-	color: #000;
-	}
-	
-#contact a	{
-	color: #000;
-	text-decoration: none;
 	}
 
 #recent	{
@@ -158,17 +137,47 @@ img {
 	}
 		
 footer {
-	clear: both;
-	background-color: #3A7230;
-	color: #000;
-	font: 400 16px/16px "lato";
+	height: 160px;
+	background-color:#3A7230;
+	margin:0 auto;
 	text-align: center;
-	padding: 5px;
+	padding: 10px;
 	}
 	
-.hidden {
-	display: none;
+footer ul {
+	width: 380px;
+	height: 120px;
+	list-style: none;
+	margin: 0 auto;
 	}
+	
+footer ul li {
+	font-size: 2em;
+	display: inline;
+	float: left;
+	margin: 10px auto 10px 15%;
+}
+
+footer a {
+	color: #000; 
+	font-size: 2em;
+	display: inline;
+	margin: 0 auto 10px;
+	text-decoration: none;
+	}
+	
+footer a:hover {	
+	-webkit-animation:spin .5s ease-in-out 1;
+    -moz-animation:spin .5s ease-in-out 1;
+    animation:spin .5s ease-in-out 1;
+}
+
+footer p a {
+	font-size: 1em;
+	text-decoration: underline;
+	}
+
+
 
 	
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -179,17 +188,8 @@ footer {
 
 
 h1	{
-	float: left;
-	width: 450px;
-	font-size: 3.4em;
-	}
-	
-button {
-	border-radius: 100%;
-	height: 200px;
-	width: 200px;
-	background-color: pink;
-	margin: 0 auto;
+
+	font-size: 3em;
 	}
 
 #desc	{
@@ -199,30 +199,28 @@ button {
 	}
 
 #desc p {
-	font-size: 2.4em;
 
-	}
 
-#contact {
-	font-size: 2.5em;
 	}
 
 #recent p {
-	font-size: 2.4em;
+	font-size: 1.3em;
 	}
-
 	
 footer {
 	height: 180px;
 	color: #000;
-	background-color:#3A7230;
 	}	
 	
-
+footer ul {
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	}
 	
-footer p {
-	font-size: 2.4em;
-	margin: 90px auto 10px 8%;
+footer ul li {
+	font-size: 2em;
+	margin: 0 auto 5px 21%;
 	}
 
 	
@@ -231,36 +229,24 @@ footer p {
 
 	
 	@media all and (min-width: 890px) and (orientation: landscape), (min-device-width: 890px) {
-	
-	
-	
-
-
-#main {
-	height: 750px;
-}
-
-#main ul li {
-	margin:50px auto 50px 9%;
-	}
-	
-
-	
 
 
 footer {
 	width: 810px;
 	color: #000;
-	background-color:  #3A7230;
 	}	
-
 	
-footer p{
+footer ul {
+	width: 100%;
+	height: 100px;
+	margin: 0;
+	}
+	
+footer ul li {
 	font-size: 2em;
 	margin: 0 auto 5px 20%;
 	}
 	
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
