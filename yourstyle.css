@@ -144,19 +144,22 @@ footer {
 	padding: 10px;
 	}
 	
+footer {
+	width: 650px;
+	color: #000;
+	background-color: #fff;
+	}	
+	
 footer ul {
-	width: 380px;
-	height: 120px;
-	list-style: none;
-	margin: 0 auto;
+	width: 100%;
+	height: 100px;
+	margin: 0;
 	}
 	
 footer ul li {
 	font-size: 2em;
-	display: inline;
-	float: left;
-	margin: 10px auto 10px 15%;
-}
+	margin: 0 auto 5px 20%;
+	}
 
 footer a {
 	color: #000; 
@@ -210,7 +213,7 @@ h1	{
 	
 footer ul li {
 	font-size: 2em;
-	margin: 0 auto 5px 21%;
+	margin: 0 auto 5px 10%;
 	}
 
 	
@@ -223,7 +226,7 @@ footer ul li {
 	
 footer ul li {
 	font-size: 2em;
-	margin: 0 auto 5px 20%;
+	margin: 0 auto 5px 10%;
 	}
 	
 
