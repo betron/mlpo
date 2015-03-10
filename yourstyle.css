@@ -57,8 +57,8 @@ a:hover {
 
 h1	{
 	float: left;
-	width: 450px;
-	font-size: 3em;
+	width: 460px;
+	font-size: 3.2em;
 	font-family: 'gravitas one';
 	text-align: center;
 	color: black;
@@ -77,7 +77,7 @@ img {
 #desc	{
 	float: left;
 	width: 405px;
-	margin-left: 31%;
+	margin-left: 30%;
 	text-align: center;
 	}
 
@@ -85,13 +85,8 @@ img {
 	font-size: 1.8em;
 	line-height: 1.8em;
 	font-family: "lato", sans-serif;
-	margin-left: 2px;
 	margin-top: 30px;
 	
-	}
-	
-#desc span {
-	text-decoration: line-through;
 	}
 
 #recent	{
@@ -137,26 +132,23 @@ img {
 	}
 		
 footer {
+	width: 650px;
 	height: 160px;
 	background-color:#3A7230;
 	margin:0 auto;
 	text-align: center;
 	padding: 10px;
-	}
-	
-footer {
-	width: 650px;
-	color: #000;
-	background-color: #fff;
 	}	
 	
 footer ul {
 	width: 100%;
 	height: 100px;
 	margin: 0;
+	list-style: none;
 	}
 	
 footer ul li {
+	display: inline;
 	font-size: 2em;
 	margin: 0 auto 5px 20%;
 	}
@@ -197,7 +189,7 @@ h1	{
 
 #desc	{
 
-	width: 450px;
+	width: 460px;
 
 	}
 
