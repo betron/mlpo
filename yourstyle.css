@@ -100,7 +100,7 @@ img {
 	}
 	
 #recent li {
-	margin:0 0 300px 40%;
+	margin:0 0 300px 30%;
 	padding: 10px;
 	text-align: none;
 	width: 400px;
@@ -132,6 +132,7 @@ img {
 	}
 		
 footer {
+	clear: both;
 	width: 650px;
 	height: 160px;
 	background-color:#3A7230;
@@ -139,6 +140,10 @@ footer {
 	text-align: center;
 	padding: 10px;
 	}	
+	
+footer p {
+	height: 300px;
+	}
 	
 footer ul {
 	width: 100%;
@@ -193,10 +198,6 @@ h1	{
 
 	}
 
-#desc p {
-
-
-	}
 
 #recent p {
 	font-size: 1.3em;
