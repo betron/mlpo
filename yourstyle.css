@@ -57,8 +57,7 @@ a:hover {
 
 h1	{
 	float: left;
-	width: 460px;
-	font-size: 3.2em;
+	font-size: 3.3em;
 	font-family: 'gravitas one';
 	text-align: center;
 	color: black;
@@ -76,7 +75,6 @@ img {
 
 #desc	{
 	float: left;
-	width: 405px;
 	margin-left: 30%;
 	text-align: center;
 	}
@@ -139,10 +137,11 @@ footer {
 	margin:0 auto;
 	text-align: center;
 	padding: 10px;
+	font-family: "lato", sans-serif;
 	}	
 	
 footer p {
-	height: 300px;
+	height: 20px;
 	}
 	
 footer ul {
@@ -155,7 +154,7 @@ footer ul {
 footer ul li {
 	display: inline;
 	font-size: 2em;
-	margin: 0 auto 5px 10%;
+	margin: 0 auto 5px 5%;
 	}
 
 footer a {
@@ -189,7 +188,7 @@ footer p a {
 
 h1	{
 
-	font-size: 3em;
+
 	}
 
 #desc	{
