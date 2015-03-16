@@ -211,20 +211,16 @@ h1	{
 
 #recent p {
 	font-size: 1.3em;
-	}
-
-footer ul {
-	margin-left: 5%;
 	}	
 	
 footer ul li {
 	font-size: 2.8em;
-	margin: 20px auto 5px 5%;
+	margin: 20px auto 5px 10%;
 	}
 	
 footer p {
 	font-size: 3em;
-	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 	
