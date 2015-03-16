@@ -417,12 +417,12 @@ h1 {
 #main button {
 	height: 195px;
 	width: 195px;
-	font-size: 2em;
-	line-height: 6em;
+	font-size: 1.4em;
+	line-height: 5em;
 	}
 	
 #main a {
-	font-size: 3em;
+	font-size: 1em;
 	}
 
 #little {
@@ -432,7 +432,7 @@ h1 {
 #little ul li {
 	margin: 20px auto 20px 19%;
 	width: 200px;
-	font-size: 3em;
+	font-size: 1em;
 	}
 	
 #holder {
@@ -454,7 +454,7 @@ h1 {
 	
 #pond a {
     text-align: center;
-	font-size: 3em;
+	font-size: 1em;
 	}
 	
 footer {
