@@ -480,12 +480,12 @@ footer ul li {
 
 
 	
-	@media all and (min-width: 890px)  {
+@media all and (min-width: 890px) and (orientation: landscape)  {
 	
 	
 	
 #topBanner {
-	background-color: #fff;
+	background-color: blue;
 	}
 
 #main {
