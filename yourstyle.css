@@ -150,7 +150,7 @@ footer p {
 	
 footer ul {
 	width: 100%;
-	height: 120px;
+	height: 140px;
 	margin: 0 0 10px;
 	padding-top: 30px;
 	list-style: none;
@@ -207,7 +207,7 @@ h1	{
 
 #desc p {
 		font-size: 2.4em;
-		color: pink;
+		
 	}
 
 #recent p {
@@ -219,12 +219,13 @@ footer ul {
 	}
 	
 footer ul li {
-	font-size: 2.8em;
+	font-size: 3em;
 	margin: 20px 15% 5px 0;
 	}
 	
 footer p {
-	font-size: 3em;
+	font-size: 2.1em;
+	color: pink;
 	padding-bottom: 20px;
 }
 
