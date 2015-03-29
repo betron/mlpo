@@ -34,7 +34,7 @@ body	{
 		}
 		
 a {
-	color: #000;
+	color: #46427F;
 	text-decoration: underline;
 	padding-bottom: 1px;
 	}
@@ -125,9 +125,6 @@ img {
 	color: black;
 	}
 	
-#recent a {
-	color: black;
-	}
 	
 
 		
@@ -161,7 +158,6 @@ footer ul li {
 	}
 
 footer a {
-	color: #000; 
 	font-size: 2em;
 	display: inline;
 	margin: 0 auto 10px;
