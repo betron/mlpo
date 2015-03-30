@@ -18,6 +18,11 @@
 	
 <style type="text/css" media="all">@import"yourstyle.css";</style>
 <script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>
+<script>
+// Picture element HTML5 shiv
+document.createElement( "picture" );
+</script>
+<script src="picturefill.min.js" async></script>
 
 
 </head>
@@ -39,14 +44,19 @@
 				<div id="recent">
 				
 					<ul>					
-					<li><a href="/JFPpage.html"><img src="images/WarIsAForceBig.png" alt="[JonathanFoxPoetry.com]"/></a>
-					<p><a href="/JFPpage.html">Web Sites,</a> <span>HTML, CSS, Javascript, Wordpress</span></li>
+					<li><a href="/JFPpage.html"><img sizes="(min-width: 40em) 80vw, 100vw"
+						srcset="images/foxSmall.png 375w, images/foxLarge.png 480w" alt="[Jonathan Fox Poetry]">  </a>
+					<p><a href="/JFPpage.html">Web Sites,</a><br>
+					    <span>HTML, CSS, Javascript, Wordpress</span></li>
 					
-     				<li><a href="/WarIsAForce.html"><img src="images/WarIsAForceBig.png" alt="[Plane Game]"/></a>
-					<p><a href="/WarIsAForce.html">Games,</a> <span>Javascript</span>
+     				<li><a href="/WarIsAForce.html"><img sizes="(min-width: 40em) 80vw, 100vw"
+						srcset="images/WarIsAForce.png 375w, images/WarIsAForceBig.png 480w" alt="[Plane Game]">  </a>
+					<p><a href="/WarIsAForce.html">Games,</a><br> 
+					    <span>Javascript</span>
 					
 					<li><a href="/icons.html"><img src="images/MedLogIcon.png" alt="[Apt 88 Logo]"/></a>
-					<p><a href="/WarIsAForce.html">Icons, Logos,</a> <span>Photoshop, Illustrator, InDesign</span>
+					<p><a href="/WarIsAForce.html">Icons, Logos,</a><br> 
+					    <span>Photoshop, Illustrator, InDesign</span>
 					
                     
                     </li>
