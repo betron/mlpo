@@ -96,7 +96,7 @@ img {
 #recent ul {
 	list-style: none;
 
-	padding-top: 120px;
+	padding-top: 110px;
 	}
 	
 #recent li {
@@ -227,6 +227,7 @@ footer ul li {
 footer p {
 	font-size: 3em;
 	padding-bottom: 20px;
+	border: 2px solid red;
 }
 
 	
@@ -246,6 +247,7 @@ footer ul li {
 	
 footer p {
 	font-size: 1.4em;
+	border: none;
 }
 	
 
