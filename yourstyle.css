@@ -247,7 +247,7 @@ footer ul li {
 	
 footer p {
 	font-size: 1.4em;
-	border: none;
+
 }
 	
 
@@ -272,8 +272,9 @@ h1	{
 	font-size: 1.9em;
 	}
 
- 
- 
+footer p {
+	border: none;
+	}
  
  
  
