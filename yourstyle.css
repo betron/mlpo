@@ -27,6 +27,7 @@ body	{
 	max-width: 1100px;
 	padding: 0;
 	border: 0;	
+	background-color: #3A7230;
 	}
 
 .page	{
@@ -34,7 +35,7 @@ body	{
 		}
 		
 a {
-	color: #000;
+	color: #3A7230;
 	text-decoration: underline;
 	padding-bottom: 1px;
 	}
@@ -46,7 +47,7 @@ a:hover {
 #banner	{
 	height: 472px;
 	width: 100%;
-	background-color: #3A7230;
+	background-color: #fff;
 	margin: 0;
 	padding: 0;
 	}	
@@ -88,18 +89,19 @@ img {
 	}
 
 #recent	{
-	height: 1700px;
-	padding-bottom: 10px;
+	height: 2000px;
+	background-color: #2D2E34;
 	}
 	
 #recent ul {
 	list-style: none;
-	margin: 80px 0 0;
+
+	padding-top: 120px;
 	}
 	
 #recent li {
-	margin:0 0 300px 30%;
-	padding: 10px;
+	margin:0 0 0 30%;
+	padding: 10px 0 100px;
 	text-align: none;
 	width: 400px;
 	float: left;
@@ -118,11 +120,11 @@ img {
 	font-family: "lato", sans-serif;
 	line-height: 1.3em;
 	width: 100%;
+	
 	}
 	
 #recent span 	{
-	font-style: oblique;
-	color: black;
+	color: #BEC4CC;
 	}
 	
 	
@@ -132,10 +134,11 @@ footer {
 	clear: both;
 	width: 100%;
 	height: 230px;
-	background-color:#3A7230;
+	background-color:#fff;
 	margin:0 auto;
 	text-align: center;
 	font-family: "lato", sans-serif;
+
 	}	
 	
 footer p {
@@ -150,6 +153,7 @@ footer ul {
 	margin: 0 0 10px;
 	padding-top: 30px;
 	list-style: none;
+
 	}
 	
 footer ul li {
@@ -159,7 +163,7 @@ footer ul li {
 	}
 
 footer a {
-	color: #000;
+	color: #3A7230;
 	font-size: 2em;
 	display: inline;
 	margin: 0 auto 10px;
@@ -173,7 +177,6 @@ footer a:hover {
 }
 
 footer p a {
-	color: #46427F;
 	font-size: 1em;
 	text-decoration: underline;
 	}
@@ -188,7 +191,7 @@ footer p a {
 
 
 #banner	{
-	height: 572px;
+	height: 560px;
 	}
 
 h1	{
@@ -212,7 +215,8 @@ h1	{
 	}	
 
 footer ul {
-	margin:20px 0 0;
+	margin:0;
+	padding-top: 20px;
 	}
 	
 footer ul li {
@@ -232,7 +236,7 @@ footer p {
 	
 	@media all and (min-width: 890px), (orientation: landscape) {
 #banner	{
-	height: 572px;
+
 	}
 	
 footer ul li {
@@ -248,6 +252,10 @@ footer p {
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 @media all and (min-width: 1100px){
+
+#banner	{
+	height: 472px;
+	}
  
 h1	{
 	font-size: 3.5em;
@@ -262,10 +270,6 @@ h1	{
 	font-size: 1.9em;
 	}
 
- 
-footer {
-	background-color: #3A7230;
-}
  
  
  
