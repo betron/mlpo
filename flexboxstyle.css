@@ -1,0 +1,225 @@
+/* Brendan Tronconi.com */
+
+/* Remove browser styles*/
+	
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+		}
+			 
+	 
+body	{	
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1100px;
+	padding: 0;
+	border: 0;	
+	background-color: #3A7230;
+	}
+
+.page	{
+	margin: 0 auto;
+		}
+		
+a {
+	color: #3A7230;
+	text-decoration: underline;
+	padding-bottom: 1px;
+	}
+	
+a:hover {
+	opacity: .8;
+	}
+
+#banner	{
+	height: 472px;
+	width: 100%;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	}	
+	
+#banner a {
+	text-decoration: none;
+	}	
+
+h1	{
+	float: left;
+	font-size: 3em;
+	font-family: 'gravitas one';
+	text-align: center;
+	color: black;
+    margin-top: 55px;
+    margin-bottom: 40px;
+    width: 100%;
+	}
+	
+
+img {
+	max-width: 100%;
+	}
+
+#desc	{
+	float: left;
+	margin-left: 25%;
+	text-align: center;
+	}
+
+
+#recent	{
+	height: 1500px;
+	background-color: #2D2E34;
+	}
+	
+.products{
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	}
+	
+.products > div {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	}
+	
+.products > div:nth-child(2){
+	margin: 0 9em;
+	}
+
+
+
+
+.flex {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.flex > *{
+	min-width: 100px;
+	min-height: 100px;
+}
+
+header{
+	background: rgba(220, 220, 220, 1);
+}
+article {
+	background: rgba(200, 200, 200, .8);
+}
+aside{
+	background: rgba(200, 200, 200, .6);
+}
+footer{
+	background:rgba(200, 200, 200, .4);
+}
+
+
+
+	
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media all and (min-width: 660px) {
+
+
+#banner	{
+	height: 560px;
+	}
+
+h1	{
+	font-size: 4em;
+
+	}
+
+#desc	{
+
+	width: 500px;
+
+	}
+
+#desc p {
+		font-size: 2.4em;
+		
+	}
+
+#recent p {
+	font-size: 1.9em;
+	}	
+
+footer ul {
+	margin:0;
+	padding-top: 20px;
+	}
+	
+footer ul li {
+	font-size: 3em;
+	margin: 20px 15% 5px 0;
+	}
+	
+footer p {
+	font-size: 1.4em;
+	padding-bottom: 20px;
+}
+
+	
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+	
+	@media all and (min-width: 890px), (orientation: landscape) {
+#banner	{
+
+	}
+	
+footer ul li {
+	font-size: 3em;
+	margin: 0 5% 5px 5%;
+	}
+	
+footer p {
+	font-size: 1.4em;
+
+}
+	
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media all and (min-width: 1100px){
+
+#banner	{
+	height: 472px;
+	}
+ 
+h1	{
+	font-size: 3.5em;
+
+	}
+ 
+#desc	{
+	margin-left: 27%;
+	}
+	
+#desc p {
+	font-size: 1.9em;
+	}
+
+
+ 
+ 
+ 
+ 
+}}}
