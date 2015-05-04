@@ -102,23 +102,27 @@ img {
 
 
 
-
 .flex {
 	display: flex;
-	flex-flow: column;
-	align-items: center;
-	justify-content: space-around;
+	flex-flow: row;
+	align-items: flex-end;
+	justify-content: flex-end;
 }
+
 .flex > *{
 	min-width: 100px;
-	min-height: 100px;
+	height: 100px;
+	
+
 }
 
 header{
 	background: rgba(220, 220, 220, 1);
+	flex-grow: 2;
 }
 article {
 	background: rgba(200, 200, 200, .8);
+	flex-grow: 2;
 }
 aside{
 	background: rgba(200, 200, 200, .6);
