@@ -64,6 +64,7 @@ h1	{
 	color: black;
     margin-top: 55px;
     margin-bottom: 40px;
+    width: 100%;
 	}
 	
 h2	{
@@ -126,7 +127,16 @@ img {
 #recent span 	{
 	color: #BEC4CC;
 	}
+ 
+#recent article {
+	margin: 0 0 0 30%;
+	padding: 10px 0 100px;
+	width: 400px;
+	}
 	
+#recent article p {
+	color: #BEC4CC;
+	}	
 	
 
 		
