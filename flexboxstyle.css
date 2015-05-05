@@ -57,7 +57,7 @@ h1	{
 .flex {
    display: flex;
    align-items: center;
-   justify-content: flex-start;
+   justify-content: center;
    flex-flow: column wrap;
    align-content: stretch;
    height: 450px;
