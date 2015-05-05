@@ -44,63 +44,15 @@ a:hover {
 	opacity: .8;
 	}
 
-#banner	{
-	height: 472px;
-	width: 100%;
-	background-color: #fff;
-	margin: 0;
-	padding: 0;
-	}	
-	
-#banner a {
-	text-decoration: none;
-	}	
-
 h1	{
-	float: left;
+
 	font-size: 3em;
 	font-family: 'gravitas one';
 	text-align: center;
 	color: black;
     margin-top: 55px;
-    margin-bottom: 40px;
     width: 100%;
 	}
-	
-
-img {
-	max-width: 100%;
-	}
-
-#desc	{
-	float: left;
-	margin-left: 25%;
-	text-align: center;
-	}
-
-
-#recent	{
-	height: 1500px;
-	background-color: #2D2E34;
-	}
-	
-.products{
-	display: flex;
-	flex-flow: row;
-	justify-content: center;
-	}
-	
-.products > div {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-	}
-	
-.products > div:nth-child(2){
-	margin: 0 9em;
-	}
-
-
 
 .flex {
    display: flex;
@@ -108,12 +60,15 @@ img {
    justify-content: flex-start;
    flex-flow: column wrap;
    align-content: stretch;
-   height: 400px;
+   height: 450px;
+   padding-top: 150px;
 }
 
 .flex > *{
 	min-width: 100px;
-	height: 200px;
+	height: 180px;
+	margin-top: 15px;
+
 }
 
 header	{
@@ -133,12 +88,12 @@ footer	{
 }
 
 div.one {
-	background-color: pink;
+	background-color: blue;
 
 }
 
 div.two {
-	background-color: purple;	
+	background-color: orange;	
 }
 
 div.three{
