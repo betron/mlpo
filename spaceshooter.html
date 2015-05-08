@@ -26,6 +26,7 @@ function preload() {
     game.load.spritesheet('buttonfire', 'assets/button-round-a.png',96, 96);
     game.load.spritesheet('buttonthrust', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
+    game.load.spritesheet('asteroid', 'assets/animated_asteroid.png',96,64);
 
 	// fullscreen setup
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -76,6 +77,24 @@ function create() {
 
     sprite.body.drag.set(100);
     sprite.body.maxVelocity.set(200);
+
+    // Add the Asteroid
+    asteroid = game.add.sprite( 200, 200, 'asteroid');
+
+   /*setupEnemies: function () {
+    this.enemyPool = this.add.group();
+    this.enemyPool.enableBody = true;
+    this.enemyPool.physicsBodyType = Phaser.Physics.ARCADE;
+    this.enemyPool.createMultiple(50, 'greenEnemy');
+    this.enemyPool.setAll('anchor.x', 0.5);
+    this.enemyPool.setAll('anchor.y', 0.5);
+    this.enemyPool.setAll('outOfBoundsKill', true);
+    this.enemyPool.setAll('checkWorldBounds', true);
+    this.enemyPool.setAll('reward', BasicGame.ENEMY_REWARD, false, false, 0, true);
+    this.enemyPool.setAll(
+      'dropRate', BasicGame.ENEMY_DROP_RATE, false, false, 0, true
+    );
+*/
 
     //  Game input
     cursors = game.input.keyboard.createCursorKeys();
