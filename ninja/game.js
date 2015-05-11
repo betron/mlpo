@@ -23,7 +23,7 @@ window.onload = function() {
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.setScreenSize(true);
 			game.load.image("ninja", "ninja.png"); 
-			game.load.image("pole", "pole.png");
+			game.load.image("pole", "tree.png");
                game.load.image("powerbar", "powerbar.png");
 		},
 		create:function(){
