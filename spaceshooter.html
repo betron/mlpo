@@ -26,7 +26,7 @@ function preload() {
     game.load.spritesheet('buttonfire', 'assets/button-round-a.png',96, 96);
     game.load.spritesheet('buttonthrust', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
-    game.load.spritesheet('asteroid', 'assets/animated_asteroid.png',96,64);
+    game.load.spritesheet('asteroid', 'assets/animated_asteroid.png',64,64);
 
 	// fullscreen setup
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -35,6 +35,7 @@ function preload() {
 
 var sprite;
 var cursors;
+var asteroid;
 
 var bullet;
 var bullets;
@@ -72,7 +73,7 @@ function create() {
     sprite = game.add.sprite(300, 300, 'ship');
     sprite.anchor.set(0.5);
 
-    //  and its physics settings
+    // Ship physics settings
     game.physics.enable(sprite, Phaser.Physics.ARCADE);
 
     sprite.body.drag.set(100);
@@ -80,21 +81,13 @@ function create() {
 
     // Add the Asteroid
     asteroid = game.add.sprite( 200, 200, 'asteroid');
+    asteroid.anchor.set(0.5);
+    asteroid.enableBody = true;
 
-   /*setupEnemies: function () {
-    this.enemyPool = this.add.group();
-    this.enemyPool.enableBody = true;
-    this.enemyPool.physicsBodyType = Phaser.Physics.ARCADE;
-    this.enemyPool.createMultiple(50, 'greenEnemy');
-    this.enemyPool.setAll('anchor.x', 0.5);
-    this.enemyPool.setAll('anchor.y', 0.5);
-    this.enemyPool.setAll('outOfBoundsKill', true);
-    this.enemyPool.setAll('checkWorldBounds', true);
-    this.enemyPool.setAll('reward', BasicGame.ENEMY_REWARD, false, false, 0, true);
-    this.enemyPool.setAll(
-      'dropRate', BasicGame.ENEMY_DROP_RATE, false, false, 0, true
-    );
-*/
+    // Asteroid physics settings
+    game.physics.enable(asteroid, Phaser.Physics.ARCADE);
+    asteroid.body.drag.set(200);
+    asteroid.body.maxVelocity.set(300);
 
     //  Game input
     cursors = game.input.keyboard.createCursorKeys();
@@ -168,7 +161,12 @@ function update() {
 
     screenWrap(sprite);
 
+    screenWrapA(asteroid);
+    
     bullets.forEachExists(screenWrap, this);	
+
+    game.physics.arcade.collide(sprite, asteroid);
+    game.physics.arcade.collide(asteroid, bullets);
 }
 
 function fireBullet () {
@@ -232,6 +230,46 @@ function screenWrap (sprite) {
     }
 
 }
+
+function screenWrapA (asteroid) {
+
+    if (asteroid.x < 0)
+    {
+        asteroid.x = game.width;
+    }
+    else if (asteroid.x > game.width)
+    {
+        asteroid.x = 0;
+    }
+
+    if (asteroid.y < 0)
+    {
+        asteroid.y = game.height;
+    }
+    else if (asteroid.y > game.height)
+    {
+        asteroid.y = 0;
+    }
+
+}
+
+function checkCollisions () {
+      this.physics.arcade.overlap(
+        this.sprite, this.asteroid, this.playerHit, null, this
+      );
+
+      this.physics.arcade.overlap(
+        this.asteroid, this.bullets, this.asteroidHit, null, this
+      );
+  }
+
+function asteroidHit (bullet, asteroid)  {
+    asteroid.kill();
+  }
+
+function playerHit (player, asteroid) {
+    player.kill();
+  }
 
 function gofull() { game.scale.startFullScreen(false);}
 
