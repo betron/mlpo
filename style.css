@@ -156,6 +156,7 @@ a:visited {
 #little h1	{
 	text-align: center;
 	margin: 7% auto 0;
+	transform: skewX(4deg) rotate(4deg);
 	font-size: 3em;
 	color: white;
 	font-family: 'Braggadocio', 'Erica One', 'Times New Roman', serif;
@@ -179,10 +180,12 @@ a:visited {
 	padding-bottom: 10px;
 	font-size: 1.6em;
 	text-transform: uppercase;
+	transform: skewX(-4deg) rotate(-4deg);
 	}
 	
 #little h3 {
 	width: 14em;
+	transform: skewX(-4deg) rotate(-4deg);
 	}
 	
 #pond	{
