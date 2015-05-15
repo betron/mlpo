@@ -166,7 +166,13 @@ function update() {
     bullets.forEachExists(screenWrap, this);	
 
     game.physics.arcade.collide(sprite, asteroid);
-    game.physics.arcade.collide(asteroid, bullets);
+    game.physics.arcade.collide(asteroid, bullets, collisionHandler, null, this);
+
+    
+}
+
+function collisionHandler (asteroid, bullets) {
+    asteroid.kill();
 }
 
 function fireBullet () {
@@ -252,24 +258,6 @@ function screenWrapA (asteroid) {
     }
 
 }
-
-function checkCollisions () {
-      this.physics.arcade.overlap(
-        this.sprite, this.asteroid, this.playerHit, null, this
-      );
-
-      this.physics.arcade.overlap(
-        this.asteroid, this.bullets, this.asteroidHit, null, this
-      );
-  }
-
-function asteroidHit (bullet, asteroid)  {
-    asteroid.kill();
-  }
-
-function playerHit (player, asteroid) {
-    player.kill();
-  }
 
 function gofull() { game.scale.startFullScreen(false);}
 
