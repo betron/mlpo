@@ -22,9 +22,9 @@ window.onload = function() {
 		preload:function(){
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.setScreenSize(true);
-			game.load.image("ninja", "ninja.png"); 
-			game.load.image("pole", "tree.png");
-               game.load.image("powerbar", "powerbar.png");
+			game.load.spritesheet("ninja", "mechsprite.png", 62, 115); 
+			game.load.image("pole", "treeOne.png");
+            game.load.image("powerbar", "powerbar.png");
 		},
 		create:function(){
 			ninjaJumping = false;
@@ -37,9 +37,11 @@ window.onload = function() {
 				font:"bold 16px Arial"
 			});
 			updateScore();
-			game.stage.backgroundColor = "#87CEEB";
+			game.stage.backgroundColor = "#3A7230";
 			game.physics.startSystem(Phaser.Physics.ARCADE);
 			ninja = game.add.sprite(80,0,"ninja");
+			ninja.animations.add('up', [2, 3, 4, 5, 6], 6, false);
+			ninja.animations.add('preup', [0, 1], 2, false);
 			ninja.anchor.set(0.5);
 			ninja.lastPole = 1;
 			game.physics.arcade.enable(ninja);              
@@ -61,11 +63,12 @@ window.onload = function() {
 	}     
 	function prepareToJump(){
 		if(ninja.body.velocity.y==0){
+			  ninja.animations.play('preup');
 	          powerBar = game.add.sprite(ninja.x,ninja.y-50,"powerbar");
 	          powerBar.width = 0;
 	          powerTween = game.add.tween(powerBar).to({
 			   width:100
-			}, 1000, "Linear",true); 
+			}, 1000, "Linear",true);
 	          game.input.onDown.remove(prepareToJump, this);
 	          game.input.onUp.add(jump, this);
           }        	
@@ -78,6 +81,7 @@ window.onload = function() {
           ninjaJumping = true;
           powerTween.stop();
           game.input.onUp.remove(jump, this);
+          ninja.animations.play('up');
      }     
      function addNewPoles(){
      	var maxPoleX = 0;
