@@ -168,9 +168,14 @@ function update() {
     bullets.forEachExists(screenWrap, this);	
 
     game.physics.arcade.collide(sprite, asteroid);
+
     game.physics.arcade.collide(asteroid, bullets);
 
+    game.physics.arcade.collide(asteroid, bullets, collisionHandler, null, this);
 
+function collisionHandler (asteroid, bullets) {
+    asteroid.kill();
+    }
 }
 
 function fireBullet () {
