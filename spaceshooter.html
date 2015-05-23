@@ -89,6 +89,8 @@ function create() {
     asteroid.body.drag.set(200);
     asteroid.body.maxVelocity.set(300);
 
+    asteroid.animations.add('rotate', [0, 1, 2, 3, 4, 5], 10, true);
+
     //  Game input
     cursors = game.input.keyboard.createCursorKeys();
     game.input.keyboard.addKeyCapture([ Phaser.Keyboard.SPACEBAR ]);
@@ -162,11 +164,13 @@ function update() {
     screenWrap(sprite);
 
     screenWrapA(asteroid);
-    
+
     bullets.forEachExists(screenWrap, this);	
 
     game.physics.arcade.collide(sprite, asteroid);
     game.physics.arcade.collide(asteroid, bullets);
+
+
 }
 
 function fireBullet () {
@@ -252,24 +256,6 @@ function screenWrapA (asteroid) {
     }
 
 }
-
-function checkCollisions () {
-      this.physics.arcade.overlap(
-        this.sprite, this.asteroid, this.playerHit, null, this
-      );
-
-      this.physics.arcade.overlap(
-        this.asteroid, this.bullets, this.asteroidHit, null, this
-      );
-  }
-
-function asteroidHit (bullet, asteroid)  {
-    asteroid.kill();
-  }
-
-function playerHit (player, asteroid) {
-    player.kill();
-  }
 
 function gofull() { game.scale.startFullScreen(false);}
 
