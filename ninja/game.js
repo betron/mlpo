@@ -22,11 +22,15 @@ window.onload = function() {
 		preload:function(){
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.setScreenSize(true);
+			game.load.image("clear", "floor.jpg");
+			game.load.image("stand", "stand.jpg");
 			game.load.spritesheet("ninja", "mechsprite.png", 62, 115); 
 			game.load.image("pole", "treeOne.png");
             game.load.image("powerbar", "powerbar.png");
 		},
 		create:function(){
+			background = game.add.tileSprite(0, game.height-160, game.width, 0, 'clear');
+			stand = game.add.image(game.width-500, game.height-225, 'stand');
 			ninjaJumping = false;
 			ninjaFallingDown = false;
 			score = 0;
@@ -37,7 +41,7 @@ window.onload = function() {
 				font:"bold 16px Arial"
 			});
 			updateScore();
-			game.stage.backgroundColor = "#3A7230";
+			game.stage.backgroundColor = "#7cc5ff";
 			game.physics.startSystem(Phaser.Physics.ARCADE);
 			ninja = game.add.sprite(80,0,"ninja");
 			ninja.animations.add('up', [2, 3, 4, 5, 6], 6, false);
