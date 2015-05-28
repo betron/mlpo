@@ -23,13 +23,15 @@ window.onload = function() {
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.setScreenSize(true);
 			game.load.image("clear", "floor.jpg");
-			game.load.image("stand", "stand.jpg");
+			game.load.image("stand", "lastStand.png");
+			game.load.image("sky", "sky.gif");
 			game.load.spritesheet("ninja", "mechsprite.png", 62, 115); 
 			game.load.image("pole", "treeOne.png");
             game.load.image("powerbar", "powerbar.png");
 		},
 		create:function(){
 			background = game.add.tileSprite(0, game.height-160, game.width, 0, 'clear');
+			sky = game.add.tileSprite(0, 0, game.width, game.height-160, 'sky');
 			stand = game.add.image(game.width-500, game.height-225, 'stand');
 			ninjaJumping = false;
 			ninjaFallingDown = false;
