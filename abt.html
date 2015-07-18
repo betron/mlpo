@@ -16,12 +16,12 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(8000, 6000, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
-    game.load.image('ground', 'assets/ledgeMid.jpg');
-    game.load.image('groundl', 'assets/ledgeLeft.jpg');
+    game.load.image('ground', 'assets/ledgeMid.png');
+    game.load.image('groundl', 'assets/ledgeLeft.png');
     game.load.image('star', 'assets/star.png');
     game.load.image('lizard', 'assets/ball.jpg'); 
 
@@ -78,6 +78,19 @@ function create() {
     ledge.body.immovable = true;
     
     ledge = platforms.create(240, 450, 'groundl');
+    ledge.body.immovable = true;
+
+
+    ledge = platforms.create(5000, 2000, 'ground');
+    ledge.body.immovable = true;
+    
+     ledge = platforms.create(4500, 2700, 'ground');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(3500, 3600, 'groundl');
+    ledge.body.immovable = true;
+    
+    ledge = platforms.create(2400, 4500, 'groundl');
     ledge.body.immovable = true;
     
 
