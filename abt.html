@@ -8,22 +8,31 @@
     <script src="js/gamecontroller.js" type="text/javascript"></script>
     <style type="text/css">
         body {
-            margin: 0, auto;
+            margin: 2% 25%;
+            background-color: #a1a1a1;
+        }
+
+        h1 {
+            font-family: courier, sans-serif;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
+    <h1>a bleak thing</h1>
+
 <script type="text/javascript">
 
-var game = new Phaser.Game(1800, 2000, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(800, 800, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
     game.load.image('sky', 'assets/oldsky.png');
-    game.load.image('groundN', 'assets/ledgeNew.png');
+    game.load.image('groundL', 'assets/ledgeNew.png');
     game.load.image('groundR', 'assets/ledgeRight.png');
     game.load.image('star', 'assets/star.png');
+    game.load.image('fire', 'assets/fireball.png');
     game.load.spritesheet('lizard', 'assets/ball.png', 64, 64); 
 
 }
@@ -33,6 +42,7 @@ var platforms;
 var cursors;
 
 var stars;
+var fires;
 var score = 0;
 var scoreText;
 var left=false;
@@ -59,64 +69,102 @@ function create() {
     game.camera.follow(player); //always center player
 
     //  Now let's create four ledges
-    
 
-    ledge = platforms.create(0, 500, 'groundN');
+   ledge = platforms.create(1200, 300, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(300, 500, 'groundR');
+    ledge = platforms.create(1500, 300, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 500, 'groundN');
+    ledge = platforms.create(900, 450, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 500, 'groundR');
+    ledge = platforms.create(600, 550, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1100, 500, 'groundN');
+    ledge = platforms.create(1600, 1250, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1100, 700, 'groundN');
+    ledge = platforms.create(50, 700, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1300, 700, 'groundN');
+    ledge = platforms.create(300, 850, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 700, 'groundN');
+    ledge = platforms.create(500, 1000, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 420, 'groundN');
+    ledge = platforms.create(1200, 1100, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(700, 350, 'groundN');
+    ledge = platforms.create(900, 1100, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1600, 1000, 'groundR');
+    ledge = platforms.create(1600, 1250, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1000, 'groundR');
+
+    ledge = platforms.create(80, 1300, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1000, 'groundN');
+
+
+
+
+
+    ledge = platforms.create(1800, 1400, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1600, 1000, 'groundR');
+    ledge = platforms.create(200, 1400, 'groundL');
+    ledge.body.immovable = true;    
+
+    ledge = platforms.create(1200, 1400, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1800, 'groundR');
+    ledge = platforms.create(900, 1400, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1800, 'groundN');
+    ledge = platforms.create(1700, 1500, 'groundR');
     ledge.body.immovable = true;
 
-        ledge = platforms.create(1400, 1500, 'groundR');
+    ledge = platforms.create(400, 1500, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1500, 'groundN');
+    ledge = platforms.create(1200, 1600, 'groundL');
     ledge.body.immovable = true;
+
+    ledge = platforms.create(900, 1600, 'groundR');
+    ledge.body.immovable = true;
+
+
+
+
+
+    ledge = platforms.create(0, 1700, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(300, 1700, 'groundL');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(600, 1700, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(900, 1700, 'groundL');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(1200, 1700, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(1500, 1700, 'groundL');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(1600, 700, 'groundR');
+    ledge.body.immovable = true;
+
+
 
     // The player and its settings
-    player = game.add.sprite(100, 10, 'lizard');
+    player = game.add.sprite(30, 1600, 'lizard');
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -139,10 +187,10 @@ function create() {
     stars.enableBody = true;
 
     //  Here we'll create 13 of them evenly spaced apart
-    for (var i = 0; i < 13; i++)
+    for (var i = 0; i < 5; i++)
     {
         //  Create a star inside of the 'stars' group
-        var star = stars.create(i * 70, 0, 'star');
+        var star = stars.create(1600, 0, 'star');
 
         //  Let gravity do its thing
         star.body.gravity.y = 300;
@@ -151,8 +199,15 @@ function create() {
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
 
+    // A fireball to collect
+    fires = game.add.group();
+
+    fires.enableBody = true;
+
+    var fire = fires.create (1660, 670, 'fire');
+
     //  The score
-    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+    scoreText = game.add.text(1600, 600, 'score: 0', { fontSize: '32px', fill: '#000' });
 
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
@@ -165,9 +220,12 @@ function update() {
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.collide(stars, platforms);
+    game.physics.arcade.collide(fires, platforms);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     game.physics.arcade.overlap(player, stars, collectStar, null, this);
+
+    game.physics.arcade.overlap(player, fires, collectFire, null, this);
 
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
@@ -175,13 +233,13 @@ function update() {
     if (cursors.left.isDown)
     {
         //  Move to the left
-        player.body.velocity.x = -150;
+        player.body.velocity.x = -275;
 
     }
     else if (cursors.right.isDown)
     {
         //  Move to the right
-        player.body.velocity.x = 150;
+        player.body.velocity.x = 275;
 
         
     }
@@ -195,7 +253,7 @@ function update() {
     //  Allow the player to jump if they are touching the ground.
     if (cursors.up.isDown && player.body.touching.down)
     {
-        player.body.velocity.y = -250;
+        player.body.velocity.y = -275;
     }
     
     // define what should happen when a button is pressed
@@ -208,10 +266,24 @@ function collectStar (player, star) {
     star.kill();
 
     //  Add and update the score
-    score += 960;
+    score += 20;
     scoreText.text = 'Score: ' + score;
 
-}}
+}
+
+function collectFire (player, fire) {
+    
+    // Removes the fire from the screen
+    fire.kill();
+
+    //  Add and update the score
+    score += 200;
+    scoreText.text = 'Score: ' + score;
+
+}
+
+
+}
 
 </script>
 
