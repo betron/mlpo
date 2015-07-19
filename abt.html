@@ -22,8 +22,9 @@ function preload() {
 
     game.load.image('sky', 'assets/oldsky.png');
     game.load.image('groundN', 'assets/ledgeNew.png');
+    game.load.image('groundR', 'assets/ledgeRight.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('lizard', 'assets/ball.png', 72, 72); 
+    game.load.spritesheet('lizard', 'assets/ball.png', 128, 128); 
 
 }
 
@@ -51,10 +52,6 @@ function create() {
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
 
-    // Here we create the ground.
-    var ground = platforms.create(0, game.world.height - 64, 'ground');
-   
-
     //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
     ground.scale.setTo(2, 2);
 
@@ -68,8 +65,32 @@ function create() {
     
     ledge = platforms.create(0, 200, 'groundN');
     ledge.body.immovable = true;
+
+    ledge = platforms.create(0, 400, 'groundN');
+    ledge.body.immovable = true;
     
-    ledge = platforms.create(100, 550, 'groundN');
+    ledge = platforms.create(0, 600, 'groundN');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(0, 800, 'groundN');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(0, 1000, 'groundN');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(900, 200, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(900, 400, 'groundR');
+    ledge.body.immovable = true;
+    
+    ledge = platforms.create(900, 600, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(900, 800, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(900, 1000, 'groundR');
     ledge.body.immovable = true;
 
 
@@ -135,21 +156,19 @@ function update() {
         //  Move to the left
         player.body.velocity.x = -150;
 
-        player.animations.play('left');
     }
     else if (cursors.right.isDown)
     {
         //  Move to the right
         player.body.velocity.x = 150;
 
-        player.animations.play('right');
+        
     }
     else
     {
-        //  Stand still
-        player.animations.stop();
+        
 
-        player.frame = 2;
+        player.frame = 0;
     }
     
     //  Allow the player to jump if they are touching the ground.
