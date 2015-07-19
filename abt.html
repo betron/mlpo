@@ -23,6 +23,7 @@ function preload() {
     game.load.image('sky', 'assets/oldsky.png');
     game.load.image('ground', 'assets/ledgeMid.png');
     game.load.image('groundl', 'assets/ledgeLeft.png');
+    game.load.image('groundN', 'assets/ledgeNew.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('lizard', 'assets/ball.png', 64, 64); 
 
@@ -67,21 +68,27 @@ function create() {
     //  Now let's create four ledges
     
     
-    ledge = platforms.create(600, 100, 'ground');
+    ledge = platforms.create(0, 200, 'groundN');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(500, 200, 'ground');
+    ledge = platforms.create(600, 400, 'ground');
     ledge.body.immovable = true;
     
-     ledge = platforms.create(450, 270, 'ground');
+     ledge = platforms.create(1000, 650, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(350, 360, 'ground');
+    ledge = platforms.create(600, 850, 'ground');
     ledge.body.immovable = true;
     
-    ledge = platforms.create(240, 450, 'ground');
+    ledge = platforms.create(400, 1300, 'ground');
     ledge.body.immovable = true;
     
+    ledge = platforms.create(800, 800, 'ground');
+    ledge.body.immovable = true;
+
+     ledge = platforms.create(800, 500, 'groundL');
+    ledge.body.immovable = true;
+
 
     // The player and its settings
     player = game.add.sprite(650, 10, 'lizard');
