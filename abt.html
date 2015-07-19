@@ -25,7 +25,7 @@ function preload() {
     game.load.image('groundl', 'assets/ledgeLeft.png');
     game.load.image('groundN', 'assets/ledgeNew.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('lizard', 'assets/ball.png', 64, 64); 
+    game.load.spritesheet('lizard', 'assets/ball.png', 72, 72); 
 
 }
 
@@ -82,7 +82,7 @@ function create() {
 
 
     // The player and its settings
-    player = game.add.sprite(650, 10, 'lizard');
+    player = game.add.sprite(100, 10, 'lizard');
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
