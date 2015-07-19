@@ -24,7 +24,7 @@ function preload() {
     game.load.image('groundN', 'assets/ledgeNew.png');
     game.load.image('groundR', 'assets/ledgeRight.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('lizard', 'assets/ball.png', 64, 81); 
+    game.load.spritesheet('lizard', 'assets/ball.png', 64, 64); 
 
 }
 
@@ -85,7 +85,10 @@ function create() {
     ledge = platforms.create(900, 800, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 1000, 'groundR');
+    ledge = platforms.create(300, 1000, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(600, 1000, 'groundN');
     ledge.body.immovable = true;
 
     ledge = platforms.create(900, 1000, 'groundR');
