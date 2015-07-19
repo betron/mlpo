@@ -21,8 +21,6 @@ var game = new Phaser.Game(1200, 1400, Phaser.AUTO, '', { preload: preload, crea
 function preload() {
 
     game.load.image('sky', 'assets/oldsky.png');
-    game.load.image('ground', 'assets/ledgeMid.png');
-    game.load.image('groundl', 'assets/ledgeLeft.png');
     game.load.image('groundN', 'assets/ledgeNew.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('lizard', 'assets/ball.png', 72, 72); 
@@ -70,14 +68,8 @@ function create() {
     
     ledge = platforms.create(0, 200, 'groundN');
     ledge.body.immovable = true;
-
-    ledge = platforms.create(100, 400, 'ground');
-    ledge.body.immovable = true;
     
-     ledge = platforms.create(500, 650, 'groundN');
-    ledge.body.immovable = true;
-
-     ledge = platforms.create(900, 900, 'groundL');
+    ledge = platforms.create(100, 550, 'groundN');
     ledge.body.immovable = true;
 
 
