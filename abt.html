@@ -76,28 +76,34 @@ function create() {
     ledge = platforms.create(1100, 500, 'groundN');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(400, 600, 'groundN');
+    ledge = platforms.create(1100, 600, 'groundN');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 600, 'groundN');
+    ledge = platforms.create(1300, 600, 'groundN');
     ledge.body.immovable = true;
 
     ledge = platforms.create(900, 600, 'groundN');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 450, 'groundN');
+    ledge = platforms.create(600, 420, 'groundN');
     ledge.body.immovable = true;
 
     ledge = platforms.create(700, 350, 'groundN');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1000, 1800, 'groundR');
+    ledge = platforms.create(1600, 1800, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(700, 1800, 'groundR');
+    ledge = platforms.create(1400, 1800, 'groundR');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(500, 1800, 'groundN');
+    ledge = platforms.create(900, 1800, 'groundN');
+    ledge.body.immovable = true;
+
+        ledge = platforms.create(1400, 1500, 'groundR');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(900, 1500, 'groundN');
     ledge.body.immovable = true;
 
     // The player and its settings
@@ -108,7 +114,7 @@ function create() {
 
     //  Player physics properties. Give the little guy a slight bounce.
     player.body.bounce.y = 0.2;
-    player.body.gravity.y = 300;
+    player.body.gravity.y = 200;
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
