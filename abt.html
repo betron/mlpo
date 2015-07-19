@@ -52,10 +52,8 @@ function create() {
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
 
-    //  This stops it from falling away when you jump on it
-    ground.body.immovable = true;
 
-                game.camera.follow(player); //always center player
+    game.camera.follow(player); //always center player
 
     //  Now let's create four ledges
     
