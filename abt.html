@@ -24,16 +24,16 @@
 
 <script type="text/javascript">
 
-var game = new Phaser.Game(800, 800, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
 
-    game.load.image('sky', 'assets/oldsky.png');
-    game.load.image('groundL', 'assets/ledgeNew.png');
-    game.load.image('groundR', 'assets/ledgeRight.png');
+    game.load.image('sky', 'assets/background.png');
+    game.load.image('groundL', 'assets/ledgeSquare.png');
+    //game.load.image('groundL', 'assets/ledgeRight.png');
     game.load.image('star', 'assets/star.png');
     game.load.image('fire', 'assets/fireball.png');
-    game.load.spritesheet('lizard', 'assets/ball.png', 64, 64); 
+    game.load.spritesheet('lizard', 'assets/ballRoll.png', 64, 64); 
 
 }
 
@@ -70,101 +70,100 @@ function create() {
 
     //  Now let's create four ledges
 
-   ledge = platforms.create(1200, 300, 'groundR');
+   ledge = platforms.create(1200, 160, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1500, 300, 'groundL');
+    ledge = platforms.create(1500, 160, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 450, 'groundR');
+    ledge = platforms.create(900, 340, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 550, 'groundR');
+    ledge = platforms.create(400, 450, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1600, 1250, 'groundR');
+   
+
+    ledge = platforms.create(30, 600, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(50, 700, 'groundL');
+    ledge = platforms.create(300, 750, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(300, 850, 'groundL');
+    ledge = platforms.create(500, 900, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(500, 1000, 'groundL');
+    ledge = platforms.create(1200, 1000, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1100, 'groundL');
+    ledge = platforms.create(900, 1000, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1100, 'groundR');
-    ledge.body.immovable = true;
-
-    ledge = platforms.create(1600, 1250, 'groundR');
-    ledge.body.immovable = true;
-
-
-    ledge = platforms.create(80, 1300, 'groundL');
+    ledge = platforms.create(1600, 1150, 'groundL');
     ledge.body.immovable = true;
 
 
-
-
-
-
-    ledge = platforms.create(1800, 1400, 'groundL');
+    ledge = platforms.create(80, 1200, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(200, 1400, 'groundL');
+
+
+
+
+
+    ledge = platforms.create(1800, 1300, 'groundL');
+    ledge.body.immovable = true;
+
+    ledge = platforms.create(200, 1300, 'groundL');
     ledge.body.immovable = true;    
 
-    ledge = platforms.create(1200, 1400, 'groundL');
+    ledge = platforms.create(1200, 1300, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1400, 'groundR');
+    ledge = platforms.create(900, 1300, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1700, 1500, 'groundR');
+    ledge = platforms.create(1700, 1490, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(400, 1500, 'groundL');
+    ledge = platforms.create(400, 1490, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1600, 'groundL');
+    ledge = platforms.create(1200, 1650, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1600, 'groundR');
+    ledge = platforms.create(900, 1650, 'groundL');
     ledge.body.immovable = true;
 
 
 
 
 
-    ledge = platforms.create(0, 1700, 'groundR');
+    ledge = platforms.create(0, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(300, 1700, 'groundL');
+    ledge = platforms.create(300, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 1700, 'groundR');
+    ledge = platforms.create(600, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1700, 'groundL');
+    ledge = platforms.create(900, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1700, 'groundR');
+    ledge = platforms.create(1200, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1500, 1700, 'groundL');
+    ledge = platforms.create(1500, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1600, 700, 'groundR');
+    ledge = platforms.create(795, 600, 'groundL');
     ledge.body.immovable = true;
 
 
 
     // The player and its settings
-    player = game.add.sprite(30, 1600, 'lizard');
+    player = game.add.sprite(50, 1600, 'lizard');
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -175,8 +174,8 @@ function create() {
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
-    player.animations.add('left', [0], 1, true);
-    player.animations.add('right', [0], 1, true);
+    player.animations.add('left', [0,1,2,3], 0, true);
+    player.animations.add('right', [0,3,2,1], 0, true);
 
      game.camera.follow(player); //always center player
     
@@ -204,10 +203,10 @@ function create() {
 
     fires.enableBody = true;
 
-    var fire = fires.create (1660, 670, 'fire');
+    var fire = fires.create (800, 570, 'fire');
 
     //  The score
-    scoreText = game.add.text(1600, 600, 'score: 0', { fontSize: '32px', fill: '#000' });
+    scoreText = game.add.text(1600, 30, 'score: 0', { fontSize: '32px', fill: '#000' });
 
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
@@ -235,17 +234,21 @@ function update() {
         //  Move to the left
         player.body.velocity.x = -275;
 
+        player.animations.play('left');
+
     }
     else if (cursors.right.isDown)
     {
         //  Move to the right
         player.body.velocity.x = 275;
 
+        player.animations.play('right');
+
         
     }
     else
     {
-        
+        player.animations.stop();   
 
         player.frame = 0;
     }
