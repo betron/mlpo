@@ -22,13 +22,13 @@
 <body>
 
 <script type="text/javascript">
-var game = new Phaser.Game(320, 480, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(720, 1280, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 
 function preload() {
 
     game.load.image('space', 'assets/deep-space.jpg');
     game.load.image('bullet', 'assets/bullets.png');
-    game.load.image('ship', 'assets/shipPurp.png');
+    game.load.image('ship', 'assets/shipNew.png');
     game.load.spritesheet('buttonfire', 'assets/button-round-a.png',96, 96);
     game.load.spritesheet('buttonthrust', 'assets/button-round-b.png',96,96);
     game.load.spritesheet('buttonhorizontal', 'assets/button-horizontal.png',96,64);
