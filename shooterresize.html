@@ -48,6 +48,8 @@ var left=false;
 var right=false;
 
 function create() {
+
+    if (!game.device.desktop){ game.input.onDown.add(gofull, this); } //go fullscreen on mobile devices
 	
 	this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
@@ -60,7 +62,7 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     //  A spacey background
-    game.add.tileSprite(0, 0, game.width, game.height, 'space');
+    game.add.image(0, 0, 'space');
 
     //  Our ships bullets
     bullets = game.add.group();
@@ -168,7 +170,7 @@ function fireBullet () {
             bullet.reset(sprite.body.x + 16, sprite.body.y + 16);
             bullet.lifespan = 2000;
             bullet.rotation = sprite.rotation;
-            game.physics.arcade.velocityFromRotation(sprite.rotation, 400, bullet.body.velocity);
+            game.physics.arcade.velocityFromRotation(sprite.rotation, 300, bullet.body.velocity);
             bulletTime = game.time.now + 90;
         }
     }
@@ -188,7 +190,7 @@ function fire_now() {
             bullet.reset(sprite.body.x + 16, sprite.body.y + 16);
             bullet.lifespan = 2000;
             bullet.rotation = sprite.rotation;
-            game.physics.arcade.velocityFromRotation(sprite.rotation, 400, bullet.body.velocity);
+            game.physics.arcade.velocityFromRotation(sprite.rotation, 300, bullet.body.velocity);
             bulletTime = game.time.now + 90;
         }
     }
