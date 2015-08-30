@@ -1,40 +1,10 @@
-<!doctype html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8" />
-    <title>A Bleak Thing</title>
-    <script type="text/javascript" src="js/phaser.min.js">
-    </script>
-    <script src="js/gamecontroller.js" type="text/javascript"></script>
-    <style type="text/css">
-        body {
-            margin: 2% 25%;
-            background-color: #a1a1a1;
-        }
+BasicGame.Game = function (game) {
 
-        h1 {
-            font-family: courier, sans-serif;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
+};
 
-    <h1>a bleak thing</h1>
+BasicGame.Game.prototype = {
 
-<script type="text/javascript">
-
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
-
-function preload() {
-
-    game.load.image('sky', 'assets/background.png');
-    game.load.image('groundL', 'assets/ledgeSquare.png');
-    game.load.image('star', 'assets/star.png');
-    game.load.image('fire', 'assets/fireball.png');
-    game.load.spritesheet('lizard', 'assets/ballRoll.png', 64, 64); 
-
-}
+function create() {
 
 var player;
 var platforms;
@@ -48,7 +18,7 @@ var left=false;
 var right=false;
 var jump=false;
     
-function create() {
+
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -313,7 +283,4 @@ function collectFire (player, fire) {
 
 }
 
-</script>
-
-</body>
-</html>
+}
