@@ -370,16 +370,17 @@ footer p {
 
 
 #topBanner {
-	background-color: green;
+	background-color: #fff;
 	}
 
 .logo h1 {
 	font-size: 4em;
 	line-height: 20px;
+	color: #3A7230;
 	}
 
 #main	{
-	height: 1150px;
+	height: 750px;
 	}
 	
 #main h1	{
@@ -391,16 +392,15 @@ footer p {
 	}
 	
 #main ul li {
-
 	height: 210px;
 	width: 210px;
-	font-size: 2em;
+	font-size: 1.7em;
 	}
 	
 #main ul li div	{
-
 	height: 195px;
 	width: 195px;
+	line-height: 2.3em;
 	}
 	
 #main button {
@@ -436,7 +436,7 @@ footer p {
 	}
 
 #pond	{
-	height: 1130px;
+	height: 530px;
 	}
 	
 #pond ul li{
@@ -475,7 +475,11 @@ footer ul li {
 	
 	
 #topBanner {
-	background-color: blue;
+	background-color: #2D2E34;
+	}
+
+.logo h1 {
+	color: #000;
 	}
 
 #main {
