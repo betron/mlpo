@@ -6,7 +6,7 @@ BasicGame.MainMenu = function (game) {
 
 BasicGame.MainMenu.prototype = {
 
-  function create () {
+  create:function () {
 
     //  We've already preloaded our assets, so let's kick right into the Main Menu itself.
     //  Here all we're doing is playing some music and adding a picture and button
@@ -14,22 +14,22 @@ BasicGame.MainMenu.prototype = {
 
     this.add.sprite(0, 0, 'titlepage');
 
-    this.loadingText = this.add.text(this.game.width / 2, this.game.height / 2 + 80, "Press Spacebar or tap/click game to start", { font: "20px monospace", fill: "#fff" });
+    this.loadingText = this.add.text(this.game.width / 2, this.game.height / 2 + 80, "Press Z or tap/click game to start", { font: "20px monospace", fill: "#000" });
     this.loadingText.anchor.setTo(0.5, 0.5);
     
 
   },
 
-  function update () {
+  update:function () {
 
-    if (this.input.keyboard.isDown(Phaser.Keyboard.Spacebar) || this.input.activePointer.isDown) {
+    if (this.input.keyboard.isDown(Phaser.Keyboard.Z) || this.input.activePointer.isDown) {
       this.startGame();
     }
     //  Do some nice funky main menu effect here
 
   },
 
-  function startGame (pointer) {
+  startGame: function (pointer) {
 
     //  Ok, the Play Button has been clicked or touched, so let's stop the music (otherwise it'll carry on playing)
     // this.music.stop();

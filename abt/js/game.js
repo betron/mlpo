@@ -1,10 +1,11 @@
 BasicGame.Game = function (game) {
 
+
 };
 
 BasicGame.Game.prototype = {
 
-function create() {
+create:function () {
 
 var player;
 var platforms;
@@ -17,152 +18,153 @@ var scoreText;
 var left=false;
 var right=false;
 var jump=false;
+
     
 
     //  We're going to be using physics, so enable the Arcade Physics system
-    game.physics.startSystem(Phaser.Physics.ARCADE);
+    this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    game.world.setBounds(0, 0, 1800, 2000);//(x, y, width, height)
+    this.game.world.setBounds(0, 0, 1800, 2000);//(x, y, width, height)
 
 
     //  A simple background for our game
-     bg = game.add.sprite(0, 0, 'sky');
+     bg = this.game.add.sprite(0, 0, 'sky');
      bg.fixedToCamera = true;
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
-    platforms = game.add.group();
+    this.platforms = this.game.add.group();
 
     //  We will enable physics for any object that is created in this group
-    platforms.enableBody = true;
+    this.platforms.enableBody = true;
 
 
-    game.camera.follow(player); //always center player
+    this.game.camera.follow(player); //always center player
 
      // Flag to track if the jump button is pressed
     this.jumping = false;
 
     //  Now let's create four ledges
 
-   ledge = platforms.create(1200, 160, 'groundL');
+   ledge = this.platforms.create(1200, 160, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1500, 160, 'groundL');
+    ledge = this.platforms.create(1500, 160, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 340, 'groundL');
+    ledge = this.platforms.create(900, 340, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(400, 450, 'groundL');
+    ledge = this.platforms.create(400, 450, 'groundL');
     ledge.body.immovable = true;
 
    
 
-    ledge = platforms.create(30, 600, 'groundL');
+    ledge = this.platforms.create(30, 600, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(300, 750, 'groundL');
+    ledge = this.platforms.create(300, 750, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(500, 900, 'groundL');
+    ledge = this.platforms.create(500, 900, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1000, 'groundL');
+    ledge = this.platforms.create(1200, 1000, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1000, 'groundL');
+    ledge = this.platforms.create(900, 1000, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1600, 1150, 'groundL');
-    ledge.body.immovable = true;
-
-
-    ledge = platforms.create(80, 1200, 'groundL');
+    ledge = this.platforms.create(1600, 1150, 'groundL');
     ledge.body.immovable = true;
 
 
-
-
-
-
-    ledge = platforms.create(1800, 1300, 'groundL');
+    ledge = this.platforms.create(80, 1200, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(200, 1300, 'groundL');
+
+
+
+
+
+    ledge = this.platforms.create(1800, 1300, 'groundL');
+    ledge.body.immovable = true;
+
+    ledge = this.platforms.create(200, 1300, 'groundL');
     ledge.body.immovable = true;    
 
-    ledge = platforms.create(1200, 1300, 'groundL');
+    ledge = this.platforms.create(1200, 1300, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1300, 'groundL');
+    ledge = this.platforms.create(900, 1300, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1700, 1490, 'groundL');
+    ledge = this.platforms.create(1700, 1490, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(400, 1490, 'groundL');
+    ledge = this.platforms.create(400, 1490, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1650, 'groundL');
+    ledge = this.platforms.create(1200, 1650, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1650, 'groundL');
+    ledge = this.platforms.create(900, 1650, 'groundL');
     ledge.body.immovable = true;
 
 
 
 
-
-    ledge = platforms.create(0, 1800, 'groundL');
+    //first platform on bottom left 
+    ledge = this.platforms.create(0, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(300, 1800, 'groundL');
+    ledge = this.platforms.create(300, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(600, 1800, 'groundL');
+    ledge = this.platforms.create(600, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(900, 1800, 'groundL');
+    ledge = this.platforms.create(900, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1200, 1800, 'groundL');
+    ledge = this.platforms.create(1200, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1500, 1800, 'groundL');
+    ledge = this.platforms.create(1500, 1800, 'groundL');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(795, 600, 'groundL');
+    ledge = this.platforms.create(795, 600, 'groundL');
     ledge.body.immovable = true;
 
 
 
     // The player and its settings
-    player = game.add.sprite(50, 1600, 'lizard');
+    this.player = this.game.add.sprite(50, 1600, 'lizard');
 
     //  We need to enable physics on the player
-    game.physics.arcade.enable(player);
+    this.physics.enable(this.player, Phaser.Physics.ARCADE);
 
     //  Player physics properties. Give the little guy a slight bounce.
-    player.body.bounce.y = 0.2;
-    player.body.gravity.y = 300;
-    player.body.collideWorldBounds = true;
+    this.player.body.bounce.y = 0.2;
+    this.player.body.gravity.y = 500;
+    this.player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
-    player.animations.add('left', [0,1,2,3], 8, true);
-    player.animations.add('right', [0,3,2,1], 8, true);
+    this.player.animations.add('left', [0,1,2,3], 8, true);
+    this.player.animations.add('right', [0,3,2,1], 8, true);
 
-     game.camera.follow(player); //always center player
+    this.game.camera.follow(this.player); //always center player
     
     //  Finally some stars to collect
-    stars = game.add.group();
+    this.stars = this.game.add.group();
 
     //  We will enable physics for any star that is created in this group
-    stars.enableBody = true;
+    this.stars.enableBody = true;
 
     //  Here we'll create 13 of them evenly spaced apart
     for (var i = 0; i < 5; i++)
     {
         //  Create a star inside of the 'stars' group
-        var star = stars.create(1600, 0, 'star');
+        var star = this.stars.create(150, 1690, 'star');
 
         //  Let gravity do its thing
         star.body.gravity.y = 300;
@@ -172,67 +174,65 @@ var jump=false;
     }
 
     // A fireball to collect
-    fires = game.add.group();
+    this.fires = this.game.add.group();
 
-    fires.enableBody = true;
+    this.fires.enableBody = true;
 
-    var fire = fires.create (800, 570, 'fire');
+    var fire = this.fires.create (800, 570, 'fire');
 
     //  The score
-    scoreText = game.add.text(1600, 30, 'score: 0', { fontSize: '32px', fill: '#000' });
+    this.scoreText = this.game.add.text(1600, 30, 'score: 0', { fontSize: '32px', fill: '#000' });
 
     //  Our controls.
-    cursors = game.input.keyboard.createCursorKeys();
+    this.cursors = this.game.input.keyboard.createCursorKeys();
     
     
-}
+},
 
-function update() {
+update:function () {
 
     //  Collide the player and the stars with the platforms
-    game.physics.arcade.collide(player, platforms);
-    game.physics.arcade.collide(stars, platforms);
-    game.physics.arcade.collide(fires, platforms);
+    this.game.physics.arcade.collide( this.platforms, this.player);
+    this.physics.arcade.collide(this.stars, this.platforms, this.collisionHandler, null, this);
+    this.physics.arcade.collide(this.fires, this.platforms);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
-    game.physics.arcade.overlap(player, stars, collectStar, null, this);
+    this.physics.arcade.overlap(this.player, this.stars, collectStar, null, this);
 
-    game.physics.arcade.overlap(player, fires, collectFire, null, this);
+    this.physics.arcade.overlap(this.player, this.fires, this.collectFire, null, this);
 
     //  Reset the players velocity (movement)
-    player.body.velocity.x = 0;
+    this.player.body.velocity.x = 0;
     
-    if (cursors.left.isDown)
+    if (this.cursors.left.isDown)
     {
         //  Move to the left
-        player.body.velocity.x = -275;
+        this.player.body.velocity.x = -275;
 
-        player.animations.play('left');
+        this.player.animations.play('left');
 
     }
-    else if (cursors.right.isDown)
+    else if (this.cursors.right.isDown)
     {
         //  Move to the right
-        player.body.velocity.x = 275;
+        this.player.body.velocity.x = 275;
 
-        player.animations.play('right');
+        this.player.animations.play('right');
 
         
     }
     else
     {
-        player.animations.stop();   
+        this.player.animations.stop();   
 
-        player.frame = 0;
+        this.player.frame = 0;
     }
     
     
-    //  Allow the player to jump if they are touching the ground.
-    //if (cursors.up.isDown && player.body.touching.down) {  player.body.velocity.y = -375;}
 
 
   // Set a variable that is true when the player is touching the ground
-    var onTheGround = player.body.touching.down;
+    var onTheGround = this.player.body.touching.down;
 
     // If the player is touching the ground, let him have 2 jumps
     if (onTheGround) {
@@ -241,13 +241,13 @@ function update() {
     }
 
     // Jump!
-    if (cursors.up.isDown && this.jumps > 0 ) {
-        player.body.velocity.y = -260;
+    if (this.cursors.up.isDown && this.jumps > 0 ) {
+        this.player.body.velocity.y = -200;
         this.jumping = true;
     }
 
     // Reduce the number of available jumps if the jump input is released
-    if (cursors.up.isUp && this.jumping) {
+    if (this.cursors.up.isUp && this.jumping) {
         this.jumps--;
         this.jumping = false;
     }
@@ -264,8 +264,8 @@ function collectStar (player, star) {
     star.kill();
 
     //  Add and update the score
-    score += 20;
-    scoreText.text = 'Score: ' + score;
+    this.score += 20;
+    this.scoreText.text = 'Score: ' + this.score;
 
 }
 
@@ -275,8 +275,8 @@ function collectFire (player, fire) {
     fire.kill();
 
     //  Add and update the score
-    score += 200;
-    scoreText.text = 'Score: ' + score;
+    this.score += 200;
+    this.scoreText.text = 'Score: ' + this.score;
 
 }
 
