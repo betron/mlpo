@@ -2,7 +2,7 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
-    <title>A Bleak Thing</title>
+    <title>A Bleak Thing- 1 FILE</title>
     <script type="text/javascript" src="js/phaser.min.js">
     </script>
     <script src="js/gamecontroller.js" type="text/javascript"></script>
@@ -24,11 +24,11 @@
 <script type="text/javascript">
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 function preload() {
-    game.load.image('sky', 'assets/background.png');
-    game.load.image('groundL', 'assets/ledgeSquare.png');
-    game.load.image('star', 'assets/star.png');
-    game.load.image('fire', 'assets/fireball.png');
-    game.load.spritesheet('lizard', 'assets/ballRoll.png', 64, 64); 
+    game.load.image('sky', './abt/assets/background.png');
+    game.load.image('groundL', './abt/assets/ledgeSquare.png');
+    game.load.image('star', './abt/assets/star.png');
+    game.load.image('fire', './abt/assets/fireball.png');
+    game.load.spritesheet('lizard', './abt/assets/ballRoll.png', 64, 64); 
 }
 var player;
 var platforms;

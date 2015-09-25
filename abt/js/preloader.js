@@ -14,6 +14,8 @@ BasicGame.Preloader.prototype = {
     this.load.image('star', 'assets/star.png');
     this.load.image('fire', 'assets/fireball.png');
     this.load.spritesheet('lizard', 'assets/ballRoll.png', 64, 64); 
+
+    this.load.text('level', 'assets/data/level.json');
 },
 
 update:function () { 

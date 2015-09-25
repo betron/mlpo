@@ -43,7 +43,7 @@ var jump=false;
      // Flag to track if the jump button is pressed
     this.jumping = false;
 
-    //  Now let's create four ledges
+    /*  Now let's create ledges
 
    ledge = this.platforms.create(1200, 160, 'groundL');
     ledge.body.immovable = true;
@@ -108,12 +108,21 @@ var jump=false;
     ledge.body.immovable = true;
 
     ledge = this.platforms.create(900, 1650, 'groundL');
-    ledge.body.immovable = true;
+    ledge.body.immovable = true;*/
 
 
+    this.levelData = JSON.parse(this.game.cache.getText('level'));
 
+    console.log(this.levelData);
 
-    //first platform on bottom left 
+    this.levelData.platformData.forEach(function(element){
+       ledge = this.platforms.create(element.x, element.y, 'groundL');
+    }, this);
+
+    this.platforms.setAll('body.immovable', true);
+    this.platforms.setAll('body.allowGravity', false);
+
+    /*first platform on bottom left 
     ledge = this.platforms.create(0, 1800, 'groundL');
     ledge.body.immovable = true;
 
@@ -133,7 +142,7 @@ var jump=false;
     ledge.body.immovable = true;
 
     ledge = this.platforms.create(795, 600, 'groundL');
-    ledge.body.immovable = true;
+    ledge.body.immovable = true;*/
 
 
 
@@ -164,7 +173,7 @@ var jump=false;
     for (var i = 0; i < 5; i++)
     {
         //  Create a star inside of the 'stars' group
-        var star = this.stars.create(150, 1690, 'star');
+        var star = this.stars.create(450, 1590, 'star');
 
         //  Let gravity do its thing
         star.body.gravity.y = 300;
@@ -192,14 +201,14 @@ var jump=false;
 update:function () {
 
     //  Collide the player and the stars with the platforms
-    this.game.physics.arcade.collide( this.platforms, this.player);
+    this.game.physics.arcade.collide( this.platforms, this.player, this.collisionHandler, null, this);
     this.physics.arcade.collide(this.stars, this.platforms, this.collisionHandler, null, this);
     this.physics.arcade.collide(this.fires, this.platforms);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     this.physics.arcade.overlap(this.player, this.stars, collectStar, null, this);
 
-    this.physics.arcade.overlap(this.player, this.fires, this.collectFire, null, this);
+    this.physics.arcade.overlap(this.player, this.fires, collectFire, null, this);
 
     //  Reset the players velocity (movement)
     this.player.body.velocity.x = 0;
@@ -236,13 +245,13 @@ update:function () {
 
     // If the player is touching the ground, let him have 2 jumps
     if (onTheGround) {
-        this.jumps = 2;
+        this.jumps = 1;
         this.jumping = false;
     }
 
     // Jump!
     if (this.cursors.up.isDown && this.jumps > 0 ) {
-        this.player.body.velocity.y = -200;
+        this.player.body.velocity.y = -250;
         this.jumping = true;
     }
 
