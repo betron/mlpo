@@ -43,74 +43,6 @@ var jump=false;
      // Flag to track if the jump button is pressed
     this.jumping = false;
 
-    /*  Now let's create ledges
-
-   ledge = this.platforms.create(1200, 160, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(1500, 160, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(900, 340, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(400, 450, 'groundL');
-    ledge.body.immovable = true;
-
-   
-
-    ledge = this.platforms.create(30, 600, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(300, 750, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(500, 900, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(1200, 1000, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(900, 1000, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(1600, 1150, 'groundL');
-    ledge.body.immovable = true;
-
-
-    ledge = this.platforms.create(80, 1200, 'groundL');
-    ledge.body.immovable = true;
-
-
-
-
-
-
-    ledge = this.platforms.create(1800, 1300, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(200, 1300, 'groundL');
-    ledge.body.immovable = true;    
-
-    ledge = this.platforms.create(1200, 1300, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(900, 1300, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(1700, 1490, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(400, 1490, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(1200, 1650, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(900, 1650, 'groundL');
-    ledge.body.immovable = true;*/
-
-
     this.levelData = JSON.parse(this.game.cache.getText('level'));
 
     console.log(this.levelData);
@@ -121,30 +53,6 @@ var jump=false;
 
     this.platforms.setAll('body.immovable', true);
     this.platforms.setAll('body.allowGravity', false);
-
-    /*first platform on bottom left 
-    ledge = this.platforms.create(0, 1800, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(300, 1800, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(600, 1800, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(900, 1800, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(1200, 1800, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(1500, 1800, 'groundL');
-    ledge.body.immovable = true;
-
-    ledge = this.platforms.create(795, 600, 'groundL');
-    ledge.body.immovable = true;*/
-
-
 
     // The player and its settings
     this.player = this.game.add.sprite(50, 1600, 'lizard');
