@@ -45,7 +45,6 @@ var jump=false;
 
     this.levelData = JSON.parse(this.game.cache.getText('level'));
 
-    console.log(this.levelData);
 
     this.levelData.platformData.forEach(function(element){
        ledge = this.platforms.create(element.x, element.y, 'groundL');
@@ -102,6 +101,14 @@ var jump=false;
 
     //  Our controls.
     this.cursors = this.game.input.keyboard.createCursorKeys();
+
+     this.game.input.keyboard.addKeyCapture([
+        Phaser.Keyboard.LEFT,
+        Phaser.Keyboard.RIGHT,
+        Phaser.Keyboard.UP,
+        Phaser.Keyboard.DOWN
+    ]);
+
     
     
 },
@@ -144,34 +151,53 @@ update:function () {
 
         this.player.frame = 0;
     }
-    
-    
-
 
   // Set a variable that is true when the player is touching the ground
     var onTheGround = this.player.body.touching.down;
 
-    // If the player is touching the ground, let him have 2 jumps
+  // If the player is touching the ground, let him have 2 jumps
     if (onTheGround) {
-        this.jumps = 1;
+        this.jumps = 2;
         this.jumping = false;
+
+        
     }
 
     // Jump!
-    if (this.cursors.up.isDown && this.jumps > 0 ) {
-        this.player.body.velocity.y = -250;
+    if (this.jumps > 0 && upInputIsActive(5)) {
+        this.player.body.velocity.y = -300;
         this.jumping = true;
     }
 
     // Reduce the number of available jumps if the jump input is released
-    if (this.cursors.up.isUp && this.jumping) {
+    if (this.jumping && this.upInputReleased()) {
         this.jumps--;
         this.jumping = false;
     }
 
+   
+
+
+
+   /* if (this.jumping && this.cursors.up.isDown) {
+        this.jumping = true;
+    }
+
+   // this.cursors.up.onDown.add(this.jumpCheck, this); //tells phaser to fire jumpCheck() ONCE per onDown event.
+
 
     
-    // define what should happen when a button is pressed
+
+    if (!onTheGround && this.cursors.up.isDown ){
+          this.jumps--;
+          this.jumping = true;
+       }  
+
+
+*/
+    
+
+
    
 
 
@@ -196,6 +222,30 @@ function collectFire (player, fire) {
     this.scoreText.text = 'Score: ' + this.score;
 
 }
+
+
+     // This function returns true when the player releases the "jump" control
+function upInputReleased (duration) {
+    var released = false;
+
+    released = this.input.keyboard.upDuration(this.cursors.up);
+
+    return released;
+}
+
+
+// This function should return true when the player activates the "jump" control
+// In this case, either holding the up arrow or tapping or clicking on the center
+// part of the screen.
+function upInputIsActive (duration) {
+    var isActive = false;
+
+    isActive = this.input.keyboard.downDuration(this.cursors.up, duration);
+    
+
+    return isActive;
+};
+
 
 
 }
