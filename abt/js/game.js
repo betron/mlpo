@@ -164,13 +164,13 @@ update:function () {
     }
 
     // Jump!
-    if (this.jumps > 0 && upInputIsActive(5)) {
+    if (this.jumps > 0 && this.cursors.up.isDown) {
         this.player.body.velocity.y = -300;
         this.jumping = true;
     }
 
     // Reduce the number of available jumps if the jump input is released
-    if (this.jumping && this.upInputReleased()) {
+    if (this.jumping && this.cursors.up.isUp) {
         this.jumps--;
         this.jumping = false;
     }
@@ -223,28 +223,6 @@ function collectFire (player, fire) {
 
 }
 
-
-     // This function returns true when the player releases the "jump" control
-function upInputReleased (duration) {
-    var released = false;
-
-    released = Phaser.Keyboard.Up.upDuration(this.cursors.up, duration);
-
-    return released;
-}
-
-
-    // This function should return true when the player activates the "jump" control
-    // In this case, either holding the up arrow or tapping or clicking on the center
-    // part of the screen.
-function upInputIsActive (duration) {
-    var isActive = false;
-
-    isActive = Phaser.Keyboard.Down.downDuration(this.cursors.up, duration);
-    
-
-    return isActive;
-};
 
 
 
