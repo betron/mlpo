@@ -228,19 +228,19 @@ function collectFire (player, fire) {
 function upInputReleased (duration) {
     var released = false;
 
-    released = this.input.keyboard.upDuration(this.cursors.up);
+    released = Phaser.Keyboard.Up.upDuration(this.cursors.up, duration);
 
     return released;
 }
 
 
-// This function should return true when the player activates the "jump" control
-// In this case, either holding the up arrow or tapping or clicking on the center
-// part of the screen.
+    // This function should return true when the player activates the "jump" control
+    // In this case, either holding the up arrow or tapping or clicking on the center
+    // part of the screen.
 function upInputIsActive (duration) {
     var isActive = false;
 
-    isActive = this.input.keyboard.downDuration(this.cursors.up, duration);
+    isActive = Phaser.Keyboard.Down.downDuration(this.cursors.up, duration);
     
 
     return isActive;
