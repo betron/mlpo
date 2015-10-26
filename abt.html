@@ -32,7 +32,6 @@ function preload() {
 }
 var player;
 var platforms;
-var cursors;
 var stars;
 var fires;
 var score = 0;
@@ -150,8 +149,7 @@ function create() {
     var fire = fires.create (800, 570, 'fire');
     //  The score
     scoreText = game.add.text(1600, 30, 'score: 0', { fontSize: '32px', fill: '#000' });
-    //  Our controls.
-    cursors = game.input.keyboard.createCursorKeys();
+   
     
     
 }
@@ -175,13 +173,13 @@ function update() {
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
     
-    if (cursors.left.isDown)
+    if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X))
     {
         //  Move to the left
         player.body.velocity.x = -275;
         player.animations.play('left');
     }
-    else if (cursors.right.isDown)
+    else if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X))
     {
         //  Move to the right
         player.body.velocity.x = 275;
@@ -221,6 +219,11 @@ function update() {
     if (pad1.justReleased(Phaser.Gamepad.XBOX360_B))
     {
         sprite.angle -= 5;
+    }
+    
+    if (pad1.justReleased(Phaser.Gamepad.XBOX360_X))
+    {
+        platforms.angle -= 5;
     }
 
     if (pad1.connected)
