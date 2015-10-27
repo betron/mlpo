@@ -13,6 +13,10 @@ var cursors;
 
 var stars;
 var fires;
+var forest;
+var grass;
+var trees;
+var mage;
 var score = 0;
 var scoreText;
 var left=false;
@@ -31,11 +35,16 @@ var jump=false;
      bg = this.game.add.sprite(0, 0, 'sky');
      bg.fixedToCamera = true;
 
+     bg2 = this.game.add.sprite(0, 0, 'grass');
+
     //  The platforms group contains the ground and the 2 ledges we can jump on
     this.platforms = this.game.add.group();
+    this.forest = this.game.add.group();
 
     //  We will enable physics for any object that is created in this group
     this.platforms.enableBody = true;
+
+    this.forest.enableBody = true;
 
 
     this.game.camera.follow(player); //always center player
@@ -53,20 +62,41 @@ var jump=false;
     this.platforms.setAll('body.immovable', true);
     this.platforms.setAll('body.allowGravity', false);
 
+
+    trees = this.forest.create( 200, 1600, 'trees');
+    
+    trees = this.forest.create( 600, 1600, 'trees');
+    trees = this.forest.create( 1100, 1600, 'trees');
+    trees = this.forest.create( 1400, 1600, 'trees');
+    
+    trees = this.forest.create( 100, 1300, 'trees');
+    trees = this.forest.create( 400, 1300, 'trees');
+    trees = this.forest.create( 700, 1300, 'trees');
+
+
+
+    this.forest.setAll('body.immovable', true);
+    this.forest.setAll('body.allowGravity', false);
+
     // The player and its settings
     this.player = this.game.add.sprite(50, 1600, 'lizard');
 
+    this.mage = this.game.add.image(350, 1600, 'cloaked');
+
     //  We need to enable physics on the player
     this.physics.enable(this.player, Phaser.Physics.ARCADE);
+
+    this.physics.enable(this.mage, Phaser.Physics.ARCADE);
 
     //  Player physics properties. Give the little guy a slight bounce.
     this.player.body.bounce.y = 0.2;
     this.player.body.gravity.y = 500;
     this.player.body.collideWorldBounds = true;
 
+
     //  Our two animations, walking left and right.
-    this.player.animations.add('left', [0,1,2,3], 8, true);
-    this.player.animations.add('right', [0,3,2,1], 8, true);
+    this.player.animations.add('left', [0,], 1, true);
+    this.player.animations.add('right', [0,], 1, true);
 
     this.game.camera.follow(this.player); //always center player
     
