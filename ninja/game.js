@@ -22,7 +22,7 @@ window.onload = function() {
 		preload:function(){
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.setScreenSize(true);
-			game.load.image("background", "JumperBackground.png");
+			game.load.image("background", "clearcut.png");
 			
 			
 			game.load.spritesheet("ninja", "mechsprite.png", 62, 115); 
