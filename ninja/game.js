@@ -22,15 +22,21 @@ window.onload = function() {
 		preload:function(){
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.setScreenSize(true);
-			game.load.image("background", "clearcut.png");
+			game.load.image("background", "hill2.png");
+			game.load.image("background2", "skyHills.png");
+			
 			
 			
 			game.load.spritesheet("ninja", "mechsprite.png", 62, 115); 
 			game.load.image("pole", "treeOne.png");
             game.load.image("powerbar", "powerbar.png");
+
 		},
 		create:function(){
-			background = game.add.image(0,0, 'background');
+			background = game.add.image(0,-100, 'background');
+			backgroundtwo = game.add.image(0,-100, 'background2');
+			
+
 		
 
 			
