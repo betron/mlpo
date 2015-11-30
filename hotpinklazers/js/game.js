@@ -197,6 +197,9 @@ gameState.prototype = {
     },
 
     fire: function (){
+         if (!this.shipSprite.alive) {
+            return;
+        }
     	if (game.time.now > this.bulletInterval) {   
     		this.sndFire.play();
 
