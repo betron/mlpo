@@ -1,6 +1,6 @@
 var gameProperties = {
-    screenWidth: 700,
-    screenHeight: 700,
+    screenWidth: 400,
+    screenHeight: 400,
 
     delayToStartLevel: 3,
 };
