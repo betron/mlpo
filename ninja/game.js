@@ -22,8 +22,9 @@ window.onload = function() {
 		preload:function(){
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.setScreenSize(true);
-			game.load.image("background", "hill2.png");
-			game.load.image("background2", "skyHills.png");
+			game.load.image("background2", "Smog.png");
+			game.load.image("background", "Hills.png");
+			
 			
 			
 			
@@ -34,7 +35,7 @@ window.onload = function() {
 		},
 		create:function(){
 			background = game.add.image(0,-100, 'background');
-			backgroundtwo = game.add.image(0,-100, 'background2');
+			//backgroundtwo = game.add.image(300,-100, 'background2');
 			
 
 		
