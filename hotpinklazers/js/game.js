@@ -1,6 +1,6 @@
 var gameProperties = {
-    screenWidth: 1280,
-    screenHeight: 720,
+    screenWidth: 350,
+    screenHeight: 500,
 
     delayToStartLevel: 3,
 };
@@ -197,6 +197,9 @@ gameState.prototype = {
     },
 
     fire: function (){
+         if (!this.shipSprite.alive) {
+            return;
+        }
     	if (game.time.now > this.bulletInterval) {   
     		this.sndFire.play();
 
