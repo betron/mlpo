@@ -16,6 +16,12 @@ var graphicAssets = {
 	asteroidLarge: {URL: 'assets/asteroidLarge.png', name:'asteroidLarge'},
 	asteroidMedium: {URL:'assets/asteroidMedium.png', name: 'asteroidMedium'},
 	asteroidSmall: {URL: 'assets/asteroidSmall.png', name: 'asteroidSmall'},
+
+    background:{URL:'assets/background.png', name:'background'},
+    explosionLarge:{URL:'assets/explosionLarge.png', name:'explosionLarge', width:64, height:64, frames:8},
+    explosionMedium:{URL:'assets/explosionMedium.png', name:'explosionMedium', width:58, height:58, frames:8},
+    explosionSmall:{URL:'assets/explosionSmall.png', name:'explosionSmall', width:41, height:41, frames:8},
+
 };
 
 var soundAssets = {
@@ -47,9 +53,9 @@ var asteroidProperties = {
 	maxAsteroids: 20,
 	incrementAsteroids: 2,
 
-	asteroidLarge: { minVelocity: 50, maxVelocity: 100, minAngularVelocity: 0, maxAngularVelocity: 200, score: 20, nextSize: graphicAssets.asteroidMedium.name, pieces: 2 },
-    asteroidMedium: { minVelocity: 50, maxVelocity: 200, minAngularVelocity: 0, maxAngularVelocity: 200, score: 50, nextSize: graphicAssets.asteroidSmall.name, pieces: 2 },
-    asteroidSmall: { minVelocity: 50, maxVelocity: 250, minAngularVelocity: 0, maxAngularVelocity: 200, score: 100 },
+	asteroidLarge: { minVelocity: 50, maxVelocity: 100, minAngularVelocity: 0, maxAngularVelocity: 200, score: 20, nextSize: graphicAssets.asteroidMedium.name, pieces: 2, explosion:'explosionLarge' },
+    asteroidMedium: { minVelocity: 50, maxVelocity: 200, minAngularVelocity: 0, maxAngularVelocity: 200, score: 50, nextSize: graphicAssets.asteroidSmall.name, pieces: 2, explosion: 'explosionMedium' },
+    asteroidSmall: { minVelocity: 50, maxVelocity: 250, minAngularVelocity: 0, maxAngularVelocity: 200, score: 100, explosion: 'explosionSmall' },
 };
 
 var fontAssets = {
@@ -77,6 +83,12 @@ var gameState = function(game){
 
     this.sndDestroyed;
     this.sndFire;
+
+    this.backgroundSprite;
+
+    this.explosionLargeGroup;
+    this.explosionMediumGroup;
+    this.explosionSmallGroup;
 };
 
 gameState.prototype = {
@@ -91,7 +103,13 @@ gameState.prototype = {
         
         game.load.audio(soundAssets.destroyed.name, soundAssets.destroyed.URL);
         game.load.audio(soundAssets.fire.name, soundAssets.fire.URL);
+    
+        game.load.image(graphicAssets.background.name, graphicAssets.background.URL);
+        game.load.spritesheet(graphicAssets.explosionLarge.name, graphicAssets.explosionLarge.URL, graphicAssets.explosionLarge.width, graphicAssets.explosionLarge.height, graphicAssets.explosionLarge.frames);
+        game.load.spritesheet(graphicAssets.explosionMedium.name, graphicAssets.explosionMedium.URL, graphicAssets.explosionMedium.width, graphicAssets.explosionMedium.height, graphicAssets.explosionMedium.frames);
+        game.load.spritesheet(graphicAssets.explosionSmall.name, graphicAssets.explosionSmall.URL, graphicAssets.explosionSmall.width, graphicAssets.explosionSmall.height, graphicAssets.explosionSmall.frames);
     },
+
     
     create: function () {
         this.initGraphics();
@@ -116,6 +134,7 @@ gameState.prototype = {
     },
 
     initGraphics: function () {
+        this.backgroundSprite = game.add.sprite(0, 0, graphicAssets.background.name);
     	this.shipSprite = game.add.sprite(shipProperties.startX, shipProperties.startY, graphicAssets.ship.name);
     	this.shipSprite.angle = -90;
         this.shipSprite.anchor.set(0.5, 0.5); 
@@ -128,6 +147,24 @@ gameState.prototype = {
     	this.tf_score = game.add.text(gameProperties.screenWidth - 20, 10, "0", fontAssets.counterFontStyle);
     	this.tf_score.align = 'right';
     	this.tf_score.anchor.set(1, 0);
+
+        this.explosionLargeGroup = game.add.group();
+        this.explosionLargeGroup.createMultiple(20, graphicAssets.explosionLarge.name, 0);
+        this.explosionLargeGroup.setAll('anchor.x', 0.5);
+        this.explosionLargeGroup.setAll('anchor.y', 0.5);
+        this.explosionLargeGroup.callAll('animations.add', 'animations', 'explode', null, 30);
+        
+        this.explosionMediumGroup = game.add.group();
+        this.explosionMediumGroup.createMultiple(20, graphicAssets.explosionMedium.name, 0);
+        this.explosionMediumGroup.setAll('anchor.x', 0.5);
+        this.explosionMediumGroup.setAll('anchor.y', 0.5);
+        this.explosionMediumGroup.callAll('animations.add', 'animations', 'explode', null, 30);
+        
+        this.explosionSmallGroup = game.add.group();
+        this.explosionSmallGroup.createMultiple(20, graphicAssets.explosionSmall.name, 0);
+        this.explosionSmallGroup.setAll('anchor.x', 0.5);
+        this.explosionSmallGroup.setAll('anchor.y', 0.5);
+        this.explosionSmallGroup.callAll('animations.add', 'animations', 'explode', null, 30);
     },
 
     initSounds: function() {
@@ -268,6 +305,11 @@ gameState.prototype = {
     	if (!this.asteroidGroup.countLiving()) {
     		game.time.events.add(Phaser.Timer.SECOND * gameProperties.delayToStartLevel, this.nextLevel, this);
     	}
+
+        var explosionGroup = asteroidProperties[asteroid.key].explosion + "Group";
+        var explosion = this[explosionGroup].getFirstExists(false);
+        explosion.reset(asteroid.x, asteroid.y);
+        explosion.animations.play('explode', null, false, true);
     },
 
     destroyShip: function () {
@@ -277,6 +319,11 @@ gameState.prototype = {
     	if(this.shipLives) {
     		game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.resetShip, this);
     	}
+
+        var explosion = this.explosionLargeGroup.getFirstExists(false);
+        explosion.reset(this.shipSprite.x, this.shipSprite.y);
+        explosion.animations.play('explode', 30, false, true);
+
     },
 
     resetShip: function () {
