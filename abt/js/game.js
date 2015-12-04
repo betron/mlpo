@@ -35,7 +35,7 @@ var jump=false;
      bg = this.game.add.sprite(0, 0, 'sky');
      bg.fixedToCamera = true;
 
-     bg2 = this.game.add.sprite(0, 0, 'grass');
+     
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
     this.platforms = this.game.add.group();
@@ -63,16 +63,6 @@ var jump=false;
     this.platforms.setAll('body.allowGravity', false);
 
 
-    trees = this.forest.create( 200, 1600, 'trees');
-    
-    trees = this.forest.create( 600, 1600, 'trees');
-    trees = this.forest.create( 1100, 1600, 'trees');
-    trees = this.forest.create( 1400, 1600, 'trees');
-    
-    trees = this.forest.create( 100, 1300, 'trees');
-    trees = this.forest.create( 400, 1300, 'trees');
-    trees = this.forest.create( 700, 1300, 'trees');
-
 
 
     this.forest.setAll('body.immovable', true);
@@ -95,8 +85,8 @@ var jump=false;
 
 
     //  Our two animations, walking left and right.
-    this.player.animations.add('left', [0,], 1, true);
-    this.player.animations.add('right', [0,], 1, true);
+    this.player.animations.add('left', [0, 1, 2, 3], 4, true);
+    this.player.animations.add('right', [0, 1, 2, 3], 4, true);
 
     this.game.camera.follow(this.player); //always center player
     
