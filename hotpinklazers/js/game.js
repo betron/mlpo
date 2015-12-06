@@ -3,9 +3,11 @@ var gameProperties = {
     screenHeight: 512,
 
     delayToStartLevel: 3,
+    padding: 30,
 };
 
 var states = {
+    main: "main",
     game: "game",
 };
 
@@ -60,6 +62,7 @@ var asteroidProperties = {
 
 var fontAssets = {
 	counterFontStyle:{font: '20px Arial', fill: '#FFFFFF', align: 'center'},
+    titleFontStyle: {font: '35px braggadocio', fill: '#FF006F', align: 'center'},
 }
 var gameState = function(game){
     this.shipSprite;
@@ -70,15 +73,13 @@ var gameState = function(game){
     this.key_fire;
 
     this.bulletGroup;
-    this.bulletInterval = 0;
+    
 
     this.asteroidGroup;
-    this.asteroidsCount = asteroidProperties.startingAsteroids;
 
-    this.shipLives = shipProperties.startingLives;
     this.tf_lives;
 
-    this.score = 0;
+    
     this.tf_score;
 
     this.sndDestroyed;
@@ -110,6 +111,12 @@ gameState.prototype = {
         game.load.spritesheet(graphicAssets.explosionSmall.name, graphicAssets.explosionSmall.URL, graphicAssets.explosionSmall.width, graphicAssets.explosionSmall.height, graphicAssets.explosionSmall.frames);
     },
 
+    init: function () {
+        this.bulletInterval = 0;
+        this.asteroidsCount = asteroidProperties.startingAsteroids;
+        this.shipLives = shipProperties.startingLives;
+        this.score = 0;
+    },
     
     create: function () {
         this.initGraphics();
@@ -126,7 +133,6 @@ gameState.prototype = {
     	this.asteroidGroup.forEachExists(this.checkBoundaries, this);
 
     	game.physics.arcade.overlap(this.bulletGroup, this.asteroidGroup, this.asteroidCollision, null, this);
-    	game.physics.arcade.overlap(this.shipSprite, this.asteroidGroup, this.asteroidCollision, null, this);
 
     	if (!this.shipIsInvulnerable) {
     		game.physics.arcade.overlap(this.shipSprite, this.asteroidGroup, this.asteroidCollision, null, this);
@@ -220,16 +226,16 @@ gameState.prototype = {
     },
 
     checkBoundaries: function (sprite) {
-    	 if (sprite.x < 0) {
-            sprite.x = game.width;
-        } else if (sprite.x > game.width) {
-            sprite.x = 0;
+    	 if (sprite.x + gameProperties.padding < 0) {
+            sprite.x = game.width + gameProperties.padding;
+        } else if (sprite.x - gameProperties.padding > game.width) {
+            sprite.x = -gameProperties.padding;
         } 
  
-        if (sprite.y < 0) {
-            sprite.y = game.height;
-        } else if (sprite.y > game.height) {
-            sprite.y = 0;
+        if (sprite.y + gameProperties.padding < 0) {
+            sprite.y = game.height + gameProperties.padding;
+        } else if (sprite.y - gameProperties.padding > game.height) {
+            sprite.y = -gameProperties.padding;
         }
     },
 
@@ -318,7 +324,9 @@ gameState.prototype = {
 
     	if(this.shipLives) {
     		game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.resetShip, this);
-    	}
+    	} else {
+            game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.endGame, this);
+        }
 
         var explosion = this.explosionLargeGroup.getFirstExists(false);
         explosion.reset(this.shipSprite.x, this.shipSprite.y);
@@ -364,8 +372,38 @@ gameState.prototype = {
     	this.resetAsteroids();
     },
 
+    endGame: function () {
+        game.state.start(states.main);
+    },
+};
+
+var mainState = function(game){
+    this.tf_title;
+    this.tf_start;
+
+};
+
+mainState.prototype = {
+    create: function () {
+        var title = 'HOT PINK LAZERS';
+        this.tf_title = game.add.text(game.world.centerX, gameProperties.screenHeight-420, title, fontAssets.titleFontStyle);
+        this.tf_title.anchor.set(0.5, 0.5);
+
+        var startInstructions = 'Click to Start -\n\nUP arrow key for thrust. \n\nLEFT and RIGHT arrow keys to turn.\n\SPACE key to fire.';
+
+        this.tf_start = game.add.text(game.world.centerX, game.world.centerY, startInstructions, fontAssets.counterFontStyle);
+        this.tf_start.anchor.set(0.5, 0.5);
+        
+        game.input.onDown.addOnce(this.startGame, this);
+
+    },
+
+    startGame: function () {
+        game.state.start(states.game);
+    },
 };
 
 var game = new Phaser.Game(gameProperties.screenWidth, gameProperties.screenHeight, Phaser.AUTO, 'gameDiv');
+game.state.add(states.main, mainState);
 game.state.add(states.game, gameState);
-game.state.start(states.game);
+game.state.start(states.main);
