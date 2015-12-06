@@ -122,6 +122,7 @@ function create() {
 
 function dump() {
     console.log(pad1._axes[0]);
+    console.log(pad1._rawPad.axes[0]);
     
 }
 
@@ -163,6 +164,22 @@ function update() {
     if (pad1.justPressed(Phaser.Gamepad.XBOX360_A) && player.body.touching.down)
     {
         player.body.velocity.y = -350;
+    }
+
+    if (pad1.connected)
+    {
+        var rightStickX = pad1.axis(Phaser.Gamepad.XBOX360_STICK_RIGHT_X);
+        var rightStickY = pad1.axis(Phaser.Gamepad.XBOX360_STICK_RIGHT_Y);
+
+        if (rightStickX)
+        {
+            player.x += rightStickX * 10;
+        }
+
+        if (rightStickY)
+        {
+            player.y += rightStickY * 10;
+        }
     }
 
 }
