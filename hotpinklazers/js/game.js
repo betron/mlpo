@@ -156,9 +156,9 @@ gameState.prototype = {
         this.bulletGroup = game.add.group();
         this.asteroidGroup = game.add.group();
 
-        this.tf_lives = game.add.text(20, 10, shipProperties.startingLives, fontAssets.counterFontStyle);
+        this.tf_lives = game.add.text(20, 10, 'Lives: '+ shipProperties.startingLives, fontAssets.counterFontStyle);
         
-        this.tf_score = game.add.text(gameProperties.screenWidth - 20, 10, "0", fontAssets.counterFontStyle);
+        this.tf_score = game.add.text(gameProperties.screenWidth - 20, 10, 'Score: '+"0", fontAssets.counterFontStyle);
         this.tf_score.align = 'right';
         this.tf_score.anchor.set(1, 0);
 
@@ -394,8 +394,8 @@ var mainState = function(game){
 
 mainState.prototype = {
     create: function () {
-        var title = 'HOT PINK LAZERS';
-        this.tf_title = game.add.text(game.world.centerX, gameProperties.screenHeight-420, title, fontAssets.titleFontStyle);
+        var title = 'HOT\nPINK\nLAZERS';
+        this.tf_title = game.add.text(game.world.centerX, gameProperties.screenHeight-520, title, fontAssets.titleFontStyle);
         this.tf_title.anchor.set(0.5, 0.5);
 
         var startInstructions = 'Click to Start -\n\nUP arrow key for thrust. \n\nLEFT and RIGHT arrow keys to turn.\n\SPACE key to fire.';
