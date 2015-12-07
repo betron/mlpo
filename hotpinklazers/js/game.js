@@ -1,6 +1,6 @@
 var gameProperties = {
-    screenWidth: 512,
-    screenHeight: 512,
+    screenWidth: 800,
+    screenHeight: 630,
 
     delayToStartLevel: 3,
     padding: 30,
@@ -12,12 +12,12 @@ var states = {
 };
 
 var graphicAssets = {
-	ship:{URL:'assets/shipNew.png', name: 'ship'},
-	bullet: {URL:'assets/bulletNew.png', name: 'bullet'},
+    ship:{URL:'assets/shipNew.png', name: 'ship'},
+    bullet: {URL:'assets/bulletNew.png', name: 'bullet'},
 
-	asteroidLarge: {URL: 'assets/asteroidLarge.png', name:'asteroidLarge'},
-	asteroidMedium: {URL:'assets/asteroidMedium.png', name: 'asteroidMedium'},
-	asteroidSmall: {URL: 'assets/asteroidSmall.png', name: 'asteroidSmall'},
+    asteroidLarge: {URL: 'assets/asteroidLarge.png', name:'asteroidLarge'},
+    asteroidMedium: {URL:'assets/asteroidMedium.png', name: 'asteroidMedium'},
+    asteroidSmall: {URL: 'assets/asteroidSmall.png', name: 'asteroidSmall'},
 
     background:{URL:'assets/background.png', name:'background'},
     explosionLarge:{URL:'assets/explosionLarge.png', name:'explosionLarge', width:64, height:64, frames:8},
@@ -27,41 +27,41 @@ var graphicAssets = {
 };
 
 var soundAssets = {
-	fire:{URL:['assets/fire.m4a', 'assets/fire.ogg'], name:'fire'},
-	destroyed:{URL:['assets/destroyed.m4a', 'assets/destroyed.ogg'], name:'destroyed'},
+    fire:{URL:['assets/fire.m4a', 'assets/fire.ogg'], name:'fire'},
+    destroyed:{URL:['assets/destroyed.m4a', 'assets/destroyed.ogg'], name:'destroyed'},
 };
 
 var shipProperties = {
-	startX: gameProperties.screenWidth * 0.5,
-	startY: gameProperties.screenHeight * 0.5,
-	acceleration: 300,
-	drag: 100,
-	maxVelocity: 300,
-	angularVelocity: 200,
-	startingLives: 3,
-	timeToReset: 3,
-	blinkDelay: 0.2,
+    startX: gameProperties.screenWidth * 0.5,
+    startY: gameProperties.screenHeight * 0.5,
+    acceleration: 300,
+    drag: 100,
+    maxVelocity: 300,
+    angularVelocity: 300,
+    startingLives: 3,
+    timeToReset: 3,
+    blinkDelay: 0.2,
 };
 
 var bulletProperties = {
-	speed: 400,
-	interval: 250,
-	lifeSpan: 2000,
-	maxCount: 30,
+    speed: 400,
+    interval: 250,
+    lifeSpan: 2000,
+    maxCount: 30,
 };
 
 var asteroidProperties = {
-	startingAsteroids: 4,
-	maxAsteroids: 20,
-	incrementAsteroids: 2,
+    startingAsteroids: 4,
+    maxAsteroids: 20,
+    incrementAsteroids: 2,
 
-	asteroidLarge: { minVelocity: 50, maxVelocity: 100, minAngularVelocity: 0, maxAngularVelocity: 200, score: 20, nextSize: graphicAssets.asteroidMedium.name, pieces: 2, explosion:'explosionLarge' },
+    asteroidLarge: { minVelocity: 50, maxVelocity: 100, minAngularVelocity: 0, maxAngularVelocity: 200, score: 20, nextSize: graphicAssets.asteroidMedium.name, pieces: 2, explosion:'explosionLarge' },
     asteroidMedium: { minVelocity: 50, maxVelocity: 200, minAngularVelocity: 0, maxAngularVelocity: 200, score: 50, nextSize: graphicAssets.asteroidSmall.name, pieces: 2, explosion: 'explosionMedium' },
     asteroidSmall: { minVelocity: 50, maxVelocity: 250, minAngularVelocity: 0, maxAngularVelocity: 200, score: 100, explosion: 'explosionSmall' },
 };
 
 var fontAssets = {
-	counterFontStyle:{font: '20px Arial', fill: '#FFFFFF', align: 'center'},
+    counterFontStyle:{font: '20px Arial', fill: '#FFFFFF', align: 'center'},
     titleFontStyle: {font: '35px braggadocio', fill: '#FF006F', align: 'center'},
 }
 var gameState = function(game){
@@ -95,8 +95,8 @@ var gameState = function(game){
 gameState.prototype = {
     
     preload: function () {
-    	game.load.image(graphicAssets.asteroidLarge.name, graphicAssets.asteroidLarge.URL);
-    	game.load.image(graphicAssets.asteroidMedium.name, graphicAssets.asteroidMedium.URL);
+        game.load.image(graphicAssets.asteroidLarge.name, graphicAssets.asteroidLarge.URL);
+        game.load.image(graphicAssets.asteroidMedium.name, graphicAssets.asteroidMedium.URL);
         game.load.image(graphicAssets.asteroidSmall.name, graphicAssets.asteroidSmall.URL);
         
         game.load.image(graphicAssets.bullet.name, graphicAssets.bullet.URL);
@@ -124,35 +124,43 @@ gameState.prototype = {
         this.initPhysics();
         this.initKeyboard();
         this.resetAsteroids();
+        game.input.gamepad.start();
+        pad1 = game.input.gamepad.pad1;
+        game.input.onDown.add(dump, this);
+    },
+
+    dump: function () {
+        console.log(pad1._axes[0]);
+        console.log(pad1_rawPad.axes[0]);
     },
 
     update: function () {
-    	this.checkPlayerInput();
-    	this.checkBoundaries(this.shipSprite);
-    	this.bulletGroup.forEachExists(this.checkBoundaries, this);
-    	this.asteroidGroup.forEachExists(this.checkBoundaries, this);
+        this.checkPlayerInput();
+        this.checkBoundaries(this.shipSprite);
+        this.bulletGroup.forEachExists(this.checkBoundaries, this);
+        this.asteroidGroup.forEachExists(this.checkBoundaries, this);
 
-    	game.physics.arcade.overlap(this.bulletGroup, this.asteroidGroup, this.asteroidCollision, null, this);
+        game.physics.arcade.overlap(this.bulletGroup, this.asteroidGroup, this.asteroidCollision, null, this);
 
-    	if (!this.shipIsInvulnerable) {
-    		game.physics.arcade.overlap(this.shipSprite, this.asteroidGroup, this.asteroidCollision, null, this);
-    	}
+        if (!this.shipIsInvulnerable) {
+            game.physics.arcade.overlap(this.shipSprite, this.asteroidGroup, this.asteroidCollision, null, this);
+        }
     },
 
     initGraphics: function () {
-        this.backgroundSprite = game.add.sprite(0, 0, graphicAssets.background.name);
-    	this.shipSprite = game.add.sprite(shipProperties.startX, shipProperties.startY, graphicAssets.ship.name);
-    	this.shipSprite.angle = -90;
+        this.backgroundSprite = game.add.tileSprite(0, 0, this.game.width, this.game.height, graphicAssets.background.name);
+        this.shipSprite = game.add.sprite(shipProperties.startX, shipProperties.startY, graphicAssets.ship.name);
+        this.shipSprite.angle = -90;
         this.shipSprite.anchor.set(0.5, 0.5); 
 
         this.bulletGroup = game.add.group();
         this.asteroidGroup = game.add.group();
 
         this.tf_lives = game.add.text(20, 10, shipProperties.startingLives, fontAssets.counterFontStyle);
-    	
-    	this.tf_score = game.add.text(gameProperties.screenWidth - 20, 10, "0", fontAssets.counterFontStyle);
-    	this.tf_score.align = 'right';
-    	this.tf_score.anchor.set(1, 0);
+        
+        this.tf_score = game.add.text(gameProperties.screenWidth - 20, 10, "0", fontAssets.counterFontStyle);
+        this.tf_score.align = 'right';
+        this.tf_score.anchor.set(1, 0);
 
         this.explosionLargeGroup = game.add.group();
         this.explosionLargeGroup.createMultiple(20, graphicAssets.explosionLarge.name, 0);
@@ -174,59 +182,59 @@ gameState.prototype = {
     },
 
     initSounds: function() {
-    	this.sndDestroyed = game.add.audio(soundAssets.destroyed.name);
-    	this.sndFire = game.add.audio(soundAssets.fire.name);
+        this.sndDestroyed = game.add.audio(soundAssets.destroyed.name);
+        this.sndFire = game.add.audio(soundAssets.fire.name);
     },
 
     initPhysics: function () {
-    	game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    	game.physics.enable(this.shipSprite, Phaser.Physics.ARCADE);
-    	this.shipSprite.body.drag.set(shipProperties.drag);
-    	this.shipSprite.body.maxVelocity.set(shipProperties.maxVelocity);
+        game.physics.enable(this.shipSprite, Phaser.Physics.ARCADE);
+        this.shipSprite.body.drag.set(shipProperties.drag);
+        this.shipSprite.body.maxVelocity.set(shipProperties.maxVelocity);
 
-    	this.bulletGroup.enableBody = true;
-    	this.bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
-    	this.bulletGroup.createMultiple(30, graphicAssets.bullet.name);
-    	this.bulletGroup.setAll('anchor.x', 0.5);
-    	this.bulletGroup.setAll('anchor.y', 0.5);
-    	this.bulletGroup.setAll('lifespan', bulletProperties.lifeSpan);
+        this.bulletGroup.enableBody = true;
+        this.bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
+        this.bulletGroup.createMultiple(30, graphicAssets.bullet.name);
+        this.bulletGroup.setAll('anchor.x', 0.5);
+        this.bulletGroup.setAll('anchor.y', 0.5);
+        this.bulletGroup.setAll('lifespan', bulletProperties.lifeSpan);
 
-    	this.asteroidGroup.enableBody = true;
-    	this.asteroidGroup.physicsBodyType = Phaser.Physics.ARCADE;
+        this.asteroidGroup.enableBody = true;
+        this.asteroidGroup.physicsBodyType = Phaser.Physics.ARCADE;
     },
 
     initKeyboard: function () {
-    	this.key_left = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
-    	this.key_right = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
-    	this.key_thrust = game.input.keyboard.addKey(Phaser.Keyboard.UP);
-    	this.key_fire = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        this.key_left = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+        this.key_right = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+        this.key_thrust = game.input.keyboard.addKey(Phaser.Keyboard.UP);
+        this.key_fire = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     },
 
 
 
-    checkPlayerInput: function () {
-        if (this.key_left.isDown) {
+    checkPlayerInput: function () { 
+        if (this.key_left.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
             this.shipSprite.body.angularVelocity = -shipProperties.angularVelocity;
-        } else if (this.key_right.isDown) {
+        } else if (this.key_right.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1 ) {
             this.shipSprite.body.angularVelocity = shipProperties.angularVelocity;
         } else {
             this.shipSprite.body.angularVelocity = 0;
         }
         
-        if (this.key_thrust.isDown) {
+        if (this.key_thrust.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_LEFT_TRIGGER)) {
             game.physics.arcade.accelerationFromRotation(this.shipSprite.rotation, shipProperties.acceleration, this.shipSprite.body.acceleration);
         } else {
             this.shipSprite.body.acceleration.set(0);
         }
 
-        if (this.key_fire.isDown) {
-        	this.fire();
+        if (this.key_fire.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_RIGHT_TRIGGER)) {
+            this.fire();
         }
     },
 
     checkBoundaries: function (sprite) {
-    	 if (sprite.x + gameProperties.padding < 0) {
+         if (sprite.x + gameProperties.padding < 0) {
             sprite.x = game.width + gameProperties.padding;
         } else if (sprite.x - gameProperties.padding > game.width) {
             sprite.x = -gameProperties.padding;
@@ -243,8 +251,8 @@ gameState.prototype = {
          if (!this.shipSprite.alive) {
             return;
         }
-    	if (game.time.now > this.bulletInterval) {   
-    		this.sndFire.play();
+        if (game.time.now > this.bulletInterval) {   
+            this.sndFire.play();
 
             var bullet = this.bulletGroup.getFirstExists(false);
             
@@ -264,53 +272,53 @@ gameState.prototype = {
     },
 
     createAsteroid: function (x, y, size, pieces) {
-    	if (pieces === undefined) {pieces = 1;}
+        if (pieces === undefined) {pieces = 1;}
 
-    	for (var i=0; i<pieces; i++) {
-	    	var asteroid = this.asteroidGroup.create(x, y, size);
-	    	asteroid.anchor.set(0.5, 0.5);
-	    	asteroid.body.angularVelocity = game.rnd.integerInRange(asteroidProperties[size].minAngularVelocity, asteroidProperties[size].maxAngularVelocity);
+        for (var i=0; i<pieces; i++) {
+            var asteroid = this.asteroidGroup.create(x, y, size);
+            asteroid.anchor.set(0.5, 0.5);
+            asteroid.body.angularVelocity = game.rnd.integerInRange(asteroidProperties[size].minAngularVelocity, asteroidProperties[size].maxAngularVelocity);
 
-	    	var randomAngle = game.math.degToRad(game.rnd.angle());
-	        var randomVelocity = game.rnd.integerInRange(asteroidProperties[size].minVelocity, asteroidProperties[size].maxVelocity);
-	 
-	        game.physics.arcade.velocityFromRotation(randomAngle, randomVelocity, asteroid.body.velocity);
-    	}
+            var randomAngle = game.math.degToRad(game.rnd.angle());
+            var randomVelocity = game.rnd.integerInRange(asteroidProperties[size].minVelocity, asteroidProperties[size].maxVelocity);
+     
+            game.physics.arcade.velocityFromRotation(randomAngle, randomVelocity, asteroid.body.velocity);
+        }
     },
 
     resetAsteroids: function (){
-    	for (var i=0; i < this.asteroidsCount; i++){
-    		var side = Math.round(Math.random());
-    		var x;
-    		var y;
+        for (var i=0; i < this.asteroidsCount; i++){
+            var side = Math.round(Math.random());
+            var x;
+            var y;
 
-    		if (side) {
-    			x = Math.round(Math.random()) * gameProperties.screenWidth;
-    			y = Math.random() * gameProperties.screenHeight;
-    		} else {
-    			x= Math.random()* gameProperties.screenWidth;
-    			y= Math.round(Math.random()) * gameProperties.screenHeight;
-    		}
+            if (side) {
+                x = Math.round(Math.random()) * gameProperties.screenWidth;
+                y = Math.random() * gameProperties.screenHeight;
+            } else {
+                x= Math.random()* gameProperties.screenWidth;
+                y= Math.round(Math.random()) * gameProperties.screenHeight;
+            }
 
-    		this.createAsteroid(x, y, graphicAssets.asteroidLarge.name);
-    	}
+            this.createAsteroid(x, y, graphicAssets.asteroidLarge.name);
+        }
     },
 
     asteroidCollision: function (target, asteroid) {
-    	this.sndDestroyed.play();
-    	target.kill();
-    	asteroid.kill();
+        this.sndDestroyed.play();
+        target.kill();
+        asteroid.kill();
 
-    	if (target.key == graphicAssets.ship.name){
-    		this.destroyShip();
-    	}
+        if (target.key == graphicAssets.ship.name){
+            this.destroyShip();
+        }
 
-    	this.splitAsteroid(asteroid);
-    	this.updateScore(asteroidProperties[asteroid.key].score);
+        this.splitAsteroid(asteroid);
+        this.updateScore(asteroidProperties[asteroid.key].score);
 
-    	if (!this.asteroidGroup.countLiving()) {
-    		game.time.events.add(Phaser.Timer.SECOND * gameProperties.delayToStartLevel, this.nextLevel, this);
-    	}
+        if (!this.asteroidGroup.countLiving()) {
+            game.time.events.add(Phaser.Timer.SECOND * gameProperties.delayToStartLevel, this.nextLevel, this);
+        }
 
         var explosionGroup = asteroidProperties[asteroid.key].explosion + "Group";
         var explosion = this[explosionGroup].getFirstExists(false);
@@ -319,12 +327,12 @@ gameState.prototype = {
     },
 
     destroyShip: function () {
-    	this.shipLives --;
-    	this.tf_lives.text = this.shipLives;
+        this.shipLives --;
+        this.tf_lives.text = this.shipLives;
 
-    	if(this.shipLives) {
-    		game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.resetShip, this);
-    	} else {
+        if(this.shipLives) {
+            game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.resetShip, this);
+        } else {
             game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.endGame, this);
         }
 
@@ -335,41 +343,41 @@ gameState.prototype = {
     },
 
     resetShip: function () {
-    	this.shipIsInvulnerable = true;
-    	this.shipSprite.reset(shipProperties.startX, shipProperties.startY);
-    	this.shipSprite.angle = -90;
+        this.shipIsInvulnerable = true;
+        this.shipSprite.reset(shipProperties.startX, shipProperties.startY);
+        this.shipSprite.angle = -90;
 
-    	game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.shipReady, this);
-    	game.time.events.repeat(Phaser.Timer.SECOND * shipProperties.blinkDelay, shipProperties.timeToReset / shipProperties.blinkDelay, this.shipBlink, this);
+        game.time.events.add(Phaser.Timer.SECOND * shipProperties.timeToReset, this.shipReady, this);
+        game.time.events.repeat(Phaser.Timer.SECOND * shipProperties.blinkDelay, shipProperties.timeToReset / shipProperties.blinkDelay, this.shipBlink, this);
     },
 
     shipReady: function () {
-    	this.shipIsInvulnerable = false;
-    	this.shipSprite.visible = true;
+        this.shipIsInvulnerable = false;
+        this.shipSprite.visible = true;
     },
 
     shipBlink: function () {
-    	this.shipSprite.visible = !this.shipSprite.visible;
+        this.shipSprite.visible = !this.shipSprite.visible;
     },
 
     splitAsteroid: function (asteroid) {
-    	if (asteroidProperties[asteroid.key].nextSize) {
-    		this.createAsteroid(asteroid.x, asteroid.y, asteroidProperties[asteroid.key].nextSize, asteroidProperties[asteroid.key].pieces);
-    	}
+        if (asteroidProperties[asteroid.key].nextSize) {
+            this.createAsteroid(asteroid.x, asteroid.y, asteroidProperties[asteroid.key].nextSize, asteroidProperties[asteroid.key].pieces);
+        }
     },
 
     updateScore: function (score) {
-    	this.score += score;
-    	this.tf_score.text = this.score;
+        this.score += score;
+        this.tf_score.text = this.score;
     },
 
     nextLevel: function () {
-    	this.asteroidGroup.removeAll(true);
+        this.asteroidGroup.removeAll(true);
 
-    	if (this.asteroidsCount < asteroidProperties.maxAsteroids) {
-    		this.asteroidsCount += asteroidProperties.incrementAsteroids;
-    	}
-    	this.resetAsteroids();
+        if (this.asteroidsCount < asteroidProperties.maxAsteroids) {
+            this.asteroidsCount += asteroidProperties.incrementAsteroids;
+        }
+        this.resetAsteroids();
     },
 
     endGame: function () {
@@ -380,6 +388,7 @@ gameState.prototype = {
 var mainState = function(game){
     this.tf_title;
     this.tf_start;
+
 
 };
 
@@ -394,9 +403,22 @@ mainState.prototype = {
         this.tf_start = game.add.text(game.world.centerX, game.world.centerY, startInstructions, fontAssets.counterFontStyle);
         this.tf_start.anchor.set(0.5, 0.5);
         
+        game.input.gamepad.start();
+        pad1 = game.input.gamepad.pad1;
+        
+        
         game.input.onDown.addOnce(this.startGame, this);
 
+
     },
+
+    update: function () {
+        if (pad1.justPressed(Phaser.Gamepad.XBOX360_START)){
+            this.startGame();
+        }
+    },
+
+   
 
     startGame: function () {
         game.state.start(states.game);
