@@ -24,6 +24,9 @@ var graphicAssets = {
     explosionMedium:{URL:'assets/explosionMedium.png', name:'explosionMedium', width:58, height:58, frames:8},
     explosionSmall:{URL:'assets/explosionSmall.png', name:'explosionSmall', width:41, height:41, frames:8},
 
+    buttonfire: { URL:'assets/button-round-a.png', name: 'buttonfire', width:96, height:96},
+    buttonthrust: {URL:'assets/button-round-b.png', name: 'buttonthrust', width: 96, height: 96},
+    buttonhorizontal: {URL:'assets/button-horizontal.png', name: 'buttonhorizontal', width: 96, height:64},
 };
 
 var soundAssets = {
@@ -71,6 +74,10 @@ var gameState = function(game){
     this.key_right;
     this.key_thrust;
     this.key_fire;
+    
+    this.buttonfire;
+    //this.buttonhorizontal;
+    //this.buttonthrust;
 
     this.bulletGroup;
     
@@ -109,6 +116,11 @@ gameState.prototype = {
         game.load.spritesheet(graphicAssets.explosionLarge.name, graphicAssets.explosionLarge.URL, graphicAssets.explosionLarge.width, graphicAssets.explosionLarge.height, graphicAssets.explosionLarge.frames);
         game.load.spritesheet(graphicAssets.explosionMedium.name, graphicAssets.explosionMedium.URL, graphicAssets.explosionMedium.width, graphicAssets.explosionMedium.height, graphicAssets.explosionMedium.frames);
         game.load.spritesheet(graphicAssets.explosionSmall.name, graphicAssets.explosionSmall.URL, graphicAssets.explosionSmall.width, graphicAssets.explosionSmall.height, graphicAssets.explosionSmall.frames);
+
+        game.load.image(graphicAssets.buttonfire.name, graphicAssets.buttonfire.URL);
+        game.load.image(graphicAssets.buttonthrust.name, graphicAssets.buttonthrust.URL);
+        game.load.image(graphicAssets.buttonhorizontal.name, graphicAssets.buttonhorizontal.URL);
+
     },
 
     init: function () {
@@ -127,6 +139,15 @@ gameState.prototype = {
         game.input.gamepad.start();
         pad1 = game.input.gamepad.pad1;
         game.input.onDown.add(dump, this);
+
+        this.buttonfire = game.add.button(600, 530, graphicAssets.buttonfire.name, null, this, 0,1,0,1);
+
+
+    buttonfire.events.onInputOver.add(function(){fire=true;});
+    buttonfire.events.onInputOut.add(function(){fire=false;});
+    buttonfire.events.onInputDown.add(function(){fire=true;});
+    buttonfire.events.onInputUp.add(function(){fire=false;}); 
+
     },
 
     dump: function () {
@@ -152,6 +173,9 @@ gameState.prototype = {
         this.shipSprite = game.add.sprite(shipProperties.startX, shipProperties.startY, graphicAssets.ship.name);
         this.shipSprite.angle = -90;
         this.shipSprite.anchor.set(0.5, 0.5); 
+
+
+
 
         this.bulletGroup = game.add.group();
         this.asteroidGroup = game.add.group();
