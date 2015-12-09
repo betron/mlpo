@@ -141,6 +141,8 @@ gameState.prototype = {
         game.input.onDown.add(dump, this);
 
         this.buttonfire = game.add.button(600, 530, graphicAssets.buttonfire.name, null, this, 0,1,0,1);
+        this.buttonthrust = game.add.button(690, 530, graphicAssets.buttonthrust.name, null, this, 0,1,0,1);
+        this.buttonhorizontal = game.add.button(50, 550, graphicAssets.buttonhorizontal.name, null, this, 0,1,0,1);
 
 
     buttonfire.events.onInputOver.add(function(){fire=true;});
