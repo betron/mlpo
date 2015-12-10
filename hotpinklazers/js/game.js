@@ -117,9 +117,9 @@ gameState.prototype = {
         game.load.spritesheet(graphicAssets.explosionMedium.name, graphicAssets.explosionMedium.URL, graphicAssets.explosionMedium.width, graphicAssets.explosionMedium.height, graphicAssets.explosionMedium.frames);
         game.load.spritesheet(graphicAssets.explosionSmall.name, graphicAssets.explosionSmall.URL, graphicAssets.explosionSmall.width, graphicAssets.explosionSmall.height, graphicAssets.explosionSmall.frames);
 
-        game.load.image(graphicAssets.buttonfire.name, graphicAssets.buttonfire.URL);
-        game.load.image(graphicAssets.buttonthrust.name, graphicAssets.buttonthrust.URL);
-        game.load.image(graphicAssets.buttonhorizontal.name, graphicAssets.buttonhorizontal.URL);
+        game.load.spritesheet(graphicAssets.buttonfire.name, graphicAssets.buttonfire.URL);
+        game.load.spritesheet(graphicAssets.buttonthrust.name, graphicAssets.buttonthrust.URL);
+        game.load.spritesheet(graphicAssets.buttonhorizontal.name, graphicAssets.buttonhorizontal.URL);
 
     },
 
