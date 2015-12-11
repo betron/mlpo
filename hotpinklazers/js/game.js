@@ -24,9 +24,9 @@ var graphicAssets = {
     explosionMedium:{URL:'assets/explosionMedium.png', name:'explosionMedium', width:58, height:58, frames:8},
     explosionSmall:{URL:'assets/explosionSmall.png', name:'explosionSmall', width:41, height:41, frames:8},
 
-    buttonfire: { URL:'assets/button-round-a.png', name: 'buttonfire', width:96, height:96},
-    buttonthrust: {URL:'assets/button-round-b.png', name: 'buttonthrust', width: 96, height: 96},
-    buttonhorizontal: {URL:'assets/button-horizontal.png', name: 'buttonhorizontal', width: 96, height:64},
+    buttonfire: { URL:'assets/button-round-a.png', name: 'buttonfire', width:96, height:96, frames:2},
+    buttonthrust: {URL:'assets/button-round-b.png', name: 'buttonthrust', width: 96, height: 96, frames:2},
+    buttonhorizontal: {URL:'assets/button-horizontal.png', name: 'buttonhorizontal', width: 96, height:64, frames:2},
 };
 
 var soundAssets = {
@@ -117,9 +117,9 @@ gameState.prototype = {
         game.load.spritesheet(graphicAssets.explosionMedium.name, graphicAssets.explosionMedium.URL, graphicAssets.explosionMedium.width, graphicAssets.explosionMedium.height, graphicAssets.explosionMedium.frames);
         game.load.spritesheet(graphicAssets.explosionSmall.name, graphicAssets.explosionSmall.URL, graphicAssets.explosionSmall.width, graphicAssets.explosionSmall.height, graphicAssets.explosionSmall.frames);
 
-        game.load.spritesheet(graphicAssets.buttonfire.name, graphicAssets.buttonfire.URL);
-        game.load.spritesheet(graphicAssets.buttonthrust.name, graphicAssets.buttonthrust.URL);
-        game.load.spritesheet(graphicAssets.buttonhorizontal.name, graphicAssets.buttonhorizontal.URL);
+        game.load.spritesheet(graphicAssets.buttonfire.name, graphicAssets.buttonfire.URL, graphicAssets.buttonfire.frames);
+        game.load.spritesheet(graphicAssets.buttonthrust.name, graphicAssets.buttonthrust.URL, graphicAssets.buttonthrust.frames);
+        game.load.spritesheet(graphicAssets.buttonhorizontal.name, graphicAssets.buttonhorizontal.URL, graphicAssets.buttonhorizontal.frames);
 
     },
 
@@ -140,7 +140,6 @@ gameState.prototype = {
         pad1 = game.input.gamepad.pad1;
         game.input.onDown.add(dump, this);
 
-        this.buttonfire = game.add.button(600, 530, graphicAssets.buttonfire.name, null, this, 0,1,0,1);
         this.buttonthrust = game.add.button(690, 530, graphicAssets.buttonthrust.name, null, this, 0,1,0,1);
         this.buttonhorizontal = game.add.button(50, 550, graphicAssets.buttonhorizontal.name, null, this, 0,1,0,1);
 
@@ -176,7 +175,8 @@ gameState.prototype = {
         this.shipSprite.angle = -90;
         this.shipSprite.anchor.set(0.5, 0.5); 
 
-
+        //this.buttonfire = game.add.button(600, 530, graphicAssets.buttonfire.name, null, this, 0,1,0,1);
+        //this.buttonfire.callAll('animations.add', 'animations', null, 2);
 
 
         this.bulletGroup = game.add.group();
