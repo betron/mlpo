@@ -420,14 +420,17 @@ var mainState = function(game){
 };
 
 mainState.prototype = {
+
+     preload: function () {
+                this.load.image('titlepage', 'assets/openingbg.png');
+    },
+
     create: function () {
-        var title = 'HOT\nPINK\nLAZERS';
-        this.tf_title = game.add.text(game.world.centerX, gameProperties.screenHeight-520, title, fontAssets.titleFontStyle);
-        this.tf_title.anchor.set(0.5, 0.5);
+          this.add.image( 0, 0, 'titlepage');
 
-        var startInstructions = 'Use arrow keys to move, SPACEBAR to fire.\n\nClick to Start';
+        var startInstructions = 'Use arrow keys to move, Spacebar to fire.\n\nClick to Start';
 
-        this.tf_start = game.add.text(game.world.centerX, game.world.centerY, startInstructions, fontAssets.counterFontStyle);
+        this.tf_start = game.add.text(400,420, startInstructions, fontAssets.counterFontStyle);
         this.tf_start.anchor.set(0.5, 0.5);
         
         game.input.gamepad.start();
