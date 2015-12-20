@@ -24,9 +24,9 @@ var graphicAssets = {
     explosionMedium:{URL:'assets/explosionMedium.png', name:'explosionMedium', width:58, height:58, frames:8},
     explosionSmall:{URL:'assets/explosionSmall.png', name:'explosionSmall', width:41, height:41, frames:8},
 
-    buttonfire: { URL:'assets/button-round-a.png', name: 'buttonfire', width:96, height:96, frames:2},
-    buttonthrust: {URL:'assets/button-round-b.png', name: 'buttonthrust', width: 96, height: 96, frames:2},
-    buttonhorizontal: {URL:'assets/button-horizontal.png', name: 'buttonhorizontal', width: 96, height:64, frames:2},
+   // buttonfire: { URL:'assets/button-round-a.png', name: 'buttonfire', width:96, height:96, frames:2},
+    //buttonthrust: {URL:'assets/button-round-b.png', name: 'buttonthrust', width: 96, height: 96, frames:2},
+    //buttonhorizontal: {URL:'assets/button-horizontal.png', name: 'buttonhorizontal', width: 96, height:64, frames:2},
 };
 
 var soundAssets = {
@@ -75,7 +75,7 @@ var gameState = function(game){
     this.key_thrust;
     this.key_fire;
     
-    this.buttonfire;
+    //this.buttonfire;
     //this.buttonhorizontal;
     //this.buttonthrust;
 
@@ -117,9 +117,9 @@ gameState.prototype = {
         game.load.spritesheet(graphicAssets.explosionMedium.name, graphicAssets.explosionMedium.URL, graphicAssets.explosionMedium.width, graphicAssets.explosionMedium.height, graphicAssets.explosionMedium.frames);
         game.load.spritesheet(graphicAssets.explosionSmall.name, graphicAssets.explosionSmall.URL, graphicAssets.explosionSmall.width, graphicAssets.explosionSmall.height, graphicAssets.explosionSmall.frames);
 
-        game.load.spritesheet(graphicAssets.buttonfire.name, graphicAssets.buttonfire.URL, graphicAssets.buttonfire.frames);
-        game.load.spritesheet(graphicAssets.buttonthrust.name, graphicAssets.buttonthrust.URL, graphicAssets.buttonthrust.frames);
-        game.load.spritesheet(graphicAssets.buttonhorizontal.name, graphicAssets.buttonhorizontal.URL, graphicAssets.buttonhorizontal.frames);
+        //game.load.spritesheet(graphicAssets.buttonfire.name, graphicAssets.buttonfire.URL, graphicAssets.buttonfire.frames);
+        //game.load.spritesheet(graphicAssets.buttonthrust.name, graphicAssets.buttonthrust.URL, graphicAssets.buttonthrust.frames);
+        //game.load.spritesheet(graphicAssets.buttonhorizontal.name, graphicAssets.buttonhorizontal.URL, graphicAssets.buttonhorizontal.frames);
 
     },
 
@@ -140,7 +140,7 @@ gameState.prototype = {
         pad1 = game.input.gamepad.pad1;
         game.input.onDown.add(dump, this);
 
-        this.buttonfire = game.add.button(640, 530, graphicAssets.buttonfire.name, null, this, 0,1,0,1);
+       /* this.buttonfire = game.add.button(640, 530, graphicAssets.buttonfire.name, null, this, 0,1,0,1);
         this.buttonthrust = game.add.button(690, 530, graphicAssets.buttonthrust.name, null, this, 0,1,0,1);
         this.buttonhorizontal = game.add.button(50, 550, graphicAssets.buttonhorizontal.name, null, this, 0,1,0,1);
 
@@ -148,7 +148,7 @@ gameState.prototype = {
     buttonfire.events.onInputOver.add(function(){fire=true;});
     buttonfire.events.onInputOut.add(function(){fire=false;});
     buttonfire.events.onInputDown.add(function(){fire=true;});
-    buttonfire.events.onInputUp.add(function(){fire=false;}); 
+    buttonfire.events.onInputUp.add(function(){fire=false;}); */
 
     },
 
@@ -425,7 +425,7 @@ mainState.prototype = {
         this.tf_title = game.add.text(game.world.centerX, gameProperties.screenHeight-520, title, fontAssets.titleFontStyle);
         this.tf_title.anchor.set(0.5, 0.5);
 
-        var startInstructions = 'Click to Start -\n\nUP arrow key for thrust. \n\nLEFT and RIGHT arrow keys to turn.\n\SPACE key to fire.';
+        var startInstructions = 'Use arrow keys to move, SPACEBAR to fire.\n\nClick to Start';
 
         this.tf_start = game.add.text(game.world.centerX, game.world.centerY, startInstructions, fontAssets.counterFontStyle);
         this.tf_start.anchor.set(0.5, 0.5);

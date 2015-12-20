@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html dir="ltr" lang="en-US">
@@ -9,55 +11,63 @@
 <title>BrendanTronconi.com</title>
 
 <meta charset="UTF-8">
-<meta name="description" content="Brendan Tronconi, Web Design, Front-End Development, Brooklyn, New York.">
+<meta name="description" content="Brendan Tronconi, UX Design, Front-End Development, Brooklyn, New York.">
 	<meta name="author" content="Brendan Tronconi">
+	<meta name="viewport" content="width=960" />
+	<link rel="shortcut icon" href="http://brendantronconi.com/favicon.ico">
 
-	<link rel="icon" type="image/x-icon" href="images/favicon.png">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">
 	
-<style type="text/css" media="all">@import"yourstyle.css";</style>
-<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+
+	<style type="text/css" media="all">@import"yourstyle.css";</style>
+
+<script ="JavaScript" type="text/javascript" src="js/jquery.js"></script>
 <script>
 // Picture element HTML5 shiv
 document.createElement( "picture" );
 </script>
 <script src="js/picturefill.min.js" async></script>
 
-
 </head>
 <body>
-<div id="page">
+   <div class="container">
+      <div class="header">
+      	  <a class="navbar-brand">
+      	  	Brendan Tronconi
+      	  </a>
+      	<nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Websites</a></li>
+            <li role="presentation"><a href="#">Games</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
 			
 		<div id="banner">	
 		
 		<div id="desc">
-			<h1>Welcome to my website.</h1>
-			<p>This is the personal portfolio site of Brendan Tronconi.</p>
-			<p>I make things for the web.</p>
+			<h1 class="text-heading text-light text-center">Welcome to my website.</h1>
+			<p>I make things on the internet. I do this with HTML, CSS and Javascript. You can see some of my work below. Thanks for stopping by.</p>
 		</div>   <!-- /end .desc-->
 	
 		
 		</div> <!-- /end .banner-->
+	</div><!-- /end .header -->
 				
 			
 				<div id="recent">
 				
 					<ul>					
-					<li><a href="/sites.html"><img src="images/foxSmall.png" sizes="(min-width: 20em) 40vw, 80vw"
-						srcset="images/foxSmall.png 175w, images/foxLarge.png 280w" alt="[Jonathan Fox Poetry]">  </a>
+					<li><img src="images/HPLTitleScreen.png"alt="[HOT PINK LAZERS]">
 					<p><a href="/sites.html">Web Sites</a><br>
 					    <span>HTML, CSS, Javascript, Wordpress</span></li>
 					
-     				<li><a href="/games.html"><img src="images/WarIsAForce.png" sizes="(min-width: 40em) 80vw, 100vw"
-						srcset="images/WarIsAForce.png 375w, images/WarIsAForceBig.png 480w" alt="[Plane Game]">  </a>
+     				<li><a href="/games.html"><img src="images/WarIsAForceBig.png" alt="[Plane Game]">  </a>
 					<p><a href="/games.html">Games</a><br> 
 					    <span>Javascript</span>
-					
-					<li><a href="/branding.html"><img src="images/MedLogIconSmall.png" sizes="(min-width: 20em) 40vw, 80vw"
-						srcset="images/MedLogIconSmall.png 175w, images/MedLogIconLarge.png 280w" alt="[Icon Example]"></a>
-					<p><a href="/branding.html">Icons, Branding</a><br> 
-					    <span>Photoshop, Illustrator, InDesign</span>
 					
                     
                     </li>
@@ -65,20 +75,18 @@ document.createElement( "picture" );
 									
 				</div> <!-- end recent --> 			
 
-		
+<footer class="background-gray">
+  <div class="container flex-container theme-showcase">
+    <h4 class="copy-date"><a href="mailto:design@brendantronconi.com">Brendan Tronconi</a> &copy; <span></span></h4>
+    
+    <p class="copy">
+      <a href="http://codepen.io/betron/" target="_blank"><i class="fa fa-codepen"></i></a>
+      <a href="https://github.com/betron" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="http://www.linkedin.com/in/brendantronconi" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </p>
+  </div>
+</footer>
 
-		<footer>	
-		
-		<ul>
-			<li><a href="http://codepen.io/betron/"><i class="fa fa-codepen"></i></a></li>
-			<li><a href="https://github.com/betron"><i class="fa fa-github"></i></a></li>
-			<li><a href="mailto:Design@BrendanTronconi.com"><i class="fa fa-envelope"></i></a></li>
-		</ul>		
-		
-			<p>A simple adaptive site coded in <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.brendantronconi.com%2F">HTML</a> and CSS from scratch.  
-			
-		</footer>
-
-</div> <!-- /end #page -->
+</div> <!-- /end #container -->
 </body>
 </html>
