@@ -111,7 +111,7 @@ nav ul li a {
 	}
 
 #recent	{
-	height: 2000px;
+	height: 2200px;
 	background-color: #2D2E34;
 
 	}
@@ -269,9 +269,14 @@ h1	{
 @media all and (min-width: 960px){
 
 #recent	{
-	height: 1200px;
+	height: 2200px;
 	}
 
+@media all and (min-width: 1000px){
+
+#recent	{
+	height: 1200px;
+	}
 
  }
 
