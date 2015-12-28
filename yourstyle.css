@@ -43,6 +43,7 @@ a {
 	width: 100%;
 	background-color: #f4f4f4;
 	font-family: 'lato';
+	font-size: 1.5em;
 	}	
 
 h1	{
@@ -64,11 +65,7 @@ img {
 	max-width: 100%;
 	}
 
-.navbar-brand:hover {
-		color: #3A7230;
 
-
-}
 
 .nav li {
 	float: left;
@@ -90,8 +87,11 @@ nav ul li a {
 
 .navbar-brand {
 	color: #000;
-	font-size: 1.3em;
 	text-decoration: none;
+}
+
+.navbar-brand:hover {
+	color: #3A7230;
 }
 
 #desc	{
@@ -111,7 +111,7 @@ nav ul li a {
 	}
 
 #recent	{
-	height: 2200px;
+	height: 2150px;
 	background-color: #2D2E34;
 
 	}
@@ -157,6 +157,7 @@ nav ul li a {
 
 footer {
 	font-family:'lato';
+	font-size: 1.5em;
 }
 
 footer .copy {
@@ -270,6 +271,14 @@ h1	{
 
 #recent	{
 	height: 2200px;
+	}
+
+	footer {
+	font-size: 1.3em;
+	}
+
+	.header	{
+	font-size: 1.3em;
 	}
 
 @media all and (min-width: 1000px){
