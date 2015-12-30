@@ -39,7 +39,7 @@ a {
 	
 
 .header	{
-	height: 472px;
+	height: 772px;
 	width: 100%;
 	background-color: #f4f4f4;
 	font-family: 'lato';
@@ -178,6 +178,10 @@ footer a:hover {
 	transition-duration: 1s;
 }
 
+.copy i {
+	padding: 10px;
+}
+
 .copy-date {
     margin-top: 20px;
     color: black;
@@ -279,6 +283,7 @@ h1	{
 
 	.header	{
 	font-size: 1.3em;
+	height: 572px;
 	}
 
 @media all and (min-width: 1000px){
