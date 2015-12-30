@@ -43,7 +43,7 @@ a {
 	width: 100%;
 	background-color: #f4f4f4;
 	font-family: 'lato';
-	font-size: 1.5em;
+	font-size: 16px;
 	}	
 
 h1	{
@@ -69,6 +69,7 @@ img {
 
 .nav li {
 	float: left;
+	font-size: .8em;
 }
 
 .nav a {
@@ -88,6 +89,7 @@ nav ul li a {
 .navbar-brand {
 	color: #000;
 	text-decoration: none;
+	font-size: 1em;
 }
 
 .navbar-brand:hover {
@@ -106,7 +108,6 @@ nav ul li a {
 	font-size: 1.3em;
 	line-height: 1.5em;
 	font-family: "lato", sans-serif;
-	margin-top: 30px;
 	color: #000;
 	}
 
@@ -161,7 +162,7 @@ footer {
 }
 
 footer .copy {
-    margin: -20px 95px 0 0;
+    margin: -37px 95px 0 0;
     color: purple;
     float: right;
 }
@@ -185,6 +186,8 @@ footer a:hover {
 .copy-date {
     margin-top: 20px;
     color: black;
+    max-width: 11em;
+    padding: 10px;
 }
 
 .content-padding {
