@@ -69,7 +69,7 @@ img {
 
 .nav li {
 	float: left;
-	font-size: .8em;
+	font-size: 1.3em;
 }
 
 .nav a {
@@ -291,6 +291,10 @@ footer {
 .header	{
 	font-size: 1.3em;
 	height: 572px;
+	}
+
+.nav li {
+	font-size: .8em;
 	}
 
 @media all and (min-width: 1000px){
