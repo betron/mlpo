@@ -105,7 +105,7 @@ nav ul li a {
 	}
 
 #desc p {
-	font-size: 1.3em;
+	font-size: 1.8em;
 	line-height: 1.5em;
 	font-family: "lato", sans-serif;
 	color: #000;
@@ -276,15 +276,19 @@ h1	{
 
 @media all and (min-width: 960px){
 
+#desc p {
+	font-size: 1.3em;
+	}
+
 #recent	{
 	height: 2200px;
 	}
 
-	footer {
+footer {
 	font-size: 1.3em;
 	}
 
-	.header	{
+.header	{
 	font-size: 1.3em;
 	height: 572px;
 	}
