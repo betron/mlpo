@@ -128,6 +128,7 @@ nav ul li a {
 	max-width: 480px;
 	height: 300px;
 	float: left;
+	border: 2px dotted pink;
 	}
 	
 #recent img	{
@@ -158,19 +159,19 @@ nav ul li a {
 
 footer {
 	font-family:'lato';
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 footer .copy {
-    margin: -37px 95px 0 0;
+    margin: 0;
     color: purple;
-    float: right;
+    float: left;
 }
 
 footer a{
 	color: black;
 	text-decoration: none;
-	padding: 10px;
+	padding: 20px;
 }
 
 footer a:hover {
@@ -184,10 +185,10 @@ footer a:hover {
 }
 
 .copy-date {
-    margin-top: 20px;
+    margin-top: 10px;
     color: black;
     max-width: 11em;
-    padding: 10px;
+  
 }
 
 .content-padding {
@@ -276,6 +277,15 @@ h1	{
 
 @media all and (min-width: 960px){
 
+.header	{
+	font-size: 1.3em;
+	height: 572px;
+	}
+
+.nav li {
+	font-size: .8em;
+	}
+
 #desc p {
 	font-size: 1.3em;
 	}
@@ -285,17 +295,15 @@ h1	{
 	}
 
 footer {
-	font-size: 1.3em;
+	font-size: 2.2em;
 	}
 
-.header	{
-	font-size: 1.3em;
-	height: 572px;
-	}
+footer .copy {
+    margin: -47px 40px 0 0;
+    color: purple;
+    float: right;
+}
 
-.nav li {
-	font-size: .8em;
-	}
 
 @media all and (min-width: 1000px){
 
