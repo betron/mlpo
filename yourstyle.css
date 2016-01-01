@@ -33,13 +33,17 @@ body	{
 		
 a {
 	color: #3A7230;
-	text-decoration: underline;
+	text-decoration: none;
 	padding-bottom: 1px;
+	}
+
+a:hover {
+	text-decoration: none;
 	}
 	
 
 .header	{
-	height: 772px;
+	height: 722px;
 	width: 100%;
 	background-color: #f4f4f4;
 	font-family: 'lato';
@@ -69,7 +73,7 @@ img {
 
 .nav li {
 	float: left;
-	font-size: 1.3em;
+	font-size: 2em;
 }
 
 .nav a {
@@ -89,7 +93,8 @@ nav ul li a {
 .navbar-brand {
 	color: #000;
 	text-decoration: none;
-	font-size: 1em;
+	font-size: 2.2em;
+	padding-top: 25px;
 }
 
 .navbar-brand:hover {
@@ -128,13 +133,17 @@ nav ul li a {
 	max-width: 480px;
 	height: 300px;
 	float: left;
-	border: 2px dotted pink;
 	}
 	
 #recent img	{
 	margin: 10px;
 	padding: 0;
 	box-shadow: 0px 5px 10px #000;
+	}
+
+	
+.waf {
+	width: 95%;
 	}
 
 #recent p	{
@@ -282,6 +291,10 @@ h1	{
 	height: 572px;
 	}
 
+.navbar-brand {
+	font-size: 1em;
+	}
+
 .nav li {
 	font-size: .8em;
 	}
@@ -295,12 +308,11 @@ h1	{
 	}
 
 footer {
-	font-size: 2.2em;
+	font-size: 1.5em;
 	}
 
 footer .copy {
-    margin: -47px 40px 0 0;
-    color: purple;
+    margin: -30px 40px 0 0;
     float: right;
 }
 
