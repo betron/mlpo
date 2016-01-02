@@ -168,13 +168,13 @@ nav ul li a {
 
 footer {
 	font-family:'lato';
-	font-size: 2em;
+	
 }
 
 footer .copy {
-    margin: 0;
-    color: purple;
-    float: left;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
 }
 
 footer a{
@@ -188,10 +188,11 @@ footer a:hover {
 	transition-duration: 1s;
 }
 
-footer .copy a {
-	float: right;
-	margin: 40px 170px 40px 0;
+footer .copy div {
+	display: block;
+	margin: 0 43px 0;
 	font-size: 45px;
+	float: left;
 }
 
 .copy i {
@@ -203,7 +204,8 @@ footer .copy a {
     float: left;
     color: black;
     max-width: 11em;
-  	margin: 10px 0 10px 40%;
+  	margin: 10px 0 10px ;
+  	font-size: 22px;
 }
 
 .content-padding {
