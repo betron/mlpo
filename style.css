@@ -356,6 +356,27 @@ footer p {
 	
 	font-size: 2em;
 	}
+
+#one {
+	width: 720px;
+	height: 300px;
+	background-color: blue;
+	color: #fff;
+}
+
+#two {
+	width: 740px;
+	height: 300px;
+	background-color: #000;
+	color: #fff;
+}
+
+#three {
+	width: 900px;
+	height: 300px;
+	background-color: blue;
+	color: #fff;
+}
 	
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
