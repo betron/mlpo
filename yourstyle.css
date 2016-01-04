@@ -103,7 +103,7 @@ nav ul li a {
 
 #desc	{
 	float: left;
-	margin-left: 27%;
+	margin-left: 20%;
 	text-align: center;
 	max-width: 35rem;
 
@@ -117,43 +117,36 @@ nav ul li a {
 	}
 
 #recent	{
-	height: 2150px;
+	height: 1400px;
 	background-color: #2D2E34;
 
 	}
 	
-#recent ul {
-	list-style: none;
-	padding-top: 80px;
-	}
-	
-#recent li {
-	padding: 10px 0 100px 10%;
-	margin: 20px 0 0 0;
-	max-width: 480px;
-	height: 300px;
+#recent article {
+	margin: 30px 0;
 	float: left;
+	text-align: center;
 	}
 	
 #recent img	{
-	margin: 10px;
+	margin: 20px;
 	padding: 0;
+	max-width: 450px;
+	float: left;
 	box-shadow: 0px 5px 10px #000;
 	}
 
 	
-.waf {
-	width: 95%;
-	}
+
 
 #recent p	{
-	text-align: center;
-	margin: 70px 0 0 0;
-	padding: 10px;
+	text-align: left;
+	padding: 30px;
 	font-size: 30px;
 	font-family: "lato", sans-serif;
 	line-height: 1.3em;
 	width: 100%;
+	
 	}
 	
 #recent span 	{
@@ -216,76 +209,6 @@ footer .copy div {
 /*
 @media all and (min-width: 400px) {
 
-
-
-
-#desc p {
-	font-size: 2em;
-		
-	}
-
-#recent li {
-	margin:0 0 0 1%;
-	padding: 10px 0 100px;
-	text-align: none;
-	width: 400px;
-	float: left;
-	}
-	
-#recent img	{
-	margin: 5px;
-	padding: 0;
-	box-shadow: 0px 5px 10px #000;
-	}
-
-#recent p {
-	font-size: 1.7em;
-	}	
-
-
-
-	
-
-
-@media all and (min-width: 660px) {
-
-
-
-#desc	{
-
-	width: 31rems;
-
-	}
-
-
-/*
-
-
-h1	{
-	font-size: 4em;
-
-	}
-
-#desc	{
-
-	width: 500px;
-	height: 400px;
-
-	}
-
-#desc p {
-		font-size: 2.2em;
-		
-	}
-
-#recent p {
-	font-size: 1.9em;
-	}	
-
-#recent li {
-	margin-left: 15%;
-}
-
 		
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -306,17 +229,23 @@ h1	{
 .nav li {
 	font-size: .8em;
 	}
+
 #desc	{
-	margin-left: 10%;
+	margin-left: 8%;
 	}
 
 #desc p {
 	font-size: 1.3em;
 	}
 
-#recent	{
-	height: 2200px;
+#recent p	{
+	font-size: 1.3em;
+	max-width: 900px;
 	}
+
+#recent article {
+	margin: 30px 0 30px 8%;
+}
 
 footer .copy div {
 	font-size: 25px;
@@ -324,15 +253,12 @@ footer .copy div {
 
 footer .copy {
     margin: 0;
-    float: right;
 	}
 
 
 @media all and (min-width: 1200px){
 
-#recent	{
-	height: 1200px;
-	}
+
 
  }
 
