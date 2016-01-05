@@ -95,6 +95,7 @@ nav ul li a {
 	color: #000;
 	text-decoration: none;
 	padding-top: 25px;
+	font-size: 30px;
 }
 
 .navbar-brand:hover {
@@ -217,8 +218,8 @@ footer .copy div {
 	}
 
 .navbar-brand {
-	font-size: 1em;
-	}
+	font-size: .8em;
+}
 
 .nav li {
 	font-size: .8em;
