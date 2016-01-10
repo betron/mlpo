@@ -12,6 +12,16 @@
 <!--style type="text/css" media="all">@import "photostyle.css";</style-->
 <style>
 
+.header {
+	height: 800px;
+	border: 3px solid #040;
+}
+
+.navbar-dark {
+	border: 15px solid red;
+	position: absolute;
+	left: 2%;
+}
 
 .sectionTitle {
 	height: 400px;
@@ -21,6 +31,15 @@
 	font-size: 3em;
 	font-family: 'courier', 'courier new', serif;
 	border: 3px solid black;
+
+}
+
+.sectionTitle p img {
+	float: left;
+}
+
+#sectionOne {
+	margin-bottom: 300px;
 }
 
 footer {
@@ -43,7 +62,7 @@ footer li a{
 </style>
 </head>
 <div id="page">
-	<div id = "header">
+	<div class = "header">
 		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
 
 		<img src= "images/BrokenLogo.png" alt ="">
@@ -59,10 +78,38 @@ footer li a{
 		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
 
 		<img src="images/golf.jpg" alt="">
+		<img src="images/golf.jpg" alt="">
 		
 
 	</div>
 	
+		<div id = "sectionTwo">
+
+		<div class = "sectionTitle">
+			<p>section two
+		</div>
+
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<img src="images/golf.jpg" alt="">
+		<img src="images/golf.jpg" alt="">
+		
+
+	</div>
+
+		<div id = "sectionThree">
+
+		<div class = "sectionTitle">
+			<p>section three
+		</div>
+
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<img src="images/golf.jpg" alt="">
+		<img src="images/golf.jpg" alt="">
+		
+
+	</div>
 
 
 
@@ -83,5 +130,24 @@ footer li a{
 	</footer>
 </div> <!-- end page -->
   
+<script>
+	$ft = $('.sectionTitle'),
+     $menu = $('.header'),
+     menuHeight = $menu.height(),
+     pagePosition = $('#sectionTwo').offset().top;
+ $(window).scroll(function() {
+     var currentPosition = $(this).scrollTop();
+     if (currentPosition >= pagePosition - menuHeight) {
+         $ft.addClass('navbar-dark');
+         console.log('this');
+     } 
+ });
 
-</body></html>
+
+
+
+
+
+ </script>
+</body>
+</html>
