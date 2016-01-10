@@ -2,7 +2,7 @@
 
 <html dir="ltr" lang="en-US">
 <head>
-<title>Sandra's Photos</title>
+<title>Persistent Nav</title>
 
 <meta charset="UTF-8">
 <meta name="author" content="Brendan Tronconi">
@@ -19,8 +19,17 @@ body {
 h1 {
   font-size: 72px;
   font-family: Helvetica;
-  color: white;
+  
   text-align: center;
+}
+
+.header {
+  color: white;
+  height: 130px;
+}
+
+.blueB{
+  background-color: purple;
 }
 
 .browser {
@@ -43,6 +52,10 @@ h1 {
   margin: 160px auto;
   font-size: 20px;
   overflow: hidden;
+}
+
+.itemAdd {
+  background-color: black;
 }
 
 nav {
@@ -75,7 +88,9 @@ nav li a {
 </style>
 </head>
 <body>
+  <div class = "header">
 	<h1>Persistent Nav</h1>
+</div>
 <div class="container">
   <div class="browser" data-0="width: 90%;" data-450="width: 50%;">
     <nav>
@@ -99,6 +114,8 @@ nav li a {
   
 <script>
 	  
+
+
 $(document).ready(function () {
   
   $('nav a').on('click', function () {
@@ -122,8 +139,7 @@ $(document).ready(function () {
         'right' : '2%'
       });
     }
-  });
-  
+  }); 
   
   var threePos = $('.item3').offset();
   $(window).on('scroll', function () {
@@ -139,6 +155,27 @@ $(document).ready(function () {
     
 
     });
+
+
+
+
+
+ $menu = $( '.header' ), 
+ $mann = $( '.item2'),
+    menuHeight = $menu.height(), 
+    pagePosition = $( '.item1' ).offset().top; 
+
+    $( window ).scroll( function() {
+      
+      var currentPosition = $( this ).scrollTop(); 
+
+      if ( currentPosition >= pagePosition - menuHeight) 
+      {console.log('blues');
+        $mann.addClass( 'blueB' );
+         
+
+      } }); 
+    
 
 
 
