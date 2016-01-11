@@ -12,15 +12,63 @@
 <!--style type="text/css" media="all">@import "photostyle.css";</style-->
 <style>
 
-.header {
-	height: 800px;
-	border: 3px solid #040;
+.navbar {
+  height: 75px;
+  width: 100%;
+  border-width: 0;
+  -webkit-transition: all, 0.2s, ease;
+  -moz-transition: all, 0.2s, ease;
+  transition: all, 0.2s, ease;
+  background-color: transparent;
+  display: box;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	display: block;
+}
+
+.navbar li {
+	display: inline;
+	font-size: 1.3em;
+	font-family: 'courier', 'courier new', serif;
+	padding: 5px 25px 5px 6%;
+	color: white;
+	margin: 0;
+	position: relative;
+	bottom: 60px;
+
+}
+
+.navbar img {
+	width: 200px;
+	margin-top: 20px;
+	position: relative;
+	top: 40px;
 }
 
 .navbar-dark {
-	border: 15px solid red;
-	position: absolute;
-	left: 2%;
+  height: 75px;
+    width: 100%;
+  background: black;
+  position: fixed;
+  top: 0;
+  color: black;
+
+}
+
+.joke{
+	margin-top: 250px;
+	color: purple;
+	height: 400px;
+	border: 3px solid blue;
 }
 
 .sectionTitle {
@@ -39,7 +87,7 @@
 }
 
 #sectionOne {
-	margin-bottom: 300px;
+	margin: 300px 0;
 }
 
 footer {
@@ -62,12 +110,31 @@ footer li a{
 </style>
 </head>
 <div id="page">
-	<div class = "header">
-		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+	<div class = "navbar">
+		<ul>
+			<li>Day One</li>
+			<li>Day Two</li>
+			<li><img src= "images/BrokenLogo.png" alt =""></li>
+			<li>Day Three</li>
+			<li>Day Four</li>
+		</ul>
 
-		<img src= "images/BrokenLogo.png" alt ="">
+		
 	</div>
 
+	<div class="joke">
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+
+	</div>
 
 	<div id = "sectionOne">
 
@@ -131,18 +198,23 @@ footer li a{
 </div> <!-- end page -->
   
 <script>
-	$ft = $('.sectionTitle'),
-     $menu = $('.header'),
-     menuHeight = $menu.height(),
-     pagePosition = $('#sectionTwo').offset().top;
- $(window).scroll(function() {
-     var currentPosition = $(this).scrollTop();
-     if (currentPosition >= pagePosition - menuHeight) {
-         $ft.addClass('navbar-dark');
-         console.log('this');
-     } 
- });
 
+
+    $menu = $( '.navbar' ), 
+    menuHeight = $menu.height(), 
+    pagePosition = $( '#sectionOne' ).offset().top; 
+
+    $( window ).scroll( function() {
+      
+      var currentPosition = $( this ).scrollTop(); 
+
+      if ( currentPosition >= pagePosition - menuHeight ) 
+    	{$menu.addClass( 'navbar-dark' ); 
+
+    	} else{
+        $menu.removeClass( 'navbar-dark' ); 
+      
+}}); 
 
 
 
