@@ -78,17 +78,55 @@
 	color: #f4f4f4;
 	font-size: 3em;
 	font-family: 'courier', 'courier new', serif;
-	border: 3px solid black;
-
 }
 
-.sectionTitle p img {
-	float: left;
+#sectionOneTitle {
+	height: 400px;
+	width: 350px;
+	background-color: #000;
+	color: #f4f4f4;
+	font-size: 3em;
+	font-family: 'courier', 'courier new', serif;
 }
+
+#sectionTwoTitle {
+	height: 400px;
+	width: 350px;
+	background-color: #fff;
+	color: #f4f4f4;
+	font-size: 3em;
+	font-family: 'courier', 'courier new', serif;
+}
+
+#sectionThreeTitle {
+	height: 400px;
+	width: 350px;
+	background-color: #000;
+	color: #f4f4f4;
+	font-size: 3em;
+	font-family: 'courier', 'courier new', serif;
+}
+
 
 #sectionOne {
-	margin: 300px 0;
+	margin: 100px 0;
+	position: absolute;
+	left: 30%;
+	top: 300px;
 }
+
+#sectionOne p {
+	width: 350px;
+}
+
+#sectionOne img {
+	width: 400px;
+}
+
+#sectionTwo {
+	height: 800px;
+}
+
 
 footer {
 	height: 300px;
@@ -138,7 +176,11 @@ footer li a{
 
 	<div id = "sectionOne">
 
-		<div class = "sectionTitle">
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+
+		<div id = "sectionOneTitle">
 			<p>section one
 		</div>
 
@@ -152,21 +194,18 @@ footer li a{
 	
 		<div id = "sectionTwo">
 
-		<div class = "sectionTitle">
+		<div id = "sectionTwoTitle">
 			<p>section two
 		</div>
 
-		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
-
-		<img src="images/golf.jpg" alt="">
-		<img src="images/golf.jpg" alt="">
+		
 		
 
 	</div>
 
 		<div id = "sectionThree">
 
-		<div class = "sectionTitle">
+		<div id = "sectionThreeTitle">
 			<p>section three
 		</div>
 
@@ -216,6 +255,37 @@ footer li a{
       
 }}); 
 
+
+ var titlePos = $('#sectionOneTitle').offset();
+  $(window).on('scroll', function () {
+    if($(window).scrollTop() > parseInt(titlePos.top) - 60){
+      console.log('buns');
+      $('#sectionOneTitle').css({
+        'position' : 'fixed',
+        'right' : '550px',
+        'top': '50px'
+      });
+    } else {
+    	 $('#sectionOneTitle').css({
+        'position' : 'absolute',
+        'right' : '40%',
+       
+        
+      });
+
+    }
+  }); 
+
+  var titlePosTh = $('#sectionThreeTitle').offset();
+  $(window).on('scroll', function () {
+    if($(window).scrollTop() > parseInt(titlePosTh.top) - 60){
+      console.log('hotcross');
+      $('#sectionOneTitle').css({
+        'position' : 'absolute'
+        
+      });
+    } 
+  }); 
 
 
 
