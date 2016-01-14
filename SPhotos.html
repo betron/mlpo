@@ -65,10 +65,10 @@
 }
 
 .first{
-	margin: 250px auto 0;
+	margin: 200px auto 0;
 	height: 900px;
 	width: 850px;
-	border: 3px solid blue;
+	
 
 	
 }
@@ -100,9 +100,11 @@
 	font-family: 'courier', 'courier new', serif;
 	font-size: .9em;
 	text-align: left;
-	
-	display: block;
-	width: 150px;
+	overflow: hidden;
+	position: relative;
+	right: 220px;
+	top: 100px;
+	width: 360px;
 
 }
 
@@ -136,13 +138,14 @@
 }
 
 #sectionOneTitle {
+	margin-top: 200px;
 	height: 400px;
 	width: 350px;
 	background-color: #000;
 	color: #f4f4f4;
 	font-size: 3em;
 	font-family: 'courier', 'courier new', serif;
-}
+	}
 
 #sectionTwoTitle {
 	height: 400px;
@@ -166,8 +169,8 @@
 #sectionOne {
 	margin: 700px 0;
 	position: absolute;
-	left: 30%;
 	top: 300px;
+	width: 80%;
 }
 
 #sectionOne p {
@@ -230,7 +233,7 @@ footer li a{
 		</ul>
 		<h2>About<br> the artist</h2>
 		<div class= "spacer"></div>
-		<p>text. text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.text.
+		<p>This is the text below the About the Artist. This is the text below the About the Artist. This is the text below the About the Artist. This is the text below the About the Artist. This is the text below the About the Artist. This is the text below the About the Artist. This is the text below the About the Artist. This is the text below the About the Artist. This is the text below the About the Artist.</p>
 
 
 	</div>
@@ -317,14 +320,14 @@ footer li a{
 }}); 
 
 
- var titlePos = $('#sectionOneTitle').offset();
+ var titlePos = $('#sectionOne').offset();
   $(window).on('scroll', function () {
-    if($(window).scrollTop() > parseInt(titlePos.top) - 60){
+    if($(window).scrollTop() > parseInt(titlePos.top) + 70){
       console.log('buns');
       $('#sectionOneTitle').css({
         'position' : 'fixed',
-        'right' : '550px',
-        'top': '50px'
+        'right' : '620px',
+        'top': '5px'
       });
     } else {
     	 $('#sectionOneTitle').css({
