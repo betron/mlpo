@@ -52,6 +52,12 @@
 	margin-top: 20px;
 	position: relative;
 	top: 40px;
+	-webkit-filter: grayscale(100%);
+	
+}
+
+.hide {
+	display: none;
 }
 
 .navbar-dark {
@@ -206,7 +212,7 @@ footer li a{
 </style>
 </head>
 <div id="page">
-	<div class = "navbar">
+	<div class = "navbar hide">
 		<ul>
 			<li>Day One</li>
 			<li>Day Two</li>
@@ -312,10 +318,12 @@ footer li a{
       var currentPosition = $( this ).scrollTop(); 
 
       if ( currentPosition >= pagePosition - menuHeight ) 
-    	{$menu.addClass( 'navbar-dark' ); 
+    	{$menu.removeClass( 'hide' );
+		 $menu.addClass( 'navbar-dark' ); 
 
     	} else{
         $menu.removeClass( 'navbar-dark' ); 
+        $menu.addClass( 'hide' );
       
 }}); 
 
