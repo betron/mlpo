@@ -45,14 +45,18 @@ location  {
 }
 
 .details {
-	font-weight: 400;
-	font-size: 1em;
+	font-weight: 200;
+	font-size: .9em;
 	margin: 0 auto;
-	width: 450px;
+	display: flex;
+	border: 3px solid purple;
 
 }
 
 
+.day {
+	line-height: .3em;
+}
 .week {
 	display: flex;
 	justify-content: space-around;
@@ -60,7 +64,31 @@ location  {
 }
 
 .conditions {
-	font-weight: 200;
+		font-weight: 200
+		
+}
+
+.current {
+	list-style: none;
+	border: 2px dotted black;
+	justify-content: space-around;
+}
+
+.current li {
+	display: inline;
+
+}
+
+.currentTwo {
+	list-style: none;
+	
+		justify-content: space-around;
+		border: 5px solid pink;
+
+}
+
+.currentTwo li {
+	display: inline;
 }
 
 .temp {
@@ -87,12 +115,16 @@ location  {
 		<p>Mostly Sunny</p>
 	</div>
 	<div class="details">
-		<p>Feels Like 51
-		<p>Wind 11 mph
-		<p>Barometer 29.51in
-		<p>Visibility 10 mi
-		<p>Humidity 66%
-		<p> Dew Point 35
+		<ul class="current">
+			<li>Feels Like 51</li>
+			<li>Wind 11 mph</li>
+			<li>Barometer 29.51in</li>
+		</ul>
+		<ul class="currentTwo">
+			<li>Visibility 10 mi</li>
+			<li>Humidity 66%</li>
+			<li> Dew Point 35</li>
+		</ul>
 	</div><!-- end details -->
 
 	<ul class="week">
