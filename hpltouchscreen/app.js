@@ -20,7 +20,7 @@ var DemoClass = (function () {
         this.preload = function () {
             // We need multiple inputs because an asteroids game will require four, one for each button
             // This demo I only include two rotate buttons and one thrust button.  
-            _this.game.input.maxPointers = 3;
+            _this.game.input.maxPointers = 4;
             // Load the ship demo sprieAtlas.  This contains the ship and the three buttons
             _this.game.load.atlas('spriteAtlas', 'assets/spriteAtlas3.png', 'assets/spriteAtlas3.json');
         };
@@ -28,7 +28,7 @@ var DemoClass = (function () {
             // typical mobile scaling code
             _this.game.stage.disableVisibilityChange = false;
             _this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-           // _this.game.scale.setMinMax(288, 384, 768 * 2, 1024 * 2);
+            _this.game.scale.setMinMax(288, 384, 768, 1024);
             _this.game.scale.pageAlignHorizontally = true;
             _this.game.scale.pageAlignVertically = true;
             // The cursor keys are for desktop control

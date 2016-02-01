@@ -25,11 +25,18 @@ var Controls = (function (_super) {
         // I use the sprite atlas 'spriteAtlas' 
         // the null parameter is in place of a button callback.  Since we don't use the callback we need to set it to null.
         // We still keep the 'this' parameter.
-        this.btnThrust = new Phaser.Button(this.game, this.game.width, this.game.height, 'spriteAtlas', null, this, 'btnFire.png', 'btnFire.png', 'btnFire.png');
+        this.btnThrust = new Phaser.Button(this.game, this.game.width, this.game.height, 'spriteAtlas', null, this, 'btnThrust.png', 'btnThrust.png', 'btnThrust.png');
         // Add the button as a child of this class
         this.addChild(this.btnThrust);
         // Set the anchor to the far right and bottom of the sprite
         this.btnThrust.anchor.setTo(1, 1);
+
+
+        this.btnFire = new Phaser.Button(this.game, this.game.width-96, this.game.height, 'spriteAtlas', null, this, 'btnFire.png', 'btnFire.png', 'btnFire.png');
+        this.addChild(this.btnFire);
+        this.btnFire.anchor.setTo(1, 1);
+
+
         // add the shot button at the bottom of the screen.  I set the position to the width and height of the game because
         // we make the anchor set to 0,1 which means it sets the anchor to the the bottom left of the sprite
         // I use the sprite atlas 'spriteAtlas' 

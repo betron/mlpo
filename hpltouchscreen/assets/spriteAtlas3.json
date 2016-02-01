@@ -1,8 +1,16 @@
 {"frames": [
 
 {
-	"filename": "btnFire.png",
+	"filename": "btnThrust.png",
 	"frame": {"x":93,"y":2,"w":89,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":89,"h":89},
+	"sourceSize": {"w":89,"h":89}
+},
+{
+	"filename": "btnFire.png",
+	"frame": {"x":93,"y":96,"w":89,"h":89},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":89,"h":89},
