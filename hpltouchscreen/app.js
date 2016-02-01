@@ -28,7 +28,7 @@ var DemoClass = (function () {
             // typical mobile scaling code
             _this.game.stage.disableVisibilityChange = false;
             _this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            _this.game.scale.setMinMax(288, 384, 768 * 2, 1024 * 2);
+           // _this.game.scale.setMinMax(288, 384, 768 * 2, 1024 * 2);
             _this.game.scale.pageAlignHorizontally = true;
             _this.game.scale.pageAlignVertically = true;
             // The cursor keys are for desktop control
@@ -86,10 +86,10 @@ var DemoClass = (function () {
             }
             // Check for the left arroow ket or the virtual button state that controls left rotation
             if ((_this.cursors.left.isDown) || (_this.virtualLeftButtonDown)) {
-                _this.ship.rotate(-2.5);
+                _this.ship.rotate(-3);
             }
             else if ((_this.cursors.right.isDown) || (_this.virtualRightButtonDown)) {
-                _this.ship.rotate(2.5);
+                _this.ship.rotate(3);
             }
         };
         this.game = new Phaser.Game(480, 640, Phaser.CANVAS, 'stage', { preload: this.preload, create: this.create, update: this.update });
