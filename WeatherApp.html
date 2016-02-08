@@ -8,6 +8,7 @@
 <meta name="author" content="Brendan Tronconi">
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,200,400,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
 
 <style>
 
@@ -40,14 +41,13 @@ h1 span {
 	position: relative;
 	top: -30px;
 	right: 15px;
-
 }
 
 .design {
-	width: 250px;
+	width: 165px;
 	margin: 0 auto;
 	padding: 40px 0 0 ;
-	height: 170px;
+	height: 160px;
 }
 
 .design p {
@@ -66,7 +66,7 @@ h1 span {
 
 .design .cc {
 	position: relative;
-	bottom: 60px;
+	bottom: 80px;
 	left: 20px;
 }
 
@@ -88,18 +88,42 @@ location  {
 }
 
 .details {
+	width: 490px;
 	font-weight: 200;
 	font-size: .9em;
 	margin: 0 auto;
 	display: flex;
-	border: 6px solid red;
+	flex-direction: column;
+	right: 40px;
+}
 
+.current {
+	margin: 10px auto;
+	list-style: none;
+	justify-content: space-around;
+}
+
+.current li {
+	display: inline;
+	margin: 0 20px 0;
+}
+
+.currentTwo {
+	list-style: none;
+	justify-content: space-around;
+	margin: 10px auto;
+}
+
+.currentTwo li {
+	display: inline;
+	margin: 0 20px 0;
 }
 
 
 .day {
 	line-height: .3em;
 }
+
 .week {
 	display: flex;
 	justify-content: space-around;
@@ -107,31 +131,9 @@ location  {
 }
 
 .conditions {
-		font-weight: 200
-		color: green;
-		
-}
+	font-weight: 100;
 
-.current {
-	list-style: none;
-	border: 2px dotted black;
-	justify-content: space-around;
-}
-
-.current li {
-	display: inline;
-
-}
-
-.currentTwo {
-	list-style: none;
-	justify-content: space-around;
-	border: 3px solid red;
-
-}
-
-.currentTwo li {
-	display: inline;
+			
 }
 
 .temp {
@@ -160,26 +162,26 @@ location  {
 	</div>
 	<div class="details">
 		<ul class="current">
-			<li>Feels Like 51</li>
-			<li>Wind 11 mph</li>
-			<li>Barometer 29.51in</li>
+			<li>Feels Like  &nbsp; 51 &#176;</li>
+			<li>Wind &nbsp; 11 mph</li>
+			<li>Barometer &nbsp; 29.51in</li>
 		</ul>
 		<ul class="currentTwo">
-			<li>Visibility 10 mi</li>
-			<li>Humidity 66%</li>
-			<li> Dew Point 35</li>
+			<li>Visibility &nbsp;10 mi</li>
+			<li>Humidity &nbsp;66%</li>
+			<li> Dew Point &nbsp;35&#176;</li>
 		</ul>
 	</div><!-- end details -->
 
 	<ul class="week">
-		<li class="day"><p>Sat 16 <p class="temp">51 &#176;<span>32 &#176;</span>  <p class="conditions">Mostly Cloudy</li>
-		<li class="day"><p>Sun 17 <p class="temp">29  &#176;<span>24  &#176;</span>  <p class="conditions">Cloudy</li>
-		<li class="day"><p>Mon 18 <p class="temp">33  &#176;<span>17  &#176;</span>  <p class="conditions">Mostly Cloudy</li>
-		<li class="day"><p>Tue 19 <p class="temp">51  &#176;<span>32  &#176;</span>  <p class="conditions">Mostly Cloudy</li>
-		<li class="day"><p>Wed 20 <p class="temp">39  &#176;<span>24  &#176;</span>  <p class="conditions">Sunny</li>
-		<li class="day"><p>Thu 21 <p class="temp">33  &#176;<span>17  &#176;</span>  <p class="conditions">Mostly Sunny</li>
-		<li class="day"><p>Fri 22 <p class="temp">51  &#176;<span>32  &#176;</span>  <p class="conditions">Mostly Cloudy</li>
-		<li class="day"><p>Sat 23 <p class="temp">39  &#176;<span>24  &#176;</span>  <p class="conditions">Cloudy</li>
+		<li class="day"><p>Sat 16 <p class="temp">51 &#176;<span>32 &#176;</span>  <i class="fa fa-cloud"></i><p class="conditions">Mostly Cloudy</li>
+		<li class="day"><p>Sun 17 <p class="temp">29  &#176;<span>24  &#176;</span> <i class="fa fa-cloud"></i> <p class="conditions">Cloudy</li>
+		<li class="day"><p>Mon 18 <p class="temp">33  &#176;<span>17  &#176;</span>  <i class="fa fa-cloud"></i><p class="conditions">Mostly Cloudy</li>
+		<li class="day"><p>Tue 19 <p class="temp">51  &#176;<span>32  &#176;</span>  <i class="fa fa-sun-o"></i><p class="conditions">Mostly Cloudy</li>
+		<li class="day"><p>Wed 20 <p class="temp">39  &#176;<span>24  &#176;</span>  <i class="fa fa-sun-o"></i><p class="conditions">Sunny</li>
+		<li class="day"><p>Thu 21 <p class="temp">33  &#176;<span>17  &#176;</span>  <i class="fa fa-sun-o"></i><p class="conditions">Mostly Sunny</li>
+		<li class="day"><p>Fri 22 <p class="temp">51  &#176;<span>32  &#176;</span>  <i class="fa fa-sun-o"></i><p class="conditions">Mostly Cloudy</li>
+		<li class="day"><p>Sat 23 <p class="temp">39  &#176;<span>24  &#176;</span>  <i class="fa fa-cloud"></i><p class="conditions">Cloudy</li>
 
 	</ul>
 		
