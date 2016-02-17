@@ -40,6 +40,16 @@ a:hover {
 	text-decoration: none;
 	}
 
+
+a:visited {
+
+	color: #3A7230;
+	opacity: .8;
+	text-decoration: none;
+}
+
+
+
 .container-fluid {
 	padding: 0;
 }
@@ -123,7 +133,7 @@ nav ul li a {
 	}
 
 #recent	{
-	height: 2800px;
+	height: 3200px;
 	background-color: #2D2E34;
 	}
 	
@@ -163,6 +173,7 @@ footer {
 	font-family:'lato';
 	max-width: 1100px;
 	margin: 0 auto;
+
 }
 
 footer .copy {
@@ -171,15 +182,30 @@ footer .copy {
     box-sizing: border-box;
 }
 
-footer a{
+footer a:link{
 	color: black;
 	text-decoration: none;
 }
 
+footer a:visited {
+	color: #000;
+	opacity: .8;
+	text-decoration: none;
+
+}
+
 footer a:hover {
-	color: #f4f4f4;
+	color: #000;
 	text-decoration: none;
 	transition-duration: 1s;
+}
+
+
+footer a:active{
+
+	color: #000;
+	opacity: .8;
+	text-decoration: none;
 }
 
 footer .copy div {
