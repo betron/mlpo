@@ -134,7 +134,7 @@ nav ul li a {
 	}
 
 #recent	{
-	height: 3200px;
+	height: 2400px;
 	background-color: #2D2E34;
 	}
 	
@@ -142,6 +142,11 @@ nav ul li a {
 	margin: 50px 0 0 50px;
 	float: left;
 	text-align: center;
+	}
+
+.cp {
+	width: 80%;
+	margin: 50px;
 	}
 	
 #recent img	{
