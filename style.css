@@ -358,32 +358,13 @@ footer p {
 	}
 
 #one {
-	width: 700px;
+	width: 1000px;
 	height: 300px;
-	background-color: blue;
+	background-color: #000099;
 	color: #fff;
 }
 
-#two {
-	width: 800px;
-	height: 300px;
-	background-color: #000;
-	color: #fff;
-}
 
-#three {
-	width: 900px;
-	height: 300px;
-	background-color: blue;
-	color: #fff;
-}
-	
-#four {
-	width: 950px;
-	height: 300px;
-	background-color: #000;
-	color: #fff;
-}
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
