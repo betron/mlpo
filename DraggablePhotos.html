@@ -11,7 +11,6 @@
 
 <!--style type="text/css" media="all">@import "photostyle.css";</style-->
 <style>
-@media print , screen{
 
 /* Remove browser styles*/
 	
@@ -33,45 +32,93 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 		}
 
+@media print {
+	
+		body {
+		  background: #4444ba;
+		  margin: 0;
+		}
 
-body {
-  background: #4444ba;
-  margin: 0;
+		.box {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  cursor: move;
+		  border: none;
+		}
+
+		.box img {
+			width: 2in;
+			height: 2in;
+			z-index: 2;
+		}
+
+		#page {
+		  height: 8.5in; 
+		  width: 11in;
+		  border: none;
+		  display: flex;
+		  flex-flow: row wrap;
+		  z-index: 0;
+		}
+
+		#page div {
+		  height: 49.3%;
+		  width: 13.7%;
+		  border: none;
+		}
+
+
+
 }
 
-.box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  cursor: move;
-  border: 5px solid #ccc;
+
+
+
+
+
+
+@media screen{
+
+
+
+		body {
+		  background: #4444ba;
+		  margin: 0;
+		}
+
+		.box {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  cursor: move;
+		  border: 5px solid #ccc;
+		}
+
+		.box img {
+			width: 2in;
+			height: 2in;
+			z-index: 2;
+		}
+
+		#page {
+		  height: 8.5in; 
+		  width: 11in;
+		  border: 5px solid black;
+		  display: flex;
+		  flex-flow: row wrap;
+		  z-index: 0;
+		}
+
+		#page div {
+		  height: 49.3%;
+		  width: 13.7%;
+		  border: 3px solid red;
+		}
 }
 
-.box img {
-	width: 2in;
-	height: 2in;
-	z-index: 2;
-}
-
-#page {
-  height: 8.5in; 
-  width: 11in;
-  border: 5px solid black;
-  display: flex;
-  flex-flow: row wrap;
-  z-index: 0;
-}
-
-#page div {
-  height: 49.3%;
-  width: 13.7%;
-  border: 3px solid red;
-}
 
 
-
-
-}
 </style>
 </head>
 <body>
