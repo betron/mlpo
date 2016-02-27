@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US">
+<head>
+<title>Draggable Photos</title>
+
+<meta charset="UTF-8">
+<meta name="author" content="Brendan Tronconi">
+
+<script src="js/jquery.js"></script>
+
+<!--style type="text/css" media="all">@import "photostyle.css";</style-->
+<style>
+@media print , screen{
+
+/* Remove browser styles*/
+	
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+		}
+
+
+body {
+  background: #4444ba;
+  margin: 0;
+}
+
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: move;
+  border: 5px solid #ccc;
+}
+
+.box img {
+	width: 2in;
+	height: 2in;
+	z-index: 2;
+}
+
+#page {
+  height: 8.5in; 
+  width: 11in;
+  border: 5px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  z-index: 0;
+}
+
+#page div {
+  height: 49.3%;
+  width: 13.7%;
+  border: 3px solid red;
+}
+
+
+
+
+}
+</style>
+</head>
+<body>
+
+
+
+<div id = "page">
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div> 
+    <div> </div>
+  
+</div> <!-- end page-->
+
+<div class ="box">
+
+<img src= "images/TESTPHOTO.jpg">
+  
+</div>
+
+<div class ="box">
+
+<img src= "images/TESTPHOTOTWO.jpg">
+  
+</div>
+
+<div class ="box">
+
+<img src= "images/TESTPHOTOTHREE.jpg">
+  
+</div>
+
+<div class ="box">
+
+<img src= "images/TESTPHOTOFOUR.jpg">
+  
+</div>
+
+
+
+
+
+  
+<script>
+
+
+  $(document).ready(function() {
+  
+  
+  function drag(tab) {
+    var x, y, mx, my;
+    $(document).on("mousedown", tab, function(mouse) {
+      mx = mouse.clientX;
+      my = mouse.clientY;
+      x = mx - $(this).offset().left;
+      y = my - $(this).offset().top;
+
+      $(this).addClass("draggable");
+    });
+    $(document).on("mouseup", function() {
+      $(tab).removeClass("draggable");
+    });
+    $(document).on("mousemove", function(mouse) {
+      if($(tab).hasClass("draggable")) {
+        var mx = mouse.clientX;
+        var my = mouse.clientY;
+        //console.log(mx - x);
+        //console.log(my - y);
+        //console.log(mx);
+        //console.log(my);
+        //console.log(e);
+        $(".draggable").css({ "top" : my - y, "left" : mx - x });
+      }
+    });
+  }
+  drag(".box")
+});
+
+
+ </script>
+</body>
+</html>
