@@ -246,32 +246,22 @@ BasicGame.Game.prototype = {
       enemy.body.velocity.y = this.rnd.integerInRange(BasicGame.ENEMY_MIN_Y_VELOCITY, BasicGame.ENEMY_MAX_Y_VELOCITY);
       enemy.play('fly');
       }
-
-    
-     
-    
   },
-
-
-
-
-
-
 
 processPlayerInput: function () {
     this.player.body.velocity.x = 0;
     this.player.body.velocity.y = 0;
 
     if (this.cursors.left.isDown) {
-      this.player.body.velocity.x = -this.player.speed;
+      this.player.body.angularVelocity = -50;
       } else if (this.cursors.right.isDown) {
-      this.player.body.velocity.x = this.player.speed;
+      this.player.body.angularVelocity = +50;
+      } else {
+        this.player.body.angularVelocity = 0;
       }
 
     if (this.cursors.up.isDown) {
-      this.player.body.velocity.y = -this.player.speed;
-      } else if (this.cursors.down.isDown) {
-      this.player.body.velocity.y = this.player.speed;
+      this.game.physics.arcade.accelerationFromRotation(this.player.rotation + 80, 1000, this.player.body.acceleration);
       }
 
     if(this.input.activePointer.isDown &&
@@ -279,13 +269,11 @@ processPlayerInput: function () {
       this.physics.arcade.moveToPointer(this.player, this.player.speed);
       }
 
-    if (this.input.keyboard.isDown(Phaser.Keyboard.Z) ||
+    if (this.input.keyboard.isDown(Phaser.Keyboard.UP) ||
         this.input.activePointer.isDown) {
       if (this.returnText && this.returnText.exists) {
         this.quitGame();
-      } else{
-        this.fire();
-      }
+      } 
     }
   },
 
