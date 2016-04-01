@@ -15,6 +15,8 @@ BasicGame.Game.prototype = {
     this.setupText();
     this.setupAudio();
 
+    this.game.world.setBounds(0, 0, 1200, 1200);//(x, y, width, height)
+
     this.cursors = this.input.keyboard.createCursorKeys();
   },
 
@@ -27,6 +29,7 @@ BasicGame.Game.prototype = {
     },
 
     render: function()  {
+     
     },
 
     //
@@ -47,87 +50,29 @@ BasicGame.Game.prototype = {
     this.player.speed = BasicGame.PLAYER_SPEED;
     this.player.body.collideWorldBounds = true;
     //20 x 20 pixel hitbox
-    this.player.body.setSize(54, 105, 0, -5);
+    this.player.body.setSize(20, 20, 0, -10);
     this.weaponLevel = 0;
   },
 
   setupEnemies: function () {
     this.enemyPool = this.add.group();
     this.enemyPool.enableBody = true;
+    //this.enemyPool.setAll.body.setSize( 62, 179, 0, 0);
     this.enemyPool.physicsBodyType = Phaser.Physics.ARCADE;
-    this.enemyPool.createMultiple(10, 'greenEnemy');
+    this.enemyPool.createMultiple(15, 'greenEnemy');
     this.enemyPool.setAll('anchor.x', 0.5);
     this.enemyPool.setAll('anchor.y', 0.5);
-    this.enemyPool.setAll('outOfBoundsKill', true);
     this.enemyPool.setAll('checkWorldBounds', true);
     this.enemyPool.setAll('reward', BasicGame.ENEMY_REWARD, false, false, 0, true);
     this.enemyPool.setAll(
       'dropRate', BasicGame.ENEMY_DROP_RATE, false, false, 0, true
     );
-
-    /* Set the animation for each sprite
-    this.enemyPool.forEach(function (enemy) {
-      enemy.animations.add('fly', [ 0, 1, 2 ], 20, true);
-      enemy.events.onAnimationComplete.add( function (e) {
-        e.play('fly');
-      }, this);
-    });*/
+    
 
     this.nextEnemyAt = 0;
     this.enemyDelay = BasicGame.SPAWN_ENEMY_DELAY;
 
-    this.shooterPool = this.add.group();
-    this.shooterPool.enableBody = true;
-    this.shooterPool.physicsBodyType = Phaser.Physics.ARCADE;
-    this.shooterPool.createMultiple(20, 'greenEnemy');
-    this.shooterPool.setAll('anchor.x', 0.5);
-    this.shooterPool.setAll('anchor.y', 0.5);
-    this.shooterPool.setAll('outOfBoundsKill', true);
-    this.shooterPool.setAll('checkWorldBounds', true);
-    this.shooterPool.setAll(
-      'reward', BasicGame.SHOOTER_REWARD, false, false, 0, true
-    );
-    this.shooterPool.setAll(
-      'dropRate', BasicGame.SHOOTER_DROP_RATE, false, false, 0, true
-    );
-
-    //Set the animaiton for each sprite
-    this.shooterPool.forEach(function (enemy) {
-      enemy.animations.add('fly', [ 0, 1, 2 ], 20, true);
-      enemy.animations.add('hit', [ 3, 1, 3, 2 ], 20, false);
-      enemy.events.onAnimationComplete.add( function (e) {
-        e.play('fly');
-      }, this);
-    });
-
-    // start spawning 5 seconds into the game
-    this.nextShooterAt = this.time.now + Phaser.Timer.SECOND * 5;
-    this.shooterDelay = BasicGame.SPAWN_SHOOTER_DELAY;
-
-    this.bossPool = this.add.group();
-    this.bossPool.enableBody = true;
-    this.bossPool.physicsBodyType = Phaser.Physics.ARCADE;
-    this.bossPool.createMultiple(1, 'boss');
-    this.bossPool.setAll('anchor.x', 0.5);
-    this.bossPool.setAll('anchor.y', 0.5);
-    this.bossPool.setAll('outOfBoundsKill', true);
-    this.bossPool.setAll('checkWorldBounds', true);
-    this.bossPool.setAll('reward', BasicGame.BOSS_REWARD, false, false, 0, true);
-    this.bossPool.setAll(
-      'dropRate', BasicGame.BOSS_DROP_RATE, false, false, 0, true
-      );
-
-    //set the animation for each sprite
-    this.bossPool.forEach(function (enemy) {
-      enemy.animations.add('fly', [0, 1, 2 ], 20, true);
-      enemy.animations.add('hit', [3, 1, 3, 2 ], 20, false);
-      enemy.events.onAnimationComplete.add( function (e) {
-        e.play('fly');
-      }, this);
-    });
-
-    this.boss = this.bossPool.getTop();
-    this.bossApproaching = false;
+    
   },
 
 
@@ -148,7 +93,7 @@ BasicGame.Game.prototype = {
     this.powerUpPool = this.add.group();
     this.powerUpPool.enableBody = true;
     this.powerUpPool.physicsBodyType = Phaser.Physics.ARCADE;
-    this.powerUpPool.createMultiple(5, 'powerup1');
+    //this.powerUpPool.createMultiple(5, 'powerup1');
     this.powerUpPool.setAll('anchor.x', 0.5);
     this.powerUpPool.setAll('anchor.y', 0.5);
     this.powerUpPool.setAll('outOfBoundsKill', true);
@@ -157,7 +102,7 @@ BasicGame.Game.prototype = {
       'reward', BasicGame.POWERUP_REWARD, false, false, 0, true
     );
 
-    this.lives = this.add.group();
+   /* this.lives = this.add.group();
     //calculate locaiton of first life icon
     var firstLifeIconX = this.game.width - 10 - (BasicGame.PLAYER_EXTRA_LIVES * 30);
     for (var i = 0; i < BasicGame.PLAYER_EXTRA_LIVES; i++) {
@@ -165,7 +110,7 @@ BasicGame.Game.prototype = {
       life.scale.setTo(0.5, 0.5);
       life.anchor.setTo(0.5, 0.5);
     }
-  },
+*/  },
 
   setupText: function () {
     this.instructions = this.add.text( 
@@ -177,14 +122,15 @@ BasicGame.Game.prototype = {
       );
     this.instructions.anchor.setTo(0.5, 0.5);
     this.instExpire = this.time.now + BasicGame.INSTRUCTION_EXPIRE;
+},
 
-    this.score = 0;
+   /* this.score = 0;
     this.scoreText = this.add.text(
       this.game.width / 2 , 30, '' + this.score,
       { font: '20px monospace', fill: '#fff', align: 'center' }
     );
     this.scoreText.anchor.setTo(0.5, 0.5);
-  },
+  },*/
 
   setupAudio: function () {
       this.explosionSFX = this.add.audio('explosion');
@@ -198,54 +144,41 @@ BasicGame.Game.prototype = {
 
 
   checkCollisions: function () {
-     /* this.physics.arcade.overlap(
-        this.bulletPool, this.enemyPool, this.enemyHit, null, this
-      );
-
-      this.physics.arcade.overlap(
-      this.bulletPool, this.shooterPool, this.enemyHit, null, this
-      );
-
-     
-
-      this.physics.arcade.overlap (
-        this.player, this.shooterPool, this.playerHit, null, this
-      );
-
-      this.physics.arcade.overlap (
-        this.player, this.enemyBulletPool, this.playerHit, null, this
-      );*/
-
+  
       this.physics.arcade.overlap(
         this.player, this.enemyPool, this.playerHit, null, this
         );
-
-      this.physics.arcade.overlap (
-        this.player, this.powerUpPool, this.playerPowerUp, null, this
-          );
-
-      if (this.bossApproaching === false) {
-        this.physics.arcade.overlap(
-          this.bulletPool, this.bossPool, this.enemyHit, null, this
-        );
-
-        this.physics.arcade.overlap(
-          this.player, this.bossPool, this.playerHit, null, this
-        );
-      }
     },
 
    spawnEnemies: function () {
       if (this.nextEnemyAt < this.time.now && this.enemyPool.countDead() > 0){
       this.nextEnemyAt = this.time.now + this.enemyDelay;
       var enemy = this.enemyPool.getFirstExists(false);
+      var side = (Math.floor(Math.random() * 2) == 0);
+        if (side) {
+          var s = 0;
+        } else {
+          var s = 1200;
+        }
+
       enemy.reset(
-        this.rnd.integerInRange(20, this.game.width - 20), 0,
+        s, this.rnd.integerInRange(0, this.game.height),
         BasicGame.ENEMY_HEALTH
       );
-      enemy.body.velocity.y = this.rnd.integerInRange(BasicGame.ENEMY_MIN_Y_VELOCITY, BasicGame.ENEMY_MAX_Y_VELOCITY);
-      enemy.play('fly');
-      }
+     // enemy.body.velocity.x = this.rnd.integerInRange(BasicGame.ENEMY_MIN_X_VELOCITY, BasicGame.ENEMY_MAX_X_VELOCITY);
+      
+      
+
+    var target = this.rnd.integerInRange(20, this.game.height - 20);
+
+      enemy.rotation = this.physics.arcade.moveToXY(
+        enemy, target, this.game.height,
+        this.rnd.integerInRange(
+          BasicGame.ENEMY_MIN_X_VELOCITY,  BasicGame.ENEMY_MAX_X_VELOCITY
+        )
+      ) + 360  ;
+}
+
   },
 
 processPlayerInput: function () {
@@ -253,15 +186,15 @@ processPlayerInput: function () {
     this.player.body.velocity.y = 0;
 
     if (this.cursors.left.isDown) {
-      this.player.body.angularVelocity = -50;
+      this.player.body.angularVelocity = -130;
       } else if (this.cursors.right.isDown) {
-      this.player.body.angularVelocity = +50;
+      this.player.body.angularVelocity = +130;
       } else {
         this.player.body.angularVelocity = 0;
       }
 
     if (this.cursors.up.isDown) {
-      this.game.physics.arcade.accelerationFromRotation(this.player.rotation + 80, 1000, this.player.body.acceleration);
+      this.game.physics.arcade.accelerationFromRotation(this.player.rotation + 80, 5000, this.player.body.acceleration);
       }
 
     if(this.input.activePointer.isDown &&
@@ -315,24 +248,17 @@ processDelayedEffects: function (){
   },
 
   playerHit: function (player, enemy) {
-    if (this.ghostUntil && this.ghostUntil > this.time.now) {
-      return;
-    }
+   
 
     this.playerExplosionSFX.play();
 
-    this.damageEnemy(enemy, BasicGame.CRASH_DAMAGE);
-    var life = this.lives.getFirstAlive();
-    if (life !==null) {
-      life.kill();
-      this.weaponLevel = 0;
-      this.ghostUntil = this.time.now + BasicGame.PLAYER_GHOST_TIME;
-      this.player.play('ghost');
-    } else {
+    
+     
+      
       this.explode(player);
       player.kill();
       this.displayEnd(false);
-    }
+    
   },
   
 
@@ -344,8 +270,8 @@ processDelayedEffects: function (){
       } else {
       this.explode(enemy);
       this.explosionSFX.play();
-      this.spawnPowerUp(enemy);
-      this.addToScore(enemy.reward);
+      //this.spawnPowerUp(enemy);
+      //this.addToScore(enemy.reward);
       if (enemy.key === 'boss') {
         this.enemyPool.destroy();
         this.shooterPool.destroy();
@@ -358,14 +284,14 @@ processDelayedEffects: function (){
 
 
 
-    addToScore: function (score) {
+   /* addToScore: function (score) {
       this.score += score;
       this.scoreText.text = this.score;
       //this approach prevents the boss from spawning again upon winning
       if (this.score >= 12000 && this.bossPool.countDead() == 1) {
         this.spawnBoss();
       }
-    },
+    },*/
 
   playerPowerUp: function (player, powerUp) {
     this.addToScore(powerUp.reward);
@@ -424,45 +350,7 @@ spawnBoss: function () {
   this.boss.play('fly');
 },
 
-/*fire: function() {
-  if (!this.player.alive || this.nextShotAt > this.time.now) {
-    return;
-  }
 
-  this.nextShotAt = this.time.now + this.shotDelay;
-  this.playerFireSFX.play();
-
-  var bullet;
-  if (this.weaponLevel === 0) {
-    if(this.bulletPool.countDead() === 0) {
-      return;
-    }
-    bullet = this.bulletPool.getFirstExists(false);
-    bullet.reset(this.player.x, this.player.y - 20);
-    bullet.body.velocity.y = -BasicGame.BULLET_VELOCITY;
-  } else {
-    if (this.bulletPool.countDead() < this.weaponLevel * 2) {
-      return;
-    }
-    for (var i = 0; i < this.weaponLevel; i++) {
-      bullet = this.bulletPool.getFirstExists(false);
-      //spawn left bullet slightly left off center
-      bullet.reset(this.player.x - (10 +i *6), this.player.y - 20);
-      //the left bullets spread from -95 degrees to -135 degrees
-      this.physics.arcade.velocityFromAngle(
-        -95 - i *10, BasicGame.BULLET_VELOCITY, bullet.body.velocity
-        );
-
-      bullet = this.bulletPool.getFirstExists(false);
-      //spawn right bullet slightly right off center
-      bullet.reset(this.player.x + (10 + i * 6), this.player.y - 20);
-      //the right bullets spread from -85 degrees to -45
-      this.physics.arcade.velocityFromAngle(
-        -85 + i * 10, BasicGame.BULLET_VELOCITY, bullet.body.velocity
-      );
-    }
-  }
-},*/
 
 quitGame: function (pointer) {
 
@@ -471,14 +359,14 @@ quitGame: function (pointer) {
     this.sea.destroy();
     this.player.destroy();
     this.enemyPool.destroy();
-    this.bulletPool.destroy();
+ 
     this.explosionPool.destroy();
-    this.shooterPool.destroy();
-    this.enemyBulletPool.destroy();
-    this.powerUpPool.destroy();
-    this.bossPool.destroy();
+    //this.shooterPool.destroy();
+    //this.enemyBulletPool.destroy();
+    //this.powerUpPool.destroy();
+    //this.bossPool.destroy();
     this.instructions.destroy();
-    this.scoreText.destroy();
+    //this.scoreText.destroy();
     this.endText.destroy();
     this.returnText.destroy();
     //  Then let's go back to the main menu.
