@@ -19,6 +19,172 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-family: inherit;
 	vertical-align: baseline;
 		}
+
+
+
+
+    Grid System
+/*------------------------------*/
+
+.row, 
+.column {
+    box-sizing: border-box;
+}
+
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.column {
+    position: relative;
+    float: left;
+    display: block;
+}
+
+.column + .column {
+    margin-left: 1.6%;
+}
+
+.column-1 {
+    width: 6.86666666667%;
+}
+
+.column-2 {
+    width: 15.3333333333%;
+}
+
+.column-3 {
+    width: 23.8%;
+}
+
+.column-4 {
+    width: 32.2666666667%;
+}
+
+.column-5 {
+    width: 40.7333333333%;
+}
+
+.column-6 {
+    width: 49.2%;
+}
+
+.column-7 {
+    width: 57.6666666667%;
+}
+
+.column-8 {
+    width: 66.1333333333%;
+}
+
+.column-9 {
+    width: 74.6%;
+}
+
+.column-10 {
+    width: 83.0666666667%;
+}
+
+.column-11 {
+    width: 91.5333333333%;
+}
+
+.column-12 {
+    width: 100%;
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 550px) {
+    .column-1, 
+    .column-2, 
+    .column-3, 
+    .column-4, 
+    .column-5, 
+    .column-6, 
+    .column-7, 
+    .column-8, 
+    .column-9, 
+    .column-10, 
+    .column-11, 
+    .column-12 {
+        float: none;
+        width: auto;
+    }
+  
+    .column + .column {
+        margin-left: 0;
+    }
+}
+
+
+    Styling
+/*------------------------------*/
+
+body {
+    padding: 20px;
+}
+
+.column {
+  /*  background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #777; */
+    padding: 5px;
+    min-height: 30px;
+    text-align: center;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.p {
+  font-size: 14px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+@media only screen and (max-width: 550px) {
+    .row {
+        margin-bottom: 0;
+    }
+    .column {
+        margin-bottom: 10px;
+    }
+    .row:last-child .column:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			 
 	 
 body	{	
@@ -49,33 +215,28 @@ a:visited {
 }
 
 
-
-.container-fluid {
-	padding: 0;
-}
-
 .header	{
-	height: 700px;
 	max-width: 1100px;
 	background-color: #f4f4f4;
 	font-family: 'lato';
 	margin: 0 auto;
+	
 	}	
 
 h1	{
-	float: left;
-	font-size: 3em;
-	font-family: 'gravitas one';
-	text-align: center;
+	font-size: 2.5em;
+	font-family: 'lato';
+	font-weight: 200;
+	text-align: left;
+	margin: 40px 0 50px;
 	color: #3A7230;
-    margin-top: 80px;
-    margin-bottom: 40px;
-    max-width: 100%;
+    width: 100%;
 	}
 	
 h2	{
 	font-family: 'lato';
 	font-size: 30px;
+	font-weight: 100;
 	line-height: 1.5em;
 	color: #f4f4f4;
 	margin: 40px;
@@ -85,88 +246,40 @@ img {
 	max-width: 100%;
 	}
 
-
-
-.nav li {
-	float: left;
-	font-size: 30px;
-	line-height: 3.3em;
+#desc {
+	
 }
-
-.nav a {
-	color: #000;
-}
-
-.nav a:hover {
-	color: #3A7230;
-	transition-duration: 1s;
-	text-decoration: none;
-}
-
-nav ul li a {
-	text-decoration: none;
-	}	
-
-.navbar-brand {
-	color: #000;
-	text-decoration: none;
-	padding-top: 25px;
-	font-size: 30px;
-}
-
-.navbar-brand:hover {
-	color: #3A7230;
-}
-
-#desc	{
-	float: left;
-	margin-left: 20%;
-	text-align: center;
-	max-width: 37rem;
-
-	}
 
 #desc p {
-	font-size: 30px;
-	line-height: 1.5em;
+	font-size: 1.4em;
 	font-family: "lato", sans-serif;
-	color: #000;
+	font-weight: 200;
+	color: #3A7230;
+	text-align: left;
+	padding-bottom: 40px;
+	}
+
+#desc p:last-of-type {
+	margin-top: 20px;
 	}
 
 #recent	{
-	height: 4500px;
 	background-color: #2D2E34;
 	}
 	
 #recent article {
-	margin: 50px 0 0 50px;
-	float: left;
-	text-align: center;
+	margin: 50px 0 0;
 	}
-
-.cp {
-	width: 80%;
-	margin: 50px;
-	}
-
-#recent .wa {
-	width: 700px;
-	margin-left: 19%;
-}
 	
 #recent img	{
-	margin: 20px;
 	padding: 0;
-	max-width: 450px;
-	float: left;
-	box-shadow: 0px 5px 10px #000;
 	}
 
 #recent p	{
 	text-align: left;
-	padding: 20px 30px 0;
 	font-size: 30px;
 	font-family: "lato", sans-serif;
+	font-weight: 400;
 	line-height: 1.3em;	
 	}
 	
@@ -230,18 +343,6 @@ footer .copy div {
 	padding: 10px;
 }
 
-.copy-date {
-    display: block;
-    float: left;
-    color: black;
-    max-width: 11em;
-  	margin: 10px 0 10px ;
-  	font-size: 22px;
-}
-
-.content-padding {
-    margin: 50px auto;
-}
 
 
 /*
@@ -249,19 +350,11 @@ footer .copy div {
  */
 
 
-@media all and (min-width: 1160px){
+@media all and (min-width: 1040px){
 
 .header	{
 	font-size: 1.3em;
-	height: 592px;
-	}
-
-.navbar-brand {
-	font-size: .8em;
-}
-
-.nav li {
-	font-size: .8em;
+	height: 710px;
 	}
 
 #desc p {
@@ -269,16 +362,15 @@ footer .copy div {
 	}
 
 #recent {
-	height: 3600px;
+	height: 1690px;
 }
 
 #recent p	{
-	font-size: 1.3em;
-	max-width: 900px;
+	font-size: 1.2em;
 	}
 
 #recent article {
-	margin: 50px 0 0 50px;
+	margin: 50px 0 0 0;
 }
 
 footer .copy div {
