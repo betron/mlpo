@@ -131,8 +131,8 @@ body {
 }
 
 .column {
-  /*  background: #eee;
-    border: 1px solid #ccc;
+    background: #eee;
+   /* border: 1px solid #ccc;
     border-radius: 4px;
     color: #777; */
     padding: 5px;
@@ -354,7 +354,7 @@ footer .copy div {
 
 .header	{
 	font-size: 1.3em;
-	height: 710px;
+	height: 780px;
 	}
 
 #desc p {
