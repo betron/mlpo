@@ -131,8 +131,8 @@ body {
 }
 
 .column {
-    background: #eee;
-   /* border: 1px solid #ccc;
+     /*background: #eee;
+   border: 1px solid #ccc;
     border-radius: 4px;
     color: #777; */
     padding: 5px;
@@ -218,14 +218,14 @@ a:visited {
 .header	{
 	max-width: 1100px;
 	background-color: #f4f4f4;
-	font-family: 'lato';
+	font-family: 'Open Sans';
 	margin: 0 auto;
 	
 	}	
 
 h1	{
 	font-size: 2.5em;
-	font-family: 'lato';
+	font-family: 'Open Sans';
 	font-weight: 200;
 	text-align: left;
 	margin: 40px 0 50px;
@@ -234,7 +234,7 @@ h1	{
 	}
 	
 h2	{
-	font-family: 'lato';
+	font-family: 'Open Sans';
 	font-size: 30px;
 	font-weight: 100;
 	line-height: 1.5em;
@@ -251,9 +251,9 @@ img {
 }
 
 #desc p {
-	font-size: 1.4em;
-	font-family: "lato", sans-serif;
-	font-weight: 200;
+	font-size: calc(14px + .3vw + .3vh);
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
 	color: #3A7230;
 	text-align: left;
 	padding-bottom: 40px;
@@ -278,7 +278,7 @@ img {
 #recent p	{
 	text-align: left;
 	font-size: 30px;
-	font-family: "lato", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	line-height: 1.3em;	
 	}
@@ -294,7 +294,7 @@ img {
 }
 
 footer {
-	font-family:'lato';
+	font-family:'Open Sans', sans-serif;
 	max-width: 1100px;
 	margin: 0 auto;
 
@@ -358,7 +358,7 @@ footer .copy div {
 	}
 
 #desc p {
-	font-size: 1.3em;
+	font-size: calc(14px + .3vw + .3vh);
 	}
 
 #recent {
