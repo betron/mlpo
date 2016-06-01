@@ -20,6 +20,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 		}
 
+* {
+	box-sizing: border-box;
+}
 
 
 
@@ -274,10 +277,10 @@ img {
 
 #recent p	{
 	text-align: left;
-	font-size: 30px;
-	font-family: "Open Sans", sans-serif;
+	font-size: calc(14px + .3vw + .3vh);
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
-	line-height: 1.3em;	
+	line-height: 1.7;	
 	}
 	
 #recent span 	{
@@ -355,7 +358,7 @@ footer .copy div {
 	}
 
 #desc p {
-	font-size: 20px;
+	font-size: calc(14px + .3vw + .3vh);
 	}
 
 #recent {
@@ -363,7 +366,7 @@ footer .copy div {
 }
 
 #recent p	{
-	font-size: 1.2em;
+	font-size: calc(14px + .3vw + .3vh);
 	}
 
 #recent article {
