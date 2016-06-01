@@ -246,13 +246,10 @@ img {
 	max-width: 100%;
 	}
 
-#desc {
-	
-}
-
 #desc p {
-	font-size: calc(14px + .3vw + .3vh);
+	font-size: 20px;
 	font-family: "Open Sans", sans-serif;
+	line-height: 1.7;
 	font-weight: 300;
 	color: #3A7230;
 	text-align: left;
@@ -358,7 +355,7 @@ footer .copy div {
 	}
 
 #desc p {
-	font-size: calc(14px + .3vw + .3vh);
+	font-size: 20px;
 	}
 
 #recent {
