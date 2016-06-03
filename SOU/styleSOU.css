@@ -80,9 +80,16 @@ body {
     background-color: white;
     overflow: hidden
 }
+
+.full-width-rev {
+    background-color: #000;
+    color: #fff;
+}
 .main {
     padding: 1em
 }
+
+
 
 @media (min-width: 1024px) {
     .main {
