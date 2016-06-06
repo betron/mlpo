@@ -89,6 +89,13 @@ body {
     padding: 1em
 }
 
+img {
+    border: 1px solid #f1f1f1;
+    height: auto;
+    margin-top: 1em;
+    width: 100%;
+}
+
 
 
 @media (min-width: 1024px) {
