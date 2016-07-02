@@ -68,15 +68,16 @@ var jump=false;
     this.forest.setAll('body.immovable', true);
     this.forest.setAll('body.allowGravity', false);
 
+
+    //this.setupPlayer ();
+
     // The player and its settings
     this.player = this.game.add.sprite(50, 1600, 'lizard');
 
-    this.mage = this.game.add.image(350, 1600, 'cloaked');
 
     //  We need to enable physics on the player
     this.physics.enable(this.player, Phaser.Physics.ARCADE);
 
-    this.physics.enable(this.mage, Phaser.Physics.ARCADE);
 
     //  Player physics properties. Give the little guy a slight bounce.
     this.player.body.bounce.y = 0.2;
@@ -85,8 +86,46 @@ var jump=false;
 
 
     //  Our two animations, walking left and right.
-    this.player.animations.add('left', [0, 1, 2, 3], 4, true);
-    this.player.animations.add('right', [0, 1, 2, 3], 4, true);
+    //this.player.animations.add ('left', [0, 1, 2, 3], 4, true);
+    //this.player.animations.add('right', [0, 1, 2, 3], 4, true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     this.game.camera.follow(this.player); //always center player
     
@@ -117,7 +156,7 @@ var jump=false;
     var fire = this.fires.create (800, 570, 'fire');
 
     //  The score
-    this.scoreText = this.game.add.text(1600, 30, 'score: 0', { fontSize: '32px', fill: '#000' });
+    this.scoreText = this.game.add.text(70, 1600, 'score: 0' , { fontSize: '32px', fill: '#999900' });
 
     //  Our controls.
     this.cursors = this.game.input.keyboard.createCursorKeys();
@@ -216,8 +255,6 @@ update:function () {
 
 */
     
-
-
    
 
 
@@ -228,7 +265,7 @@ function collectStar (player, star) {
 
     //  Add and update the score
     this.score += 20;
-    this.scoreText.text = 'Score: ' + this.score;
+    this.scoreText.text = 'score: ' + this.score;
 
 }
 
@@ -239,7 +276,7 @@ function collectFire (player, fire) {
 
     //  Add and update the score
     this.score += 200;
-    this.scoreText.text = 'Score: ' + this.score;
+    this.scoreText.text = 'score: ' + this.score;
 
 }
 

@@ -36,10 +36,13 @@ var stars;
 var fires;
 var score = 0;
 var scoreText;
+var msgText;
+var msgTextTwo;
 var left=false;
 var right=false;
 var jump=false;
 var pad1;
+var cursors;
     
 function create() {
     //  We're going to be using physics, so enable the Arcade Physics system
@@ -65,15 +68,11 @@ function create() {
     //  Now let's create four ledges
    ledge = platforms.create(1200, 160, 'groundL');
     ledge.body.immovable = true;
-    ledge = platforms.create(1500, 160, 'groundL');
-    ledge.body.immovable = true;
-    ledge = platforms.create(900, 340, 'groundL');
-    ledge.body.immovable = true;
+ 
     ledge = platforms.create(400, 450, 'groundL');
     ledge.body.immovable = true;
    
-    ledge = platforms.create(30, 600, 'groundL');
-    ledge.body.immovable = true;
+    
     ledge = platforms.create(300, 750, 'groundL');
     ledge.body.immovable = true;
     ledge = platforms.create(500, 900, 'groundL');
@@ -84,8 +83,7 @@ function create() {
     ledge.body.immovable = true;
     ledge = platforms.create(1600, 1150, 'groundL');
     ledge.body.immovable = true;
-    ledge = platforms.create(80, 1200, 'groundL');
-    ledge.body.immovable = true;
+ 
     ledge = platforms.create(1800, 1300, 'groundL');
     ledge.body.immovable = true;
     ledge = platforms.create(200, 1300, 'groundL');
@@ -116,13 +114,19 @@ function create() {
     ledge.body.immovable = true;
     ledge = platforms.create(795, 600, 'groundL');
     ledge.body.immovable = true;
+
+
+
+
+
+    
     // The player and its settings
     player = game.add.sprite(50, 1600, 'lizard');
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
     //  Player physics properties. Give the little guy a slight bounce.
-    player.body.bounce.y = 0.2;
-    player.body.gravity.y = 300;
+    player.body.bounce.y = .5;
+    player.body.gravity.y = 250;
     player.body.collideWorldBounds = true;
     //  Our two animations, walking left and right.
     player.animations.add('left', [0,1,2,3], 8, true);
@@ -137,7 +141,7 @@ function create() {
     for (var i = 0; i < 5; i++)
     {
         //  Create a star inside of the 'stars' group
-        var star = stars.create(1600, 0, 'star');
+        var star = stars.create(i * 70, 0, 'star');
         //  Let gravity do its thing
         star.body.gravity.y = 300;
         //  This just gives each star a slightly random bounce value
@@ -148,18 +152,18 @@ function create() {
     fires.enableBody = true;
     var fire = fires.create (800, 570, 'fire');
     //  The score
-    scoreText = game.add.text(1600, 30, 'score: 0', { fontSize: '32px', fill: '#000' });
+    scoreText = game.add.text(50, 1200, 'score: 0', { fontSize: '32px', fill: '#000' });
+
+    msgText = game.add.text( 50, 1500, 'jump to read this', {fontSize: '22px', fill: '#000'});
+
+    msgTextTwo = game.add.text( 900, 1600, "now we're rollin'", {fontSize: '22px', fill: '#000'});
+
    
     
-    
-}
-
-function dump() {
-
-    console.log(pad1._axes[0]);
-    console.log(pad1._rawPad.axes[0]);
+       cursors = game.input.keyboard.createCursorKeys();
 
 }
+
 
 
 function update() {
@@ -172,98 +176,49 @@ function update() {
     game.physics.arcade.overlap(player, fires, collectFire, null, this);
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
+
+
+     // Controls
     
-    if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X))
+
+  // Set a variable that is true when the player is touching the ground
+    var onTheGround = player.body.touching.down;
+
+
+   if (cursors.left.isDown)
     {
         //  Move to the left
-        player.body.velocity.x = -275;
+        player.body.velocity.x = -160;
+
         player.animations.play('left');
     }
-    else if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X))
+    else if (cursors.right.isDown)
     {
         //  Move to the right
-        player.body.velocity.x = 275;
+        player.body.velocity.x = 160;
+
         player.animations.play('right');
-        
     }
     else
     {
-        player.animations.stop();   
-        player.frame = 0;
-    }
-    
-      // Controls
-    if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1)
-    {
-        sprite.x--;
-    }
-    else if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1)
-    {
-        sprite.x++;
-    }
+        //  Stand still
+        player.animations.stop();
 
-    if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_UP) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) < -0.1)
-    {
-        sprite.y--;
+        player.frame = 2;
     }
-    else if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1)
-    {
-        sprite.y++;
-    }
-
-    if (pad1.justPressed(Phaser.Gamepad.XBOX360_A))
-    {
-        sprite.angle += 5;
-    }
-
-    if (pad1.justReleased(Phaser.Gamepad.XBOX360_B))
-    {
-        sprite.angle -= 5;
-    }
-    
-    if (pad1.justReleased(Phaser.Gamepad.XBOX360_X))
-    {
-        platforms.angle -= 5;
-    }
-
-    if (pad1.connected)
-    {
-        var rightStickX = pad1.axis(Phaser.Gamepad.XBOX360_STICK_RIGHT_X);
-        var rightStickY = pad1.axis(Phaser.Gamepad.XBOX360_STICK_RIGHT_Y);
-
-        if (rightStickX)
-        {
-            sprite.x += rightStickX * 10;
-        }
-
-        if (rightStickY)
-        {
-            sprite.y += rightStickY * 10;
-        }
-    }
-    
     
     //  Allow the player to jump if they are touching the ground.
-    //if (cursors.up.isDown && player.body.touching.down) {  player.body.velocity.y = -375;}
-  // Set a variable that is true when the player is touching the ground
-    var onTheGround = player.body.touching.down;
-    // If the player is touching the ground, let him have 2 jumps
-    if (onTheGround) {
-        this.jumps = 2;
-        this.jumping = false;
+    if (cursors.up.isDown && player.body.touching.down)
+    {
+        player.body.velocity.y = -320;
     }
-    // Jump!
-    if (cursors.up.isDown && this.jumps > 0 ) {
-        player.body.velocity.y = -260;
-        this.jumping = true;
-    }
-    // Reduce the number of available jumps if the jump input is released
-    if (cursors.up.isUp && this.jumping) {
-        this.jumps--;
-        this.jumping = false;
-    }
-    
-    // define what should happen when a button is pressed
+
+
+
+
+
+     
+
    
 function collectStar (player, star) {
     
