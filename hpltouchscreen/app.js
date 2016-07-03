@@ -1,22 +1,17 @@
 /**
 
-* More Typescript tips and code at http://updatestage.com
-*
-* You must add the following files to the project for it to compile.
-*
-*               Phaser.d.ts
-*               phaser.js
-*               pixi.d.ts
-*
-* These files are part of the Phaser repository.  You can download the
-* latest from https://github.com/photonstorm/phaser
-*
-* Phaser is copyright 2014 Photon Storm Ltd.
+
 *
 */
 var DemoClass = (function () {
     function DemoClass() {
         var _this = this;
+
+        var gameProperties = {
+            screenWidth: window.innerWidth,
+            screenHeight: window.innerHeight,
+        };
+
         this.preload = function () {
             // We need multiple inputs because an asteroids game will require four, one for each button
             // This demo I only include two rotate buttons and one thrust button.  
@@ -27,8 +22,8 @@ var DemoClass = (function () {
         this.create = function () {
             // typical mobile scaling code
             _this.game.stage.disableVisibilityChange = false;
-            _this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            _this.game.scale.setMinMax(288, 384, 768, 1024);
+            //_this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            //_this.game.scale.setMinMax(288, 384, 768, 1024);
             _this.game.scale.pageAlignHorizontally = true;
             _this.game.scale.pageAlignVertically = true;
             // The cursor keys are for desktop control
@@ -92,7 +87,7 @@ var DemoClass = (function () {
                 _this.ship.rotate(3);
             }
         };
-        this.game = new Phaser.Game(480, 640, Phaser.CANVAS, 'stage', { preload: this.preload, create: this.create, update: this.update });
+        this.game = new Phaser.Game(gameProperties.screenWidth, gameProperties.screenHeight, Phaser.CANVAS, 'stage', { preload: this.preload, create: this.create, update: this.update });
     }
     return DemoClass;
 })();
@@ -100,4 +95,3 @@ window.onload = function () {
     // Start the demo on window load
     var game = new DemoClass();
 };
-//# sourceMappingURL=app.js.map

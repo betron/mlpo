@@ -42,7 +42,7 @@ var Controls = (function (_super) {
         // I use the sprite atlas 'spriteAtlas' 
         // the null parameter is in place of a button callback.  Since we don't use the callback we need to set it to null.
         // We still keep the this parameter.
-        this.btnMoveLeft = new Phaser.Button(this.game, 0, this.game.height, 'spriteAtlas', null, this, 'btnLeft.png', 'btnLeft.png', 'btnLeft.png');
+        this.btnMoveLeft = new Phaser.Button(this.game, 5, ( this.game.height - 95 ), 'spriteAtlas', null, this, 'btnLeft.png', 'btnLeft.png', 'btnLeft.png');
         // Add the button as a child of this class
         this.addChild(this.btnMoveLeft);
         // Set the anchor to the far left and bottom of the sprite
@@ -53,7 +53,7 @@ var Controls = (function (_super) {
         // I use the sprite atlas 'spriteAtlas' 
         // the null parameter is in place of a button callback.  Since we don't use the callback we need to set it to null.
         // We still keep the 'this' parameter..
-        this.btnMoveRight = new Phaser.Button(this.game, this.btnMoveLeft.width + 10, this.game.height, 'spriteAtlas', null, this, 'btnRight.png', 'btnRight.png', 'btnRight.png');
+        this.btnMoveRight = new Phaser.Button(this.game, 5, this.game.height, 'spriteAtlas', null, this, 'btnRight.png', 'btnRight.png', 'btnRight.png');
         // Add the button as a child of this class
         this.addChild(this.btnMoveRight);
         // Set the anchor to the far left and bottom of the sprite

@@ -34,7 +34,7 @@
 },
 {
 	"filename": "ship.png",
-	"frame": {"x":2,"y":185,"w":42,"h":40},
+	"frame": {"x":2,"y":183,"w":42,"h":40},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":40},
