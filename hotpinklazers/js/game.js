@@ -1,6 +1,6 @@
 var gameProperties = {
-    screenWidth: 800,
-    screenHeight: 630,
+    screenWidth: window.innerWidth,
+    screenHeight: window.innerHeight,
 
     delayToStartLevel: 3,
     padding: 30,
@@ -426,11 +426,11 @@ mainState.prototype = {
     },
 
     create: function () {
-          this.add.image( 0, 0, 'titlepage');
+          this.add.image( (gameProperties.screenWidth*0.5) - 400 , gameProperties.screenHeight* 0.5 - 300, 'titlepage');
 
         var startInstructions = 'Use arrow keys to move, Spacebar to fire.\n\nClick to Start';
 
-        this.tf_start = game.add.text(400,420, startInstructions, fontAssets.counterFontStyle);
+        this.tf_start = game.add.text((gameProperties.screenWidth*0.5), gameProperties.screenHeight* 0.5 + 200, startInstructions, fontAssets.counterFontStyle);
         this.tf_start.anchor.set(0.5, 0.5);
         
         game.input.gamepad.start();
