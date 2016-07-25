@@ -11,7 +11,7 @@ BasicGame.MainMenu.prototype = {
     //  We've already preloaded our assets, so let's kick right into the Main Menu itself.
 
 
-    this.add.sprite(0, 0, 'titlepage');
+    this.add.sprite(this.game.width / 4, 0, 'titlepage');
 
     this.loadingText = this.add.text(this.game.width / 2, this.game.height / 2 + 80, "Press Z or tap/click game to start", { font: "20px monospace", fill: "#000" });
     this.loadingText.anchor.setTo(0.5, 0.5);

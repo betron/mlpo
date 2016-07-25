@@ -183,9 +183,9 @@ gameState.prototype = {
         this.bulletGroup = game.add.group();
         this.asteroidGroup = game.add.group();
 
-        this.tf_lives = game.add.text(20, 10, 'Lives: '+ shipProperties.startingLives, fontAssets.counterFontStyle);
+        this.tf_lives = game.add.text(50, 50, 'Lives: '+ shipProperties.startingLives, fontAssets.counterFontStyle);
         
-        this.tf_score = game.add.text(gameProperties.screenWidth - 20, 10, 'Score: '+"0", fontAssets.counterFontStyle);
+        this.tf_score = game.add.text(gameProperties.screenWidth - 50, 50, 'Score: '+"0", fontAssets.counterFontStyle);
         this.tf_score.align = 'right';
         this.tf_score.anchor.set(1, 0);
 

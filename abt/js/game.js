@@ -22,6 +22,7 @@ var scoreText;
 var left=false;
 var right=false;
 var jump=false;
+var jumpAmount = 0;
 
     
 
@@ -33,9 +34,9 @@ var jump=false;
 
     //  A simple background for our game
      bg = this.game.add.sprite(0, 0, 'sky');
-     bg.fixedToCamera = true;
+     //bg.fixedToCamera = true;
 
-     
+     // #EBDAC1 - possible background color
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
     this.platforms = this.game.add.group();
@@ -65,14 +66,13 @@ var jump=false;
 
 
 
-    this.forest.setAll('body.immovable', true);
-    this.forest.setAll('body.allowGravity', false);
+ 
 
 
-    //this.setupPlayer ();
+    //SET UP PLAYER
 
     // The player and its settings
-    this.player = this.game.add.sprite(50, 1600, 'lizard');
+    this.player = this.game.add.sprite(50, 1600, 'dusty');
 
 
     //  We need to enable physics on the player
@@ -86,46 +86,8 @@ var jump=false;
 
 
     //  Our two animations, walking left and right.
-    //this.player.animations.add ('left', [0, 1, 2, 3], 4, true);
-    //this.player.animations.add('right', [0, 1, 2, 3], 4, true);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    this.player.animations.add('left', [0, 1, 2, 3], 8, true);
+    this.player.animations.add('right', [0, 1, 2, 3], 8, true);
 
     this.game.camera.follow(this.player); //always center player
     
@@ -139,10 +101,10 @@ var jump=false;
     for (var i = 0; i < 5; i++)
     {
         //  Create a star inside of the 'stars' group
-        var star = this.stars.create(450, 1590, 'star');
+        var star = this.stars.create(650, 390, 'star');
 
         //  Let gravity do its thing
-        star.body.gravity.y = 300;
+        star.body.gravity.y = 0;
 
         //  This just gives each star a slightly random bounce value
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
@@ -156,7 +118,10 @@ var jump=false;
     var fire = this.fires.create (800, 570, 'fire');
 
     //  The score
-    this.scoreText = this.game.add.text(70, 1600, 'score: 0' , { fontSize: '32px', fill: '#999900' });
+    this.scoreText = this.game.add.text(0, 0, 'score: 0' , { fontSize: '32px', fill: '#999900' });
+
+    // Need to figure out a way for it to be stationary on the screen
+
 
     //  Our controls.
     this.cursors = this.game.input.keyboard.createCursorKeys();
@@ -218,42 +183,36 @@ update:function () {
     if (onTheGround) {
         this.jumps = 2;
         this.jumping = false;
-
-        
     }
 
+
     // Jump!
-    if (this.jumps > 0 && this.cursors.up.isDown) {
+    if (this.jumps > 0 && this.cursors.up.isDown ) {
         this.player.body.velocity.y = -300;
         this.jumping = true;
     }
 
+
+
     // Reduce the number of available jumps if the jump input is released
-    if (this.jumping && this.cursors.up.isUp) {
+    if (this.jumping && this.cursors.up.isUp ) {
         this.jumps--;
         this.jumping = false;
+        this.jumpAmount += 1;
     }
 
-   
-
-
-
-   /* if (this.jumping && this.cursors.up.isDown) {
-        this.jumping = true;
+    if (this.jumping && this.cursors.up.isUP ) {
+        this.jumping = false;
     }
-
-   // this.cursors.up.onDown.add(this.jumpCheck, this); //tells phaser to fire jumpCheck() ONCE per onDown event.
-
-
     
 
-    if (!onTheGround && this.cursors.up.isDown ){
+  if (!onTheGround && this.cursors.up.isDown ){
           this.jumps--;
           this.jumping = true;
        }  
 
 
-*/
+
     
    
 
