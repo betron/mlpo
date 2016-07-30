@@ -38,7 +38,7 @@ var shipProperties = {
     startX: gameProperties.screenWidth * 0.5,
     startY: gameProperties.screenHeight * 0.5,
     acceleration: 300,
-    drag: 100,
+    drag: 1,
     maxVelocity: 300,
     angularVelocity: 300,
     startingLives: 3,
