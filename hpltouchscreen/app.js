@@ -10,10 +10,11 @@ var DemoClass = (function () {
         var gameProperties = {
             screenWidth: window.innerWidth,
             screenHeight: window.innerHeight,
+            padding: 10,
         };
 
         var bulletProperties = {
-            speed: 400,
+            speed: 500,
             interval: 100,
             lifeSpan: 2000,
             maxCount: 30,
@@ -95,6 +96,7 @@ var DemoClass = (function () {
             _this.bulletGroup.setAll('anchor.x', 0.5);
             _this.bulletGroup.setAll('anchor.y', 0.5);
             _this.bulletGroup.setAll('lifespan', bulletProperties.lifeSpan);
+            
 
 
         };
@@ -111,7 +113,7 @@ this.fire = function (){
 
         if (_this.game.time.now > _this.bulletInterval) {   
            // this.sndFire.play();
-    console.log(_this.bulletInterval);
+   // console.log(_this.bulletInterval);
 
             var bullet = _this.bulletGroup.getFirstExists(false);
             
@@ -162,6 +164,21 @@ this.fire = function (){
             }
 
 
+           this.checkBoundaries = function (sprite) {
+                 if (sprite.x + gameProperties.padding < 0) {
+                    sprite.x = _this.game.width + gameProperties.padding;
+                } else if (sprite.x - gameProperties.padding > gameProperties.screenWidth) {
+                    sprite.x = -gameProperties.padding;
+                } 
+         
+                if (sprite.y + gameProperties.padding < 0) {
+                    sprite.y = _this.game.height + gameProperties.padding;
+                } else if (sprite.y - gameProperties.padding > gameProperties.screenHeight) {
+                    sprite.y = -gameProperties.padding;
+                }
+            }
+
+            _this.bulletGroup.forEachExists(this.checkBoundaries, this);
 
 
 
