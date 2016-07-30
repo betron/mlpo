@@ -28385,7 +28385,8 @@ Phaser.Keyboard.prototype = {
             up: this.addKey(Phaser.Keyboard.UP),
             down: this.addKey(Phaser.Keyboard.DOWN),
             left: this.addKey(Phaser.Keyboard.LEFT),
-            right: this.addKey(Phaser.Keyboard.RIGHT)
+            right: this.addKey(Phaser.Keyboard.RIGHT),
+            fire: this.addKey(Phaser.Keyboard.SPACEBAR)
         };
 
     },

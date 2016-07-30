@@ -12,6 +12,13 @@ var DemoClass = (function () {
             screenHeight: window.innerHeight,
         };
 
+        var bulletProperties = {
+            speed: 400,
+            interval: 50,
+            lifeSpan: 2000,
+            maxCount: 30,
+        };
+
         this.preload = function () {
             // We need multiple inputs because an asteroids game will require four, one for each button
             // This demo I only include two rotate buttons and one thrust button.  
@@ -19,6 +26,11 @@ var DemoClass = (function () {
             // Load the ship demo sprieAtlas.  This contains the ship and the three buttons
             _this.game.load.atlas('spriteAtlas', 'assets/spriteAtlas3.png', 'assets/spriteAtlas3.json');
         };
+
+        this.init = function () {
+            this.bulletInterval  = 0;
+        };
+
         this.create = function () {
             // typical mobile scaling code
             _this.game.stage.disableVisibilityChange = false;
@@ -63,11 +75,63 @@ var DemoClass = (function () {
             s.btnThrust.onInputUp.add(function () {
                 xThis.virtualThrustButtonDown = false;
             });
+
+            // The fire button
+
+            s.btnFire.onInputDown.add(function () {
+                xThis.virtualFireButtonDown = true;
+            });
+            s.btnFire.onInputUp.add(function () {
+                xThis.virtualFireButtonDown = false;
+            });
+
             // Init the ship class.  It will add the ship to the position we pass it.
             _this.ship = new Ship(_this.game, _this.game.world.centerX, _this.game.world.centerY, 'spriteAtlas', 'ship.png');
             // A drag rate of 1.0 means there is no drag and the ship keeps going.  Default to .99 or set to another number and experiment
             _this.ship.dragRate = 1.0;
+
+            _this.bulletGroup = _this.game.add.group();
+            _this.bulletGroup.enableBody = true;
+            _this.bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
+            _this.bulletGroup.createMultiple(30, 'spriteAtlas', 'bullet.png');
+            _this.bulletGroup.setAll('anchor.x', 0.5);
+            _this.bulletGroup.setAll('anchor.y', 0.5);
+            _this.bulletGroup.setAll('lifespan', bulletProperties.lifeSpan);
+
+
         };
+
+this.fire = function (){
+      //  if (_this.ship.alive) {
+      //      return;
+
+        //}
+        
+        if (_this.game.time.now > 0) {   
+           // this.sndFire.play();
+
+            var bullet = _this.bulletGroup.getFirstExists(false);
+            
+            if (bullet) {
+                var length = this.ship.width * 0.5;
+                var x = this.ship.x + (Math.cos(this.ship.rotation) * length);
+                var y = this.ship.y + (Math.sin(this.ship.rotation) * length);
+                
+                bullet.reset(x, y);
+                bullet.lifespan = bulletProperties.lifeSpan;
+                bullet.rotation = this.ship.rotation;
+                
+                _this.game.physics.arcade.velocityFromRotation(this.ship.rotation, bulletProperties.speed, bullet.body.velocity);
+                _this.bulletInterval = _this.game.time.now + bulletProperties.interval;
+            }
+        }
+    },
+
+
+
+
+
+
         this.update = function () {
             // Check for either the up arrow key or the virtual button state we assing thrust to and move the ship
             if ((_this.cursors.up.isDown) || (_this.virtualThrustButtonDown)) {
@@ -79,6 +143,13 @@ var DemoClass = (function () {
                 // slow down if drag is less and 1.0
                 _this.ship.drag();
             }
+
+            if ( (_this.cursors.fire.isDown) || (_this.virtualFireButtonDown)) {
+                // Fire
+                _this.fire();
+            }
+
+
             // Check for the left arroow ket or the virtual button state that controls left rotation
             if ((_this.cursors.left.isDown) || (_this.virtualLeftButtonDown)) {
                 _this.ship.rotate(-3);
@@ -86,7 +157,19 @@ var DemoClass = (function () {
             else if ((_this.cursors.right.isDown) || (_this.virtualRightButtonDown)) {
                 _this.ship.rotate(3);
             }
+
+
+
+
+
         };
+
+
+
+
+
+
+
         this.game = new Phaser.Game(gameProperties.screenWidth, gameProperties.screenHeight, Phaser.CANVAS, 'stage', { preload: this.preload, create: this.create, update: this.update });
     }
     return DemoClass;
