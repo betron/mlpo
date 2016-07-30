@@ -14,7 +14,7 @@ var DemoClass = (function () {
 
         var bulletProperties = {
             speed: 400,
-            interval: 50,
+            interval: 100,
             lifeSpan: 2000,
             maxCount: 30,
         };
@@ -27,9 +27,7 @@ var DemoClass = (function () {
             _this.game.load.atlas('spriteAtlas', 'assets/spriteAtlas3.png', 'assets/spriteAtlas3.json');
         };
 
-        this.init = function () {
-            this.bulletInterval  = 0;
-        };
+       
 
         this.create = function () {
             // typical mobile scaling code
@@ -101,14 +99,19 @@ var DemoClass = (function () {
 
         };
 
+_this.bulletInterval  = 5;
+
 this.fire = function (){
       //  if (_this.ship.alive) {
       //      return;
 
         //}
         
-        if (_this.game.time.now > 0) {   
+       
+
+        if (_this.game.time.now > _this.bulletInterval) {   
            // this.sndFire.play();
+    console.log(_this.bulletInterval);
 
             var bullet = _this.bulletGroup.getFirstExists(false);
             
@@ -122,7 +125,7 @@ this.fire = function (){
                 bullet.rotation = this.ship.rotation;
                 
                 _this.game.physics.arcade.velocityFromRotation(this.ship.rotation, bulletProperties.speed, bullet.body.velocity);
-                _this.bulletInterval = _this.game.time.now + bulletProperties.interval;
+                _this.bulletInterval = _this.game.time.now + 200;
             }
         }
     },
