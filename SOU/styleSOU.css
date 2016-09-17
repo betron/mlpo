@@ -114,7 +114,6 @@ img {
 
 .descriptor {
     font-family: Open Sans, sans-serif;
-    font-size: 20px;
     letter-spacing: 1.5px;
     font-weight: 300;
     text-transform: uppercase
@@ -131,7 +130,7 @@ h6 {
 }
 
 h2 {
-    font-size: 2em
+    font-size: 1.8em
 }
 
 p {
@@ -147,7 +146,9 @@ ol {
     margin-bottom: 1em
 }
 
-
+.filler{
+    height: 340px;
+}
 
 
 @media screen and (max-width: 71.875em) {
@@ -160,7 +161,6 @@ ol {
         font-size: 85%
     }
 }
-
 
 
 
