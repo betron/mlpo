@@ -89,6 +89,15 @@ body {
     padding: 1em
 }
 
+a {
+    color: #FF006F;
+    text-decoration: none;
+}
+
+a:visited {
+    opacity: .2;
+}
+
 img {
     border: 1px solid #f1f1f1;
     height: auto;
