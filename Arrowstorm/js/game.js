@@ -15,7 +15,10 @@ var graphicAssets = {
     ship:{URL:'assets/shipNew.png', name: 'ship'},
     bullet: {URL:'assets/arrow.png', name: 'bullet'},
 
-    asteroidLarge: {URL: 'assets/asteroidLarge.png', name:'asteroidLarge'},
+    stone: {URL: 'assets/stone.png', name:'stone'},
+    bush: {URL: 'assets/bush.png', name:'bush'},
+
+    spiderLarge: {URL: 'assets/spiderLarge.png', name:'spiderLarge'},
     asteroidMedium: {URL:'assets/asteroidMedium.png', name: 'asteroidMedium'},
     asteroidSmall: {URL: 'assets/asteroidSmall.png', name: 'asteroidSmall'},
 
@@ -58,7 +61,8 @@ var asteroidProperties = {
     maxAsteroids: 20,
     incrementAsteroids: 2,
 
-    asteroidLarge: { minVelocity: 50, maxVelocity: 100, minAngularVelocity: 0, maxAngularVelocity: 200, score: 20, nextSize: graphicAssets.asteroidMedium.name, pieces: 2, explosion:'explosionLarge' },
+
+    spiderLarge: { minVelocity: 50, maxVelocity: 70, minAngularVelocity: 0, maxAngularVelocity: 100, score: 20, nextSize: graphicAssets.asteroidMedium.name, pieces: 2, explosion:'explosionLarge' },
     asteroidMedium: { minVelocity: 50, maxVelocity: 200, minAngularVelocity: 0, maxAngularVelocity: 200, score: 50, nextSize: graphicAssets.asteroidSmall.name, pieces: 2, explosion: 'explosionMedium' },
     asteroidSmall: { minVelocity: 50, maxVelocity: 250, minAngularVelocity: 0, maxAngularVelocity: 200, score: 100, explosion: 'explosionSmall' },
 };
@@ -102,7 +106,10 @@ var gameState = function(game){
 gameState.prototype = {
     
     preload: function () {
-        game.load.image(graphicAssets.asteroidLarge.name, graphicAssets.asteroidLarge.URL);
+        game.load.image(graphicAssets.stone.name, graphicAssets.stone.URL);
+        game.load.image(graphicAssets.bush.name, graphicAssets.bush.URL);        
+
+        game.load.image(graphicAssets.spiderLarge.name, graphicAssets.spiderLarge.URL);
         game.load.image(graphicAssets.asteroidMedium.name, graphicAssets.asteroidMedium.URL);
         game.load.image(graphicAssets.asteroidSmall.name, graphicAssets.asteroidSmall.URL);
         
@@ -306,7 +313,7 @@ gameState.prototype = {
             asteroid.anchor.set(0.5, 0.5);
             asteroid.body.angularVelocity = game.rnd.integerInRange(asteroidProperties[size].minAngularVelocity, asteroidProperties[size].maxAngularVelocity);
 
-            var randomAngle = game.math.degToRad(game.rnd.angle());
+            var randomAngle = 45;
             var randomVelocity = game.rnd.integerInRange(asteroidProperties[size].minVelocity, asteroidProperties[size].maxVelocity);
      
             game.physics.arcade.velocityFromRotation(randomAngle, randomVelocity, asteroid.body.velocity);
@@ -327,7 +334,7 @@ gameState.prototype = {
                 y= Math.round(Math.random()) * gameProperties.screenHeight;
             }
 
-            this.createAsteroid(x, y, graphicAssets.asteroidLarge.name);
+            this.createAsteroid(x, y, graphicAssets.spiderLarge.name);
         }
     },
 
