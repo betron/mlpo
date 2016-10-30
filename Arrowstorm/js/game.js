@@ -13,7 +13,7 @@ var states = {
 
 var graphicAssets = {
     ship:{URL:'assets/shipNew.png', name: 'ship'},
-    bullet: {URL:'assets/bulletNew.png', name: 'bullet'},
+    bullet: {URL:'assets/arrow.png', name: 'bullet'},
 
     asteroidLarge: {URL: 'assets/asteroidLarge.png', name:'asteroidLarge'},
     asteroidMedium: {URL:'assets/asteroidMedium.png', name: 'asteroidMedium'},
@@ -49,7 +49,7 @@ var shipProperties = {
 var bulletProperties = {
     speed: 400,
     interval: 250,
-    lifeSpan: 2000,
+    lifeSpan: 3000,
     maxCount: 30,
 };
 
