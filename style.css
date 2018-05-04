@@ -303,6 +303,13 @@ ol {
 @media screen and (max-width: 71.875em) {
     html {
         font-size: 90%
+		
+		#topBanner {
+
+	background-color: #a2a2a2;
+	
+	}		
+
     }
 }
 @media screen and (max-width: 61.25em) {
