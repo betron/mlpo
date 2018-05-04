@@ -22,7 +22,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 			 
 
 a {
- text-decoration: none;
+ text-decoration: underline;
 	color: black;
 	}
 
